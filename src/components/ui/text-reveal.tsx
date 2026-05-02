@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface TextRevealByWordProps {
@@ -67,13 +67,13 @@ export function TextRevealByWord({ text, className }: TextRevealByWordProps) {
   }, [words.length]);
 
   return (
-    <section className={cn('relative py-24 bg-white', className)}>
+    <section className={cn('relative py-24 bg-[#050a14]', className)}>
       <div
         ref={containerRef}
         className="max-w-4xl mx-auto px-6 text-center"
       >
         <p
-          className="font-black leading-tight text-black"
+          className="font-black leading-tight text-[#fefefe]"
           style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)', lineHeight: 1.3 }}
         >
           {words.map((word, index) => (
@@ -82,8 +82,8 @@ export function TextRevealByWord({ text, className }: TextRevealByWordProps) {
               className={cn(
                 'inline-block mr-[0.25em] transition-all duration-300',
                 index < visibleCount
-                  ? 'opacity-100 text-black'
-                  : 'opacity-20 text-gray-400'
+                  ? 'opacity-100 text-[#fefefe]'
+                  : 'opacity-15 text-[#fefefe]'
               )}
               style={{
                 transitionDelay: `${Math.max(0, (index - visibleCount + 3) * 20)}ms`,

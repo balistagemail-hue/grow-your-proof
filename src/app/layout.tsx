@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   title: "Grow Your Proof | Websites That Turn Visitors Into Customers",
   description:
     "We build premium, high-converting websites for ambitious businesses that want more leads, stronger trust, and faster growth.",
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} h-full antialiased`}
+      className={`${dmSans.variable} h-full antialiased dark`}
       style={{ fontFamily: "'DM Sans', 'Inter', sans-serif" }}
     >
       <body className="min-h-full flex flex-col">{children}</body>

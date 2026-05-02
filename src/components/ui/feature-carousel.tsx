@@ -125,19 +125,28 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
   const activeFeature = features[activeIndex];
 
   return (
-    <section id="method" className="w-full bg-[#2583ef] py-20 overflow-hidden">
+    <section id="method" className="w-full bg-[#050a14] pt-20 pb-10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="mb-12 text-center">
-          <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-white/70">
+          <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
             Our Services
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-[#fefefe] leading-tight mb-4">
             Everything You Need<br />to Grow Online
           </h2>
-          <p className="text-white/70 text-lg max-w-xl mx-auto">
+          <p className="text-white/55 text-lg max-w-xl mx-auto mb-8">
             From design to development to marketing — we handle it all.
           </p>
+          <a
+            href="#concept-form"
+            className="inline-flex items-center gap-2 bg-[#2684ef] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#1a74db] transition-colors text-sm"
+          >
+            Get your free concept
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
         </div>
 
         {/* Main carousel content */}
@@ -175,24 +184,15 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
                 isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
               )}
             >
-              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/15 border border-white/20">
-                <activeFeature.icon className="w-7 h-7 text-white" />
+              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#2684ef]/15 border border-[#2684ef]/25">
+                <activeFeature.icon className="w-7 h-7 text-[#2684ef]" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-white mb-4">
+              <h3 className="text-2xl md:text-3xl font-black text-[#fefefe] mb-4">
                 {activeFeature.label}
               </h3>
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
+              <p className="text-white/55 text-lg leading-relaxed">
                 {activeFeature.description}
               </p>
-              <a
-                href="#concept-form"
-                className="inline-flex items-center gap-2 bg-white text-[#2583ef] font-bold px-6 py-3 rounded-xl hover:bg-white/90 transition-colors text-sm"
-              >
-                Get Started
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
             </div>
           </div>
         </div>
@@ -206,8 +206,8 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
               className={cn(
                 'inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all',
                 index === activeIndex
-                  ? 'bg-white text-[#2583ef] shadow-lg'
-                  : 'bg-white/15 text-white hover:bg-white/25 border border-white/20'
+                  ? 'bg-[#2684ef] text-white shadow-lg'
+                  : 'bg-white/8 text-white/70 hover:bg-white/15 border border-white/10'
               )}
             >
               <feature.icon className="w-4 h-4" />
@@ -224,7 +224,7 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
               onClick={() => handleTabClick(index)}
               className={cn(
                 'h-1 rounded-full transition-all duration-300',
-                index === activeIndex ? 'w-8 bg-white' : 'w-2 bg-white/30 hover:bg-white/50'
+                index === activeIndex ? 'w-8 bg-[#2684ef]' : 'w-2 bg-white/20 hover:bg-white/40'
               )}
             />
           ))}

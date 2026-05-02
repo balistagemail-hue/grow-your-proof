@@ -82,23 +82,24 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white pt-16 pb-8">
+    <footer className="bg-[#050a14] border-t border-white/8 text-[#fefefe] pt-16 pb-8">
       <div className="max-w-6xl mx-auto px-6">
         {/* Top section */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="/" className="inline-flex items-center gap-2 mb-4">
-              <span className="text-[#2583ef] font-black text-2xl">GYP</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.svg" alt="GYP" className="h-9 w-9 flex-shrink-0 rounded-full" />
               <span className="font-bold text-lg text-white">Grow Your Proof</span>
             </a>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
+            <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
               Websites That Turn Visitors Into Customers. We build premium, high-converting websites
               for ambitious businesses.
             </p>
             <a
               href="#concept-form"
-              className="inline-flex items-center gap-2 bg-[#2583ef] text-white font-bold px-5 py-2.5 rounded-xl hover:bg-[#1a6fd4] transition-colors text-sm"
+              className="inline-flex items-center gap-2 bg-[#2684ef] text-white font-bold px-5 py-2.5 rounded-xl hover:bg-[#1a74db] transition-colors text-sm"
             >
               Free Concept Request
             </a>
@@ -115,7 +116,7 @@ export function Footer() {
                   <li key={link.title}>
                     <a
                       href={link.href}
-                      className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+                      className="flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm"
                     >
                       {link.icon && (
                         <link.icon className="w-4 h-4 flex-shrink-0" />
@@ -131,14 +132,14 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
+          <p className="text-white/40 text-sm">
             © 2026 Grow Your Proof. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="/privacy" className="text-gray-500 hover:text-white transition-colors text-sm">
+            <a href="/privacy" className="text-white/40 hover:text-white transition-colors text-sm">
               Privacy Policy
             </a>
-            <a href="/terms" className="text-gray-500 hover:text-white transition-colors text-sm">
+            <a href="/terms" className="text-white/40 hover:text-white transition-colors text-sm">
               Terms
             </a>
           </div>

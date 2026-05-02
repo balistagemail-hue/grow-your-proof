@@ -103,7 +103,7 @@ const cards: CardData[] = [
 
 function ServiceCard({ card }: { card: CardData }) {
   return (
-    <div className="flex-shrink-0 w-72 md:w-80 rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
+    <div className="flex-shrink-0 w-72 md:w-80 rounded-2xl overflow-hidden bg-[#0c1629] border border-white/10 shadow-sm hover:shadow-2xl hover:border-white/20 transition-all duration-300 group">
       {/* Image */}
       <div className="relative h-48 w-full overflow-hidden">
         <Image
@@ -115,20 +115,20 @@ function ServiceCard({ card }: { card: CardData }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         <div className="absolute top-3 left-3">
-          <span className="inline-block rounded-full bg-[#2583ef] px-3 py-1 text-xs font-bold text-white">
+          <span className="inline-block rounded-full bg-[#2684ef] px-3 py-1 text-xs font-bold text-white">
             {card.category}
           </span>
         </div>
       </div>
       {/* Content */}
       <div className="p-5">
-        <h3 className="font-bold text-lg text-black mb-2 group-hover:text-[#2583ef] transition-colors">
+        <h3 className="font-bold text-lg text-[#fefefe] mb-2 group-hover:text-[#2684ef] transition-colors">
           {card.title}
         </h3>
-        <p className="text-gray-500 text-sm leading-relaxed mb-4">{card.description}</p>
+        <p className="text-white/55 text-sm leading-relaxed mb-4">{card.description}</p>
         <a
           href="#concept-form"
-          className="inline-flex items-center gap-1.5 text-[#2583ef] font-semibold text-sm hover:gap-3 transition-all"
+          className="inline-flex items-center gap-1.5 text-[#2684ef] font-semibold text-sm hover:gap-3 transition-all"
         >
           {card.readTime}
         </a>
@@ -160,20 +160,20 @@ export function ServicesSlider() {
   const handleMouseUp = useCallback(() => setIsDragging(false), []);
 
   return (
-    <section id="services" className="w-full bg-gray-50 py-20 overflow-hidden">
+    <section id="services" className="w-full bg-[#07101e] py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-10">
         <div className="flex items-end justify-between">
           <div>
-            <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2583ef]">
+            <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
               What We Do
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-black leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-[#fefefe] leading-tight">
               Our Services
             </h2>
           </div>
           <a
             href="#concept-form"
-            className="hidden md:inline-flex items-center gap-2 text-[#2583ef] font-bold text-sm hover:underline"
+            className="hidden md:inline-flex items-center gap-2 text-[#2684ef] font-bold text-sm hover:underline"
           >
             Free Concept →
           </a>
@@ -203,7 +203,7 @@ export function ServicesSlider() {
       <div className="mt-8 flex justify-center md:hidden">
         <a
           href="#concept-form"
-          className="inline-flex items-center gap-2 bg-[#2583ef] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#1a6fd4] transition-colors text-sm"
+          className="inline-flex items-center gap-2 bg-[#2684ef] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#1a74db] transition-colors text-sm"
         >
           Free Concept Request →
         </a>
