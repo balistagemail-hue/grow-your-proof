@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface CinematicHeroProps {
@@ -33,6 +33,37 @@ export function CinematicHero({
   const ctaRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLSpanElement>(null);
+
+  const [heroName, setHeroName] = useState('');
+  const [heroEmail, setHeroEmail] = useState('');
+  const [heroLoading, setHeroLoading] = useState(false);
+
+  async function handleHeroSubmit() {
+    const payload = {
+      name: heroName,
+      email: heroEmail,
+      brandColor: '#2684ef',
+      websiteType: 'Not specified',
+      message: 'Submitted from hero form',
+    };
+    console.log('Hero form submit:', payload);
+    setHeroLoading(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error('Failed');
+      alert('✅ Success! Your concept request has been received.');
+      setHeroName('');
+      setHeroEmail('');
+    } catch {
+      alert('❌ Something went wrong. Please try again.');
+    } finally {
+      setHeroLoading(false);
+    }
+  }
 
   useEffect(() => {
     let gsap: typeof import('gsap').gsap;
@@ -259,11 +290,16 @@ export function CinematicHero({
             <div className="hidden lg:block w-px self-stretch" style={{ background: 'rgba(255,255,255,0.08)' }} />
 
             {/* Form */}
-            <div className="flex-1 flex flex-col gap-3 min-w-0">
+            <form
+              className="flex-1 flex flex-col gap-3 min-w-0"
+              onSubmit={(e) => { e.preventDefault(); handleHeroSubmit(); }}
+            >
               <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
                   placeholder="Your Name"
+                  value={heroName}
+                  onChange={(e) => setHeroName(e.target.value)}
                   className="flex-1 rounded-xl px-4 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none transition-colors"
                   style={{
                     background: 'rgba(255,255,255,0.05)',
@@ -275,6 +311,8 @@ export function CinematicHero({
                 <input
                   type="email"
                   placeholder="your@email.com"
+                  value={heroEmail}
+                  onChange={(e) => setHeroEmail(e.target.value)}
                   className="flex-1 rounded-xl px-4 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none transition-colors"
                   style={{
                     background: 'rgba(255,255,255,0.05)',
@@ -284,26 +322,30 @@ export function CinematicHero({
                   onBlur={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)'; }}
                 />
               </div>
-              <a
-                href="#concept-form"
-                className="flex items-center justify-center gap-2 text-white font-bold px-6 py-3 rounded-xl text-sm transition-all duration-200"
+              <button
+                type="button"
+                disabled={heroLoading}
+                onClick={handleHeroSubmit}
+                className="flex items-center justify-center gap-2 text-white font-bold px-6 py-3 rounded-xl text-sm transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{
                   background: 'linear-gradient(90deg, #2684ef 0%, #109bdf 100%)',
                   boxShadow: '0 4px 16px rgba(38,132,239,0.30)',
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 6px 24px rgba(38,132,239,0.55)';
+                  if (!heroLoading) e.currentTarget.style.boxShadow = '0 6px 24px rgba(38,132,239,0.55)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 4px 16px rgba(38,132,239,0.30)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(38,132,239,0.30)';
                 }}
               >
-                Get Free Concept
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
+                {heroLoading ? 'Sending…' : 'Get Free Concept'}
+                {!heroLoading && (
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                )}
+              </button>
+            </form>
 
             {/* Vertical divider */}
             <div className="hidden lg:block w-px self-stretch" style={{ background: 'rgba(255,255,255,0.08)' }} />
