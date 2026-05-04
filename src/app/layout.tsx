@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import { FloatingCall } from "@/components/ui/floating-call";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -29,7 +30,10 @@ export default function RootLayout({
       className={`${dmSans.variable} h-full antialiased dark`}
       style={{ fontFamily: "'DM Sans', 'Inter', sans-serif" }}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <FloatingCall />
+      </body>
     </html>
   );
 }
