@@ -21,13 +21,7 @@ export default function Home() {
         tagline1="Websites That Turn"
         tagline2="Visitors Into Customers."
         cardHeading="Conversion-Driven by Design."
-        cardDescription={
-          <>
-            At <span className="text-white font-semibold">Grow Your Proof</span>, we build premium,
-            high-converting websites for ambitious businesses that want more leads, stronger trust,
-            and faster growth.
-          </>
-        }
+        cardDescription="No time or knowledge to build a website that actually works? We create conversion-focused websites that generate real customers. You fill in one form, we handle the rest."
         metricValue={50}
         metricLabel="Projects Delivered"
         ctaHeading="Ready to Grow?"
