@@ -17,15 +17,8 @@ export default function Home() {
 
       {/* 2. Hero */}
       <CinematicHero
-        brandName="GYP"
         tagline1="Websites That Turn"
         tagline2="Visitors Into Customers."
-        cardHeading="Conversion-Driven by Design."
-        cardDescription="No time or knowledge to build a website that actually works? We create conversion-focused websites that generate real customers. You fill in one form, we handle the rest."
-        metricValue={50}
-        metricLabel="Projects Delivered"
-        ctaHeading="Ready to Grow?"
-        ctaDescription="Get a free concept of your new high-converting website. No obligation. No fluff. Just results."
       />
 
       {/* 3. Phone Mockup */}
