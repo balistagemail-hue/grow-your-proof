@@ -8,9 +8,18 @@ export function FloatingCall() {
       href="https://wa.me/31642563863?text=Hi%20Elle,%20I%20have%20a%20question%20about%20the%20website%20design%20with%20Grow%20Your%20Proof!"
       target="_blank"
       rel="noopener noreferrer"
-      className="group fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full px-5 py-3 text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-blue-500"
+      className="group fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full px-4 py-2.5 text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-blue-500"
       style={{ background: '#0B1C2C' }}
     >
+      {/* Avatar */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/DSCF0803.jpg"
+        alt="Elle"
+        className="h-8 w-8 rounded-full object-cover flex-shrink-0"
+        style={{ border: '2px solid rgba(255,255,255,0.25)' }}
+      />
+
       {/* Icon with pulsing status dot */}
       <span className="relative flex-shrink-0">
         <MessageCircle className="h-5 w-5" />
