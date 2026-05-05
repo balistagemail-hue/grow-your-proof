@@ -146,7 +146,7 @@ export function CinematicHero({
 
         {/* Eyebrow */}
         <div className="mb-6 flex items-center gap-3">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-lg font-semibold">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 md:px-4 md:py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs md:text-lg font-semibold">
             <span className="inline-block w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
             Available for Q2 2026
           </span>
@@ -195,7 +195,7 @@ export function CinematicHero({
 
         {/* Inline form card */}
         <div
-          className="mt-10 mb-10 w-full max-w-xl rounded-2xl p-6 flex flex-col gap-4"
+          className="mt-10 mb-10 w-full max-w-xl rounded-2xl p-4 md:p-6 flex flex-col gap-4 overflow-hidden"
           style={{
             background: 'rgba(255,255,255,0.04)',
             border: '1px solid rgba(255,255,255,0.08)',
@@ -209,14 +209,14 @@ export function CinematicHero({
             className="flex flex-col gap-3"
             onSubmit={(e) => { e.preventDefault(); handleHeroSubmit(); }}
           >
-            <div className="flex flex-row gap-3">
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', width: '100%', boxSizing: 'border-box' }}>
               <input
                 type="text"
                 placeholder="Your Name"
                 value={heroName}
                 onChange={(e) => setHeroName(e.target.value)}
-                className="flex-1 rounded-xl px-4 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none transition-colors"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}
+                className="rounded-xl px-3 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none transition-colors"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', boxSizing: 'border-box', minWidth: 0, width: '100%' }}
                 onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(38,132,239,0.55)'; }}
                 onBlur={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)'; }}
               />
@@ -225,8 +225,8 @@ export function CinematicHero({
                 placeholder="your@email.com"
                 value={heroEmail}
                 onChange={(e) => setHeroEmail(e.target.value)}
-                className="flex-1 rounded-xl px-4 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none transition-colors"
-                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}
+                className="rounded-xl px-3 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none transition-colors"
+                style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', boxSizing: 'border-box', minWidth: 0, width: '100%' }}
                 onFocus={(e) => { e.currentTarget.style.borderColor = 'rgba(38,132,239,0.55)'; }}
                 onBlur={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)'; }}
               />
