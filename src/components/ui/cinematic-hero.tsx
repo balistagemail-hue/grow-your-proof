@@ -142,7 +142,7 @@ export function CinematicHero({
       />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center flex-1 px-6 pt-20 pb-12 max-w-6xl mx-auto w-full">
+      <div className="relative z-20 flex flex-col items-start md:items-center justify-center flex-1 px-6 pt-20 pb-12 max-w-6xl mx-auto w-full">
 
         {/* Eyebrow */}
         <div className="mb-6 flex items-center gap-3">
@@ -155,7 +155,7 @@ export function CinematicHero({
         {/* Main Heading */}
         <h1
           ref={headingRef}
-          className="mb-6 text-center font-black leading-[1.05] tracking-tight text-white"
+          className="mb-6 text-left md:text-center font-black leading-[1.05] tracking-tight text-white"
           style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
         >
           <span className="hero-line block overflow-hidden">
@@ -177,11 +177,11 @@ export function CinematicHero({
         </h1>
 
         {/* Description + Features */}
-        <div ref={subRef} className="mb-10 text-center max-w-2xl">
+        <div ref={subRef} className="mb-10 text-left md:text-center max-w-2xl w-full">
           <p className="text-gray-400 text-base leading-relaxed mb-8">
             {cardDescription || 'No time or knowledge to build a website that actually works? We create conversion-focused websites that generate real customers. You fill in one form, we handle the rest.'}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white">
+          <div className="flex flex-row flex-wrap items-center justify-start md:justify-center gap-4 md:gap-6 text-sm text-white">
             {FEATURES.map((item) => (
               <div key={item} className="flex items-center gap-2">
                 <span className="flex items-center justify-center w-5 h-5 rounded-full bg-blue-500 text-white flex-shrink-0">
@@ -204,12 +204,12 @@ export function CinematicHero({
             boxShadow: '0 8px 32px rgba(0,0,0,0.35)',
           }}
         >
-          <p className="text-white font-bold text-lg text-center">Get Your Free Concept</p>
+          <p className="text-white font-bold text-lg text-left md:text-center">Get Your Free Concept</p>
           <form
             className="flex flex-col gap-3"
             onSubmit={(e) => { e.preventDefault(); handleHeroSubmit(); }}
           >
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-row gap-3">
               <input
                 type="text"
                 placeholder="Your Name"
