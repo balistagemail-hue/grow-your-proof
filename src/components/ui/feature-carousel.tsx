@@ -3,10 +3,14 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'], display: 'swap' });
 
 interface Feature {
   id: string;
   label: string;
+  emoji: string;
   icon: React.ComponentType<{ className?: string; size?: number }>;
   image: string;
   description: string;
@@ -38,6 +42,7 @@ const FEATURES: Feature[] = [
   {
     id: "conversion",
     label: "Conversion Design",
+    emoji: "🚀",
     icon: CheckmarkCircle01Icon,
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1200",
     description: "Websites built to turn visitors into qualified leads and paying customers.",
@@ -45,6 +50,7 @@ const FEATURES: Feature[] = [
   {
     id: "brand",
     label: "Premium Brand Identity",
+    emoji: "✨",
     icon: MagicWandIcon,
     image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
     description: "A strong visual identity that builds trust, authority, and recognition.",
@@ -52,6 +58,7 @@ const FEATURES: Feature[] = [
   {
     id: "photo",
     label: "Photography & Drone",
+    emoji: "📸",
     icon: SmartPhone01Icon,
     image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1200",
     description: "Premium visuals that showcase your business, products, and story.",
@@ -59,6 +66,7 @@ const FEATURES: Feature[] = [
   {
     id: "marketing",
     label: "Growth Marketing",
+    emoji: "📈",
     icon: GlobalSearchIcon,
     image: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1200",
     description: "Smart marketing systems that generate traffic, leads, and growth.",
@@ -66,6 +74,7 @@ const FEATURES: Feature[] = [
   {
     id: "webshop",
     label: "Webshop / Ecommerce",
+    emoji: "🛒",
     icon: DashboardSquare01Icon,
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
     description: "Sell your products online with a webshop built for ease of use and results.",
@@ -73,6 +82,7 @@ const FEATURES: Feature[] = [
   {
     id: "hosting",
     label: "Hosting & Maintenance",
+    emoji: "⚙️",
     icon: AiCloudIcon,
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200",
     description: "We keep your website secure, fast, and fully up to date.",
@@ -80,6 +90,7 @@ const FEATURES: Feature[] = [
   {
     id: "seo",
     label: "SEO Optimization",
+    emoji: "🔍",
     icon: GlobalSearchIcon,
     image: "https://images.unsplash.com/photo-1432888622747-4eb9a8f5a07d?q=80&w=1200",
     description: "Build sustainable organic growth by investing in SEO.",
@@ -87,6 +98,7 @@ const FEATURES: Feature[] = [
   {
     id: "ads",
     label: "Website Traffic Ads",
+    emoji: "🎯",
     icon: CommandFreeIcons,
     image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=1200",
     description: "We create targeted advertisements that drive qualified visitors directly to your website.",
@@ -128,14 +140,14 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
     <section id="method" className="w-full bg-[#050a14] pt-10 pb-6 md:pt-20 md:pb-10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-6 md:mb-12 text-center">
+        <div className="mb-6 md:mb-12 text-left md:text-center">
           <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
             Our Services
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-[#fefefe] leading-tight mb-4">
             Everything You Need<br />to Grow Online
           </h2>
-          <p className="text-white/55 text-lg max-w-xl mx-auto mb-8">
+          <p className="text-white/55 text-lg max-w-xl md:mx-auto mb-8">
             From design to development to marketing — we handle it all.
           </p>
           <a
@@ -185,12 +197,12 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
               )}
             >
               <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#2684ef]/15 border border-[#2684ef]/25">
-                <activeFeature.icon className="w-7 h-7 text-[#2684ef]" />
+                <span className="text-2xl" role="img">{activeFeature.emoji}</span>
               </div>
-              <h3 className="text-2xl md:text-3xl font-black text-[#fefefe] mb-4">
+              <h3 className={`text-2xl md:text-3xl font-semibold text-[#fefefe] mb-4 ${poppins.className}`}>
                 {activeFeature.label}
               </h3>
-              <p className="text-white/55 text-lg leading-relaxed">
+              <p className={`text-white/55 text-lg leading-relaxed ${poppins.className}`}>
                 {activeFeature.description}
               </p>
             </div>
@@ -198,26 +210,26 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
         </div>
 
         {/* Tab navigation */}
-        <div className="flex flex-wrap gap-2 justify-center">
+        <div className={`flex flex-wrap gap-2 justify-start md:justify-center ${poppins.className}`}>
           {features.map((feature, index) => (
             <button
               key={feature.id}
               onClick={() => handleTabClick(index)}
               className={cn(
-                'inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all',
+                'inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-left',
                 index === activeIndex
-                  ? 'bg-[#2684ef] text-white shadow-lg'
-                  : 'bg-white/8 text-white/70 hover:bg-white/15 border border-white/10'
+                  ? 'bg-[#2684ef] text-white shadow-lg shadow-[#2684ef]/25'
+                  : 'bg-white/5 text-white/65 hover:bg-white/10 border border-white/10'
               )}
             >
-              <feature.icon className="w-4 h-4" />
-              {feature.label}
+              <span className="text-base leading-none" role="img">{feature.emoji}</span>
+              <span className="font-semibold">{feature.label}</span>
             </button>
           ))}
         </div>
 
         {/* Progress bar */}
-        <div className="mt-8 flex gap-1.5 justify-center">
+        <div className="mt-8 flex gap-1.5 justify-start md:justify-center">
           {features.map((_, index) => (
             <button
               key={index}
