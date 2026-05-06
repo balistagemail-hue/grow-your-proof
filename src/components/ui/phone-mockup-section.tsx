@@ -3,371 +3,511 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Poppins } from 'next/font/google';
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
+const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'], display: 'swap' });
 
-/* ─── Floating desktop widget ──────────────────────────────────────────────── */
-function FloatWidget({
-  children,
-  className = '',
-  delay,
-  fromX,
-  isInView,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay: number;
-  fromX: number;
-  isInView: boolean;
-}) {
+/* ─── Villa Management phone screen ──────────────────────────────────────── */
+function VillaPhoneScreen() {
   return (
-    <motion.div
-      className={`hidden md:block absolute z-30 ${className}`}
-      style={{
-        background: 'rgba(4,10,22,0.88)',
-        border: '1px solid rgba(38,132,239,0.20)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        boxShadow: '0 12px 48px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.05)',
-        borderRadius: '18px',
-      }}
-      initial={{ opacity: 0, x: fromX, y: 16 }}
-      animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 1.0, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
-/* ─── Phone screen — luxury villa website ──────────────────────────────────── */
-function PhoneScreen() {
-  const VILLA_IMG = 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80';
-  const SERVICE_IMG = 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80';
-
-  return (
-    <div className={`relative w-full h-full flex flex-col overflow-hidden ${poppins.className}`} style={{ background: '#0d1109' }}>
-
-      {/* ── HERO ── full-bleed villa image */}
-      <div className="relative flex-shrink-0 overflow-hidden" style={{ height: '52%' }}>
+    <div className={`relative w-full h-full flex flex-col overflow-hidden ${poppins.className}`} style={{ background: '#0a0d08' }}>
+      {/* Hero */}
+      <div className="relative flex-shrink-0" style={{ height: '50%' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={VILLA_IMG} alt="" className="absolute inset-0 w-full h-full object-cover object-center" style={{ opacity: 0.85 }} />
-
-        {/* Gradient overlays */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(5,8,4,0.45) 0%, rgba(5,8,4,0.15) 40%, rgba(5,8,4,0.85) 100%)' }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(5,8,4,0.3) 0%, transparent 60%)' }} />
-
-        {/* Transparent nav */}
-        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-3.5 pt-2.5 z-20">
+        <img
+          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ opacity: 0.9 }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.1) 28%, rgba(8,10,5,0.97) 100%)' }} />
+        {/* Nav */}
+        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-3 pt-2 z-20">
           <div className="flex items-center gap-1.5">
-            <div className="w-4 h-4 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #b49b64, #d4b97a)', boxShadow: '0 0 6px rgba(180,155,100,0.6)' }} />
-            <span className="text-[9px] font-bold tracking-[0.15em] text-white/90 uppercase">Villara</span>
+            <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #b49b64, #d4b97a)', boxShadow: '0 0 6px rgba(180,155,100,0.5)' }} />
+            <span className="text-[7.5px] font-black tracking-[0.18em] text-white/90 uppercase">Villara</span>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[8px] text-white/60 tracking-widest uppercase border-b border-white/20">EN</span>
-            <div className="flex flex-col gap-[3px]">
-              {[0, 1, 2].map(i => <div key={i} className="w-3 h-[1.5px] bg-white/70 rounded-full" />)}
-            </div>
+          <div className="px-1.5 py-0.5 rounded-full text-[5.5px] font-bold text-white" style={{ background: 'rgba(180,155,100,0.2)', border: '1px solid rgba(180,155,100,0.48)' }}>
+            Book Now
           </div>
         </div>
-
-        {/* Hero text */}
-        <div className="absolute bottom-0 left-0 right-0 px-3.5 pb-3 z-20">
-          {/* Review badge */}
-          <div className="flex items-center gap-1 mb-2">
-            <div className="flex items-center gap-1 px-2 py-0.5 rounded-full" style={{ background: 'rgba(180,155,100,0.18)', border: '1px solid rgba(180,155,100,0.45)', backdropFilter: 'blur(8px)' }}>
-              <svg className="w-2 h-2" fill="#d4b97a" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span className="text-[8px] font-bold" style={{ color: '#d4b97a' }}>4.9</span>
-              <span className="text-[7px]" style={{ color: 'rgba(255,255,255,0.55)' }}>· 120+ villas</span>
-            </div>
+        {/* Hero content */}
+        <div className="absolute bottom-0 left-0 right-0 px-3 pb-3 z-20">
+          <div className="flex items-center gap-1 mb-1">
+            <span className="text-[6px]" style={{ color: '#d4b97a' }}>★★★★★</span>
+            <span className="text-[5.5px]" style={{ color: 'rgba(255,255,255,0.38)' }}>4.9 · 120+ villas</span>
           </div>
-
-          <h3 className="text-[13px] font-bold text-white leading-[1.25] tracking-[-0.01em] mb-1" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.7)' }}>
-            Your Reliable Villa<br />Management Partner
+          <h3 className="text-[11.5px] font-black text-white leading-tight mb-1.5" style={{ textShadow: '0 2px 14px rgba(0,0,0,0.8)' }}>
+            Luxury Villa<br />Management in Bali
           </h3>
-          <p className="text-[7.5px] leading-relaxed mb-2.5" style={{ color: 'rgba(255,255,255,0.58)' }}>
-            Luxury hospitality & property management<br />services in Bali.
-          </p>
-
-          {/* CTA buttons */}
           <div className="flex gap-1.5">
-            <div className="flex-1 rounded-full py-[6px] flex items-center justify-center text-[7.5px] font-bold" style={{ background: 'linear-gradient(135deg, #b49b64, #d4b97a)', color: '#0d1109', boxShadow: '0 4px 14px rgba(180,155,100,0.45)' }}>
+            <button className="flex-1 rounded-full py-1.5 text-[6px] font-bold text-center" style={{ background: 'linear-gradient(135deg, #b49b64, #d4b97a)', color: '#050300' }}>
               Book Consultation
-            </div>
-            <div className="flex-1 rounded-full py-[6px] flex items-center justify-center text-[7.5px] font-semibold" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(8px)' }}>
+            </button>
+            <button className="flex-1 rounded-full py-1.5 text-[6px] font-medium text-center" style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.22)', color: 'rgba(255,255,255,0.8)' }}>
               Explore Villas
-            </div>
+            </button>
           </div>
         </div>
       </div>
 
-      {/* ── SERVICES ── glass cards */}
-      <div className="flex-shrink-0 px-3 pt-3 pb-2">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-[8px] font-bold tracking-[0.15em] uppercase" style={{ color: '#b49b64' }}>Our Services</span>
-          <span className="text-[7.5px]" style={{ color: 'rgba(255,255,255,0.35)' }}>View all →</span>
+      {/* Services grid */}
+      <div className="px-2.5 pt-2.5 pb-1.5 flex-shrink-0">
+        <div className="flex items-center justify-between mb-1.5">
+          <span className="text-[6.5px] font-bold tracking-widest uppercase" style={{ color: '#b49b64' }}>Our Services</span>
+          <span className="text-[5.5px]" style={{ color: 'rgba(255,255,255,0.28)' }}>View all →</span>
         </div>
         <div className="grid grid-cols-2 gap-1.5">
           {[
-            { label: 'Villa Marketing', sub: 'Bookings & exposure', icon: '◈' },
-            { label: 'Guest Experience', sub: 'Concierge & care', icon: '✦' },
-            { label: 'Revenue Growth', sub: 'Yield optimisation', icon: '▲' },
-            { label: 'Maintenance', sub: 'Property upkeep', icon: '⬡' },
-          ].map((s) => (
-            <div key={s.label} className="rounded-[12px] px-2.5 py-2" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(180,155,100,0.12)', backdropFilter: 'blur(12px)' }}>
-              <span className="text-[11px] mb-1 block" style={{ color: '#b49b64' }}>{s.icon}</span>
-              <p className="text-[8.5px] font-bold text-white leading-tight">{s.label}</p>
-              <p className="text-[7px] mt-0.5" style={{ color: 'rgba(255,255,255,0.38)' }}>{s.sub}</p>
+            { label: 'Villa Marketing', icon: '◈' },
+            { label: 'Guest Experience', icon: '✦' },
+            { label: 'Revenue Growth', icon: '▲' },
+            { label: 'Maintenance', icon: '⬡' },
+          ].map(s => (
+            <div key={s.label} className="rounded-[10px] px-2 py-1.5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(180,155,100,0.14)' }}>
+              <span className="text-[9px] block mb-0.5" style={{ color: '#b49b64' }}>{s.icon}</span>
+              <p className="text-[7px] font-bold text-white leading-tight">{s.label}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── STATS strip ── */}
-      <div className="flex-shrink-0 mx-3 rounded-[14px] px-3 py-2.5" style={{ background: 'rgba(180,155,100,0.07)', border: '1px solid rgba(180,155,100,0.18)' }}>
+      {/* Stats strip */}
+      <div className="mx-2.5 rounded-xl px-2.5 py-2 flex-shrink-0" style={{ background: 'rgba(180,155,100,0.07)', border: '1px solid rgba(180,155,100,0.2)' }}>
         <div className="grid grid-cols-4 gap-1 text-center">
-          {[
-            { v: '98%', l: 'Occupancy' },
-            { v: '120+', l: 'Villas' },
-            { v: '24/7', l: 'Support' },
-            { v: '+42%', l: 'Bookings' },
-          ].map((s) => (
-            <div key={s.l}>
-              <div className="text-[11px] font-black leading-none" style={{ color: '#d4b97a' }}>{s.v}</div>
-              <div className="text-[6.5px] mt-0.5 leading-tight" style={{ color: 'rgba(255,255,255,0.38)' }}>{s.l}</div>
+          {[['98%', 'Occupancy'], ['+42%', 'Bookings'], ['24/7', 'Support'], ['120+', 'Villas']].map(([v, l]) => (
+            <div key={l}>
+              <div className="text-[8.5px] font-black leading-none" style={{ color: '#d4b97a' }}>{v}</div>
+              <div className="text-[5px] mt-0.5" style={{ color: 'rgba(255,255,255,0.32)' }}>{l}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* ── VILLA PREVIEW ── */}
-      <div className="flex-shrink-0 mx-3 mt-2 rounded-[12px] overflow-hidden relative" style={{ height: 52 }}>
+      {/* Pool preview */}
+      <div className="mx-2.5 mt-1.5 rounded-[10px] overflow-hidden relative flex-1" style={{ minHeight: 38 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={SERVICE_IMG} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ opacity: 0.7 }} />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(5,8,4,0.85) 0%, transparent 60%)' }} />
-        <div className="absolute inset-0 flex items-center px-3">
+        <img
+          src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 0.72 }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.84) 0%, transparent 55%)' }} />
+        <div className="absolute inset-0 flex items-center px-2.5">
           <div>
-            <p className="text-[8px] font-bold text-white leading-none">Featured Villa</p>
-            <p className="text-[6.5px] mt-0.5" style={{ color: 'rgba(255,255,255,0.5)' }}>Ubud · 4 BR · Pool Villa</p>
-          </div>
-          <div className="ml-auto text-[7px] font-bold px-2 py-1 rounded-full" style={{ background: 'rgba(180,155,100,0.25)', color: '#d4b97a', border: '1px solid rgba(180,155,100,0.4)' }}>
-            98% full
+            <p className="text-[7.5px] font-bold text-white leading-none">Infinity Pool Villa</p>
+            <p className="text-[5.5px] mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>Ubud · 4BR · Private Pool</p>
           </div>
         </div>
       </div>
+      <div style={{ height: 8 }} />
+    </div>
+  );
+}
 
-      {/* ── BOTTOM CTA ── */}
-      <div className="px-3 pt-2 pb-2.5 mt-auto flex-shrink-0">
-        <div className="w-full rounded-full py-[9px] flex items-center justify-center gap-1.5 text-[8.5px] font-bold"
-          style={{ background: 'linear-gradient(135deg, #1a2e17 0%, #243d20 100%)', border: '1px solid rgba(180,155,100,0.35)', color: '#d4b97a', boxShadow: '0 4px 18px rgba(0,0,0,0.5), 0 0 20px rgba(180,155,100,0.12)' }}>
-          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.112 1.523 5.84L.057 23.428a.5.5 0 00.609.61l5.684-1.49A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+/* ─── Bali Stage phone screen ─────────────────────────────────────────────── */
+function BaliStagePhoneScreen() {
+  return (
+    <div className={`relative w-full h-full flex flex-col overflow-hidden ${poppins.className}`} style={{ background: '#0c1a0f' }}>
+      {/* Hero */}
+      <div className="relative flex-shrink-0" style={{ height: '48%' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ opacity: 0.85 }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,22,8,0.52) 0%, rgba(0,16,6,0.15) 28%, rgba(8,22,10,0.97) 100%)' }} />
+        {/* Nav */}
+        <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-3 pt-2 z-20">
+          <div className="flex items-center gap-1">
+            <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #2db56a, #3dcf7f)', boxShadow: '0 0 6px rgba(45,181,106,0.55)' }} />
+            <span className="text-[7px] font-black tracking-[0.1em] text-white/90 uppercase">Bali Stage</span>
+          </div>
+          <div className="px-1.5 py-0.5 rounded-full text-[5.5px] font-bold text-white" style={{ background: 'rgba(45,181,106,0.2)', border: '1px solid rgba(45,181,106,0.5)' }}>
+            Aanmelden →
+          </div>
+        </div>
+        {/* Hero content */}
+        <div className="absolute bottom-0 left-0 right-0 px-3 pb-2.5 z-20">
+          <div className="flex items-center gap-1 mb-1">
+            <div className="w-1 h-1 rounded-full bg-green-400 flex-shrink-0" />
+            <span className="text-[5px] uppercase tracking-wide font-semibold" style={{ color: '#3dcf7f' }}>500+ studenten geplaatst</span>
+          </div>
+          <h3 className="text-[10.5px] font-black text-white leading-tight mb-0.5">
+            Dé #1 in<br />Stagebemiddeling op Bali
+          </h3>
+          <p className="text-[5.5px] mb-1.5" style={{ color: 'rgba(255,255,255,0.42)' }}>Stages, accommodatie en begeleiding in Bali</p>
+          <button className="w-full rounded-full py-1.5 text-[6.5px] font-bold text-white text-center" style={{ background: 'linear-gradient(135deg, #2db56a, #1a9e5a)', boxShadow: '0 3px 14px rgba(45,181,106,0.4)' }}>
+            Gratis Aanmelden! →
+          </button>
+        </div>
+      </div>
+
+      {/* Search */}
+      <div className="px-2.5 pt-2 pb-1.5 flex-shrink-0">
+        <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border mb-1.5" style={{ background: 'rgba(255,255,255,0.04)', borderColor: 'rgba(45,181,106,0.22)' }}>
+          <svg className="w-2 h-2 flex-shrink-0" style={{ color: '#2db56a' }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
           </svg>
-          Manage your villa with confidence
+          <span className="text-[5.5px]" style={{ color: 'rgba(255,255,255,0.28)' }}>Zoek een stageplek in Bali...</span>
+        </div>
+        {/* Category pills */}
+        <div className="flex gap-1">
+          {['🏨 Horeca', '📱 Marketing', '🎨 Design'].map((cat, i) => (
+            <span key={cat} className="flex-shrink-0 px-1.5 py-0.5 rounded-full text-[4.5px] font-semibold" style={{
+              background: i === 0 ? 'rgba(45,181,106,0.22)' : 'rgba(255,255,255,0.05)',
+              border: i === 0 ? '1px solid rgba(45,181,106,0.45)' : '1px solid rgba(255,255,255,0.09)',
+              color: i === 0 ? '#3dcf7f' : 'rgba(255,255,255,0.42)',
+            }}>{cat}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Stage listings */}
+      <div className="px-2.5 flex-1">
+        <div className="flex items-center justify-between mb-1.5">
+          <span className="text-[6.5px] font-bold" style={{ color: 'rgba(255,255,255,0.62)' }}>Aanbevolen Stages</span>
+          <span className="text-[5.5px]" style={{ color: 'rgba(45,181,106,0.68)' }}>Alles zien →</span>
+        </div>
+        <div className="space-y-1.5">
+          {[
+            { title: 'Hotel Marketing Stage', company: 'The Layar Seminyak', loc: 'Seminyak' },
+            { title: 'Hospitality Stage', company: 'Alaya Resort Ubud', loc: 'Ubud' },
+          ].map(item => (
+            <div key={item.title} className="rounded-[9px] px-2 py-1.5 flex items-center gap-1.5" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
+              <div className="w-6 h-6 rounded-lg flex-shrink-0 flex items-center justify-center" style={{ background: 'rgba(45,181,106,0.14)', border: '1px solid rgba(45,181,106,0.22)' }}>
+                <span className="text-[9px]">🌴</span>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[6.5px] font-bold text-white leading-tight truncate">{item.title}</p>
+                <p className="text-[5px] truncate" style={{ color: 'rgba(255,255,255,0.35)' }}>{item.company} · 🌿 {item.loc}</p>
+              </div>
+              <span className="text-[4.5px] px-1 py-0.5 rounded-full flex-shrink-0 font-bold" style={{ background: 'rgba(45,181,106,0.15)', color: '#3dcf7f' }}>Nieuw</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Stats strip */}
+      <div className="mx-2.5 mt-1.5 mb-1.5 rounded-xl px-2.5 py-2 flex-shrink-0" style={{ background: 'rgba(45,181,106,0.07)', border: '1px solid rgba(45,181,106,0.2)' }}>
+        <div className="grid grid-cols-3 gap-1 text-center">
+          {[['500+', 'Studenten'], ['50+', 'Stages'], ['4.8★', 'Review']].map(([v, l]) => (
+            <div key={l}>
+              <div className="text-[9px] font-black leading-none" style={{ color: '#3dcf7f' }}>{v}</div>
+              <div className="text-[5px] mt-0.5" style={{ color: 'rgba(255,255,255,0.32)' }}>{l}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
 
-/* ─── iPhone shell ─────────────────────────────────────────────────────────── */
-function IPhoneMockup() {
+/* ─── Scaled-down iPhone shell ────────────────────────────────────────────── */
+function SmallIPhone({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className="relative w-[272px] h-[572px] rounded-[3rem] flex-shrink-0"
+      className="relative flex-shrink-0"
       style={{
+        width: 184,
+        height: 396,
+        borderRadius: '2.6rem',
         background: 'linear-gradient(145deg, #1c1c1e 0%, #111 100%)',
         boxShadow: `
-          inset 0 0 0 2px rgba(255,255,255,0.10),
-          inset 0 0 0 7px #000,
-          0 70px 140px -20px rgba(0,0,0,0.99),
-          0 30px 60px -10px rgba(0,0,0,0.85)
+          inset 0 0 0 1.5px rgba(255,255,255,0.10),
+          inset 0 0 0 5px #000,
+          0 50px 120px -10px rgba(0,0,0,0.99),
+          0 24px 50px -8px rgba(0,0,0,0.88)
         `,
       }}
     >
       {/* Side buttons */}
-      {[{ top: 118, h: 24 }, { top: 158, h: 44 }, { top: 216, h: 44 }].map((b, i) => (
-        <div key={i} className="absolute -left-[3px] w-[3px] rounded-l-md"
-          style={{ top: b.top, height: b.h, background: 'linear-gradient(90deg, #3a3a3c, #1c1c1e)', boxShadow: '-2px 0 5px rgba(0,0,0,0.8)' }} />
+      {[{ top: 88, h: 18 }, { top: 118, h: 32 }, { top: 160, h: 32 }].map((b, i) => (
+        <div key={i} className="absolute rounded-l-sm" style={{ left: -2.5, top: b.top, width: 2.5, height: b.h, background: 'linear-gradient(90deg, #3a3a3c, #1c1c1e)' }} />
       ))}
-      <div className="absolute top-[168px] -right-[3px] w-[3px] h-[68px] rounded-r-md"
-        style={{ background: 'linear-gradient(90deg, #1c1c1e, #3a3a3c)', boxShadow: '2px 0 5px rgba(0,0,0,0.8)' }} />
+      <div className="absolute rounded-r-sm" style={{ top: 124, right: -2.5, width: 2.5, height: 52, background: 'linear-gradient(90deg, #1c1c1e, #3a3a3c)' }} />
 
       {/* Screen */}
-      <div className="absolute inset-[7px] rounded-[2.5rem] overflow-hidden z-10">
+      <div className="absolute overflow-hidden z-10" style={{ inset: 5, borderRadius: '2.1rem' }}>
         {/* Glare */}
-        <div className="absolute inset-0 z-40 pointer-events-none rounded-[2.5rem]"
-          style={{ background: 'linear-gradient(115deg, rgba(255,255,255,0.08) 0%, transparent 38%)' }} />
+        <div
+          className="absolute inset-0 z-40 pointer-events-none"
+          style={{ borderRadius: '2.1rem', background: 'linear-gradient(115deg, rgba(255,255,255,0.07) 0%, transparent 36%)' }}
+        />
         {/* Dynamic Island */}
-        <div className="absolute top-[6px] left-1/2 -translate-x-1/2 w-[96px] h-[27px] bg-black rounded-full z-50 flex items-center justify-end px-3">
-          <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" style={{ boxShadow: '0 0 8px rgba(34,197,94,0.9)' }} />
+        <div className="absolute top-[5px] left-1/2 -translate-x-1/2 w-[60px] h-[19px] bg-black rounded-full z-50 flex items-center justify-end pr-2">
+          <div className="w-[5px] h-[5px] rounded-full bg-green-500 animate-pulse" style={{ boxShadow: '0 0 5px rgba(34,197,94,0.9)' }} />
         </div>
-        <div className="absolute inset-0 pt-10 z-10">
-          <PhoneScreen />
+        {/* Screen content */}
+        <div className="absolute inset-0 z-10" style={{ paddingTop: 28 }}>
+          {children}
         </div>
       </div>
 
       {/* Home indicator */}
-      <div className="absolute bottom-[10px] left-1/2 -translate-x-1/2 w-[110px] h-[4px] rounded-full z-20"
-        style={{ background: 'rgba(255,255,255,0.20)' }} />
+      <div
+        className="absolute left-1/2 -translate-x-1/2 z-20 rounded-full"
+        style={{ bottom: 8, width: 70, height: 3, background: 'rgba(255,255,255,0.18)' }}
+      />
     </div>
   );
 }
 
-/* ─── Main section ─────────────────────────────────────────────────────────── */
+/* ─── Floating stat badge ─────────────────────────────────────────────────── */
+function FloatBadge({ value, label, accent, className }: { value: string; label: string; accent: string; className: string }) {
+  return (
+    <div
+      className={`absolute z-30 px-3 py-2 rounded-2xl hidden lg:block ${className}`}
+      style={{
+        background: 'rgba(4,10,22,0.9)',
+        border: `1px solid ${accent}35`,
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.55)',
+      }}
+    >
+      <div className="text-[11px] font-black text-white leading-none">{value}</div>
+      <div className="text-[8px] mt-0.5 font-medium" style={{ color: accent }}>{label}</div>
+    </div>
+  );
+}
+
+/* ─── Showcase card ───────────────────────────────────────────────────────── */
+interface ShowcaseCardProps {
+  href?: string;
+  phoneScreen: React.ReactNode;
+  accentColor: string;
+  glowColor: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  metrics: { value: string; label: string }[];
+  floatBadges: { value: string; label: string; className: string }[];
+  delay: number;
+  isInView: boolean;
+}
+
+function ShowcaseCard({ href, phoneScreen, accentColor, glowColor, badge, title, subtitle, metrics, floatBadges, delay, isInView }: ShowcaseCardProps) {
+  const isLink = !!href;
+
+  const inner = (
+    <>
+      {/* Hover glow overlay */}
+      <div
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0"
+        style={{ background: `radial-gradient(ellipse at 50% 0%, ${accentColor}12 0%, transparent 60%)` }}
+      />
+
+      {/* Phone showcase area */}
+      <div className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: 460, paddingTop: 40, paddingBottom: 40 }}>
+        {/* Ambient glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: `radial-gradient(ellipse at 50% 65%, ${glowColor} 0%, transparent 58%)` }}
+        />
+        {/* Subtle dot grid */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.018]"
+          style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+        />
+
+        {/* Floating stat badges */}
+        {floatBadges.map((fb, i) => (
+          <FloatBadge key={i} value={fb.value} label={fb.label} accent={accentColor} className={fb.className} />
+        ))}
+
+        {/* Phone */}
+        <motion.div
+          initial={{ opacity: 0, y: 44, scale: 0.88 }}
+          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+          transition={{ duration: 1.1, delay: delay + 0.1, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: delay * 3 }}
+          >
+            <SmallIPhone>{phoneScreen}</SmallIPhone>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Card info footer */}
+      <div className="relative z-10 border-t px-6 pt-5 pb-6" style={{ borderColor: 'rgba(255,255,255,0.07)' }}>
+        <div className="flex items-center gap-2 mb-2 flex-wrap">
+          <span
+            className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
+            style={{ background: `${accentColor}18`, color: accentColor, border: `1px solid ${accentColor}32` }}
+          >
+            {badge}
+          </span>
+          {isLink && (
+            <span className="inline-flex items-center gap-1 text-[10px] font-medium" style={{ color: 'rgba(255,255,255,0.26)' }}>
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              Live Website
+            </span>
+          )}
+        </div>
+        <h3 className="text-xl font-black text-white mb-1">{title}</h3>
+        <p className="text-sm leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.42)' }}>{subtitle}</p>
+        <div className="grid grid-cols-3 gap-2">
+          {metrics.map(m => (
+            <div
+              key={m.label}
+              className="rounded-xl p-2.5 text-center border"
+              style={{ background: `${accentColor}0D`, borderColor: `${accentColor}28` }}
+            >
+              <div className="text-base font-black" style={{ color: accentColor }}>{m.value}</div>
+              <div className="text-[10px] mt-0.5 font-medium" style={{ color: 'rgba(255,255,255,0.3)' }}>{m.label}</div>
+            </div>
+          ))}
+        </div>
+        {isLink && (
+          <div className="mt-4 flex items-center gap-2 text-sm font-semibold transition-all duration-300 group-hover:gap-3" style={{ color: accentColor }}>
+            Visit balistage.nl
+            <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </div>
+        )}
+      </div>
+    </>
+  );
+
+  const sharedStyle = {
+    background: 'linear-gradient(160deg, #0a1020 0%, #060e18 100%)',
+    boxShadow: '0 8px 48px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)',
+  };
+
+  const sharedMotionProps = {
+    className: `group relative rounded-3xl overflow-hidden border border-white/10 flex flex-col transition-all duration-500 hover:border-opacity-40`,
+    style: {
+      ...sharedStyle,
+      ['--tw-border-opacity' as string]: '0.1',
+    },
+    initial: { opacity: 0, y: 30 },
+    animate: isInView ? { opacity: 1, y: 0 } : {},
+    transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+  };
+
+  if (isLink) {
+    return (
+      <motion.a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...sharedMotionProps}
+        className={`${sharedMotionProps.className} cursor-pointer`}
+        style={{
+          ...sharedStyle,
+          borderColor: `rgba(255,255,255,0.1)`,
+        }}
+        whileHover={{ borderColor: `${accentColor}44` }}
+      >
+        {inner}
+      </motion.a>
+    );
+  }
+
+  return (
+    <motion.div {...sharedMotionProps} style={sharedStyle}>
+      {inner}
+    </motion.div>
+  );
+}
+
+/* ─── Main section ────────────────────────────────────────────────────────── */
 export function PhoneMockupSection() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="relative w-full pt-6 pb-12 md:py-28 overflow-hidden flex flex-col items-center justify-center"
-      style={{ background: '#01040f' }}>
-
+    <section
+      ref={ref}
+      className="relative w-full py-10 md:py-20 overflow-hidden"
+      style={{ background: '#01040f' }}
+    >
       {/* Background atmosphere */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Central blue ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px]"
-          style={{ background: 'radial-gradient(ellipse, rgba(38,132,239,0.10) 0%, transparent 65%)', filter: 'blur(80px)' }} />
-        {/* Deep navy left vignette */}
-        <div className="absolute left-0 top-0 bottom-0 w-[40%]"
-          style={{ background: 'radial-gradient(ellipse at 0% 50%, rgba(7,17,48,0.7) 0%, transparent 70%)' }} />
-        {/* Deep navy right vignette */}
-        <div className="absolute right-0 bottom-0 w-[40%] h-[60%]"
-          style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(11,23,64,0.55) 0%, transparent 70%)' }} />
-        {/* Subtle grid */}
-        <div className="absolute inset-0 opacity-[0.025]"
-          style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '55px 55px' }} />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ width: 900, height: 700, background: 'radial-gradient(ellipse, rgba(38,132,239,0.07) 0%, transparent 65%)', filter: 'blur(80px)' }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.016]"
+          style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '55px 55px' }}
+        />
       </div>
 
-      {/* Section heading */}
+      {/* Section header */}
       <motion.div
-        ref={ref}
         initial={{ opacity: 0, y: 28 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="text-center mb-8 md:mb-20 relative z-10 px-6"
+        className="relative z-10 text-center mb-10 md:mb-14 px-6"
       >
-        <span className="inline-block text-sm font-semibold uppercase mb-4" style={{ color: '#2684ef', letterSpacing: '0.2em', textShadow: '0 0 20px rgba(38,132,239,0.5)' }}>
-          Mobile-First Design
+        <span
+          className="inline-block text-sm font-semibold uppercase mb-3"
+          style={{ color: '#2684ef', letterSpacing: '0.2em', textShadow: '0 0 20px rgba(38,132,239,0.45)' }}
+        >
+          Our Work
         </span>
-        <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-5">
-          Beautiful on Every Device.
+        <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-4">
+          Premium Websites That Perform.
         </h2>
-        <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.42)' }}>
-          Every website we build looks flawless and converts on mobile, tablet, and desktop.
+        <p className="text-base md:text-lg max-w-xl mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.42)' }}>
+          Real client websites built to convert — see what Grow Your Proof delivers.
         </p>
       </motion.div>
 
-      {/* Phone + floating widgets */}
-      <div className="relative z-10 w-full max-w-[980px] mx-auto px-4">
-        <div className="relative flex items-center justify-center" style={{ minHeight: 640 }}>
+      {/* Two showcase cards */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 xl:gap-8">
 
-          {/* ── Left widgets ── */}
-          <FloatWidget delay={0.55} fromX={-44} isInView={isInView} className="left-0 top-[60px] w-[178px] p-4">
-            <p className="text-[8.5px] font-semibold uppercase tracking-[0.15em] mb-3" style={{ color: 'rgba(180,155,100,0.65)' }}>Occupancy Rate</p>
-            <div className="flex items-end gap-2 mb-3">
-              <span className="text-[26px] font-black text-white leading-none">98%</span>
-              <span className="text-[8px] font-bold mb-1" style={{ color: '#d4b97a' }}>↑ This season</span>
-            </div>
-            {/* Mini occupancy bars */}
-            <div className="flex items-end gap-[3px] h-[22px]">
-              {[60, 72, 65, 80, 78, 88, 85, 98].map((h, i) => (
-                <motion.div key={i} className="flex-1 rounded-sm"
-                  style={{ height: `${h}%`, background: i === 7 ? 'linear-gradient(to top, #b49b64, #d4b97a)' : 'rgba(180,155,100,0.22)' }}
-                  initial={{ scaleY: 0 }} animate={isInView ? { scaleY: 1 } : {}}
-                  transition={{ delay: 0.85 + i * 0.07, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                />
-              ))}
-            </div>
-          </FloatWidget>
+          {/* ── Showcase 1: Villa Management ── */}
+          <ShowcaseCard
+            phoneScreen={<VillaPhoneScreen />}
+            accentColor="#d4b97a"
+            glowColor="rgba(180,155,100,0.2)"
+            badge="Villa Management"
+            title="Luxury Villa Management"
+            subtitle="Premium hospitality websites designed to increase trust, direct bookings and guest experience."
+            metrics={[
+              { value: '+42%', label: 'Bookings' },
+              { value: '98%', label: 'Occupancy' },
+              { value: '24/7', label: 'Support' },
+            ]}
+            floatBadges={[
+              { value: '98%', label: 'Occupancy Rate', className: 'top-6 right-6' },
+              { value: '+42%', label: 'More Bookings', className: 'bottom-8 left-6' },
+            ]}
+            delay={0.1}
+            isInView={isInView}
+          />
 
-          <FloatWidget delay={0.7} fromX={-44} isInView={isInView} className="left-0 bottom-[90px] w-[170px] p-4">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
-                style={{ background: 'rgba(180,155,100,0.15)', border: '1px solid rgba(180,155,100,0.35)' }}>
-                <svg className="w-3.5 h-3.5" fill="none" stroke="#b49b64" strokeWidth={1.8} viewBox="0 0 24 24">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-[9px] font-bold text-white leading-none">New Booking</p>
-                <p className="text-[7.5px] mt-0.5" style={{ color: 'rgba(255,255,255,0.38)' }}>Just confirmed</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-1.5 p-2 rounded-[10px]" style={{ background: 'rgba(180,155,100,0.08)', border: '1px solid rgba(180,155,100,0.15)' }}>
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
-              <div>
-                <p className="text-[8px] font-bold text-white">Villa Serenity · Ubud</p>
-                <p className="text-[7px]" style={{ color: 'rgba(255,255,255,0.4)' }}>7 nights · 4 guests</p>
-              </div>
-            </div>
-          </FloatWidget>
-
-          {/* ── Right widgets ── */}
-          <FloatWidget delay={0.6} fromX={44} isInView={isInView} className="right-0 top-[80px] w-[162px] p-4">
-            <div className="flex items-center gap-1.5 mb-3">
-              <div className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-2.5 h-2.5" fill="#d4b97a" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <span className="text-[8.5px] font-black text-white">4.9</span>
-            </div>
-            <p className="text-[8.5px] text-white font-medium mb-0.5 leading-snug">
-              &ldquo;Outstanding service. Our villa is always fully booked.&rdquo;
-            </p>
-            <p className="text-[7.5px]" style={{ color: 'rgba(255,255,255,0.38)' }}>— Thomas & Sarah, Villa Kayu</p>
-          </FloatWidget>
-
-          <FloatWidget delay={0.72} fromX={44} isInView={isInView} className="right-0 bottom-[100px] w-[160px] p-4">
-            <p className="text-[8.5px] font-semibold uppercase tracking-[0.15em] mb-2.5" style={{ color: 'rgba(180,155,100,0.65)' }}>Revenue Growth</p>
-            <div className="flex items-center gap-2 mb-2.5">
-              <span className="text-[22px] font-black text-white leading-none">+42%</span>
-              <div className="text-[8px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(180,155,100,0.15)', color: '#d4b97a', border: '1px solid rgba(180,155,100,0.3)' }}>
-                YoY
-              </div>
-            </div>
-            <div className="h-[4px] w-full rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.07)' }}>
-              <motion.div className="h-full rounded-full"
-                style={{ background: 'linear-gradient(90deg, #b49b64, #d4b97a)' }}
-                initial={{ width: 0 }} animate={isInView ? { width: '72%' } : {}}
-                transition={{ duration: 1.4, delay: 1.1, ease: [0.16, 1, 0.3, 1] }}
-              />
-            </div>
-            <p className="text-[7px] mt-1.5" style={{ color: 'rgba(255,255,255,0.32)' }}>Avg. across managed villas</p>
-          </FloatWidget>
-
-          {/* ── Phone + glow ── */}
-          <div className="relative flex-shrink-0">
-            {/* Outer blue glow */}
-            <div className="absolute pointer-events-none"
-              style={{ inset: '-100px', background: 'radial-gradient(ellipse at 50% 55%, rgba(38,132,239,0.32) 0%, rgba(11,23,80,0.18) 45%, transparent 70%)', filter: 'blur(60px)' }} />
-            {/* Inner tight glow */}
-            <div className="absolute pointer-events-none"
-              style={{ inset: '-16px', background: 'radial-gradient(ellipse at 50% 45%, rgba(38,132,239,0.18) 0%, transparent 60%)', filter: 'blur(20px)' }} />
-
-            <motion.div
-              initial={{ opacity: 0, y: 80, scale: 0.84 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
-            >
-              <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <IPhoneMockup />
-              </motion.div>
-            </motion.div>
-          </div>
+          {/* ── Showcase 2: Bali Stage ── */}
+          <ShowcaseCard
+            href="https://www.balistage.nl"
+            phoneScreen={<BaliStagePhoneScreen />}
+            accentColor="#3dcf7f"
+            glowColor="rgba(45,181,106,0.2)"
+            badge="Student Platform"
+            title="Bali Stage"
+            subtitle="Helping students find internships and accommodation opportunities in Bali."
+            metrics={[
+              { value: '500+', label: 'Students' },
+              { value: '50+', label: 'Internships' },
+              { value: '4.8★', label: 'Rating' },
+            ]}
+            floatBadges={[
+              { value: '500+', label: 'Students Placed', className: 'top-6 left-6' },
+              { value: '4.8★', label: 'Student Rating', className: 'bottom-8 right-6' },
+            ]}
+            delay={0.22}
+            isInView={isInView}
+          />
 
         </div>
       </div>
