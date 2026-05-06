@@ -118,7 +118,7 @@ export function CinematicHero({
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen w-full overflow-hidden bg-black flex flex-col"
+      className="relative md:min-h-screen w-full overflow-hidden bg-black flex flex-col"
     >
       {/* Background: photo */}
       <div ref={bgRef} className="absolute inset-0 z-0">
@@ -249,7 +249,7 @@ export function CinematicHero({
       </div>
 
       {/* Scroll indicator */}
-      <div className="relative z-20 flex justify-center pb-8">
+      <div className="relative z-20 flex justify-center pb-2 md:pb-8">
         <div className="flex flex-col items-center gap-2 text-gray-500 text-xs font-medium">
           <span className="uppercase tracking-widest">Scroll</span>
           <div className="w-px h-8 bg-gradient-to-b from-gray-500 to-transparent animate-pulse" />

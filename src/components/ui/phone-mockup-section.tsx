@@ -60,7 +60,7 @@ export function PhoneMockupSection() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="relative w-full bg-[#050a14] py-28 overflow-hidden flex flex-col items-center justify-center">
+    <section className="relative w-full bg-[#050a14] pt-6 pb-28 md:py-28 overflow-hidden flex flex-col items-center justify-center">
 
       {/* Ambient background glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
