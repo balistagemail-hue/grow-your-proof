@@ -20,8 +20,8 @@ function FloatWidget({
     <motion.div
       className={`hidden md:block absolute z-30 ${className}`}
       style={{
-        background: 'rgba(10,14,10,0.82)',
-        border: '1px solid rgba(180,155,100,0.22)',
+        background: 'rgba(4,10,22,0.88)',
+        border: '1px solid rgba(38,132,239,0.20)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         boxShadow: '0 12px 48px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.05)',
@@ -220,19 +220,19 @@ export function PhoneMockupSection() {
 
   return (
     <section className="relative w-full pt-6 pb-24 md:py-28 overflow-hidden flex flex-col items-center justify-center"
-      style={{ background: '#080c07' }}>
+      style={{ background: '#01040f' }}>
 
       {/* Background atmosphere */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Warm amber ambient */}
+        {/* Central blue ambient glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[700px]"
-          style={{ background: 'radial-gradient(ellipse, rgba(180,155,100,0.09) 0%, transparent 65%)', filter: 'blur(70px)' }} />
-        {/* Deep green left */}
+          style={{ background: 'radial-gradient(ellipse, rgba(38,132,239,0.10) 0%, transparent 65%)', filter: 'blur(80px)' }} />
+        {/* Deep navy left vignette */}
         <div className="absolute left-0 top-0 bottom-0 w-[40%]"
-          style={{ background: 'radial-gradient(ellipse at 0% 50%, rgba(20,45,16,0.6) 0%, transparent 70%)' }} />
-        {/* Deep green right */}
+          style={{ background: 'radial-gradient(ellipse at 0% 50%, rgba(7,17,48,0.7) 0%, transparent 70%)' }} />
+        {/* Deep navy right vignette */}
         <div className="absolute right-0 bottom-0 w-[40%] h-[60%]"
-          style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(15,35,12,0.5) 0%, transparent 70%)' }} />
+          style={{ background: 'radial-gradient(ellipse at 100% 100%, rgba(11,23,64,0.55) 0%, transparent 70%)' }} />
         {/* Subtle grid */}
         <div className="absolute inset-0 opacity-[0.025]"
           style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)', backgroundSize: '55px 55px' }} />
@@ -246,7 +246,7 @@ export function PhoneMockupSection() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mb-14 md:mb-20 relative z-10 px-6"
       >
-        <span className="inline-block text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: '#b49b64' }}>
+        <span className="inline-block text-sm font-semibold uppercase mb-4" style={{ color: '#2684ef', letterSpacing: '0.2em', textShadow: '0 0 20px rgba(38,132,239,0.5)' }}>
           Mobile-First Design
         </span>
         <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-5">
@@ -341,12 +341,12 @@ export function PhoneMockupSection() {
 
           {/* ── Phone + glow ── */}
           <div className="relative flex-shrink-0">
-            {/* Warm outer glow */}
+            {/* Outer blue glow */}
             <div className="absolute pointer-events-none"
-              style={{ inset: '-100px', background: 'radial-gradient(ellipse at 50% 55%, rgba(180,155,100,0.22) 0%, rgba(20,45,16,0.15) 50%, transparent 70%)', filter: 'blur(60px)' }} />
+              style={{ inset: '-100px', background: 'radial-gradient(ellipse at 50% 55%, rgba(38,132,239,0.32) 0%, rgba(11,23,80,0.18) 45%, transparent 70%)', filter: 'blur(60px)' }} />
             {/* Inner tight glow */}
             <div className="absolute pointer-events-none"
-              style={{ inset: '-16px', background: 'radial-gradient(ellipse at 50% 45%, rgba(180,155,100,0.14) 0%, transparent 60%)', filter: 'blur(20px)' }} />
+              style={{ inset: '-16px', background: 'radial-gradient(ellipse at 50% 45%, rgba(38,132,239,0.18) 0%, transparent 60%)', filter: 'blur(20px)' }} />
 
             <motion.div
               initial={{ opacity: 0, y: 80, scale: 0.84 }}
