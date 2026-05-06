@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Header } from '@/components/ui/header';
 import { CinematicHero } from '@/components/ui/cinematic-hero';
 import { PhoneMockupSection } from '@/components/ui/phone-mockup-section';
@@ -28,6 +27,39 @@ export default function Home() {
 
       {/* 4. The Method / FeatureCarousel */}
       <FeatureCarousel />
+
+      {/* About Us */}
+      <section id="about" className="w-full bg-[#050a14] py-10 md:py-20">
+        <div className="max-w-3xl mx-auto px-6">
+          <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
+            About Us
+          </span>
+          <h2 className="text-4xl md:text-5xl font-black text-[#fefefe] leading-tight mb-6">
+            We Don&apos;t Just Build Websites.<br />
+            <span className="text-[#2684ef]">We Build Results.</span>
+          </h2>
+          <p className="text-white/55 text-lg leading-relaxed mb-4">
+            Grow Your Proof is a web design agency built on one principle: your website should
+            work as hard as you do. Every project we take on is designed to convert — not just
+            look good.
+          </p>
+          <p className="text-white/55 text-lg leading-relaxed mb-10">
+            A dedicated team that&apos;s always ready to support you.
+          </p>
+          <div className="grid grid-cols-3 gap-6">
+            {[
+              { value: '50+', label: 'Projects Delivered' },
+              { value: '98%', label: 'Client Satisfaction' },
+              { value: '3x', label: 'Avg. Lead Increase' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl font-black text-[#2684ef] mb-1">{stat.value}</div>
+                <div className="text-xs text-white/45 font-medium uppercase tracking-wide">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* 5. Concept Form */}
       <section id="concept-form" className="w-full bg-[#07101e] pt-6 pb-10 md:pt-10 md:pb-20">
@@ -150,75 +182,6 @@ export default function Home() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About section */}
-      <section id="about" className="w-full bg-[#050a14] py-10 md:py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="inline-block mb-4 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
-                About Us
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-[#fefefe] leading-tight mb-6">
-                We Don&apos;t Just Build Websites.<br />
-                <span className="text-[#2684ef]">We Build Results.</span>
-              </h2>
-              <p className="text-white/55 text-lg leading-relaxed mb-6">
-                Grow Your Proof is a web design agency built on one principle: your website should
-                work as hard as you do. Every project we take on is designed to convert — not just
-                look good.
-              </p>
-              <p className="text-white/55 text-lg leading-relaxed mb-8">
-                A dedicated team that&apos;s always ready to support you.
-              </p>
-              <div className="grid grid-cols-3 gap-6">
-                {[
-                  { value: '50+', label: 'Projects Delivered' },
-                  { value: '98%', label: 'Client Satisfaction' },
-                  { value: '3x', label: 'Avg. Lead Increase' },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <div className="text-3xl font-black text-[#2684ef] mb-1">{stat.value}</div>
-                    <div className="text-xs text-white/45 font-medium uppercase tracking-wide">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative group flex justify-center">
-              {/* Blue radial glow — intensifies on hover */}
-              <div
-                className="absolute inset-0 rounded-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 pointer-events-none blur-2xl"
-                style={{ background: 'radial-gradient(ellipse at 60% 80%, rgba(38,132,239,0.22) 0%, transparent 65%)' }}
-              />
-              <div
-                className="relative rounded-2xl overflow-hidden w-full max-w-[88%] transition-transform duration-300 ease-out hover:scale-[1.02]"
-                style={{
-                  aspectRatio: '2/3',
-                  boxShadow: '0 20px 60px rgba(0,0,0,0.45)',
-                }}
-              >
-                <Image
-                  src="/team-photo.jpg"
-                  alt="Grow Your Proof Team"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 1024px) 90vw, 45vw"
-                />
-                {/* Subtle dark overlay */}
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{ background: 'rgba(5,10,20,0.20)' }}
-                />
-                {/* Blue glow at bottom edge */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
-                  style={{ background: 'linear-gradient(to top, rgba(38,132,239,0.10), transparent)' }}
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
