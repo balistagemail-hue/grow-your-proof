@@ -6,6 +6,7 @@ import { FeatureCarousel } from '@/components/ui/feature-carousel';
 import { Footer } from '@/components/ui/footer-section';
 import { ProcessSection } from '@/components/ui/process-section';
 import { ConceptForm } from '@/components/ui/concept-form';
+import { TransformationSection } from '@/components/ui/transformation-section';
 
 export default function Home() {
   return (
@@ -186,69 +187,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Study teaser section */}
-      <section id="case-study" className="w-full bg-[#07101e] py-10 md:py-20 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
-              Case Study
-            </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-              Real Results, Real Businesses
-            </h2>
-            <p className="mt-4 text-white/50 text-lg max-w-xl mx-auto">
-              See how we&apos;ve helped businesses like yours grow online.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                client: 'Clarke Auto Group',
-                result: '+68%',
-                metric: 'Lead Volume',
-                industry: 'Automotive',
-                color: 'from-blue-600/20 to-blue-900/40',
-              },
-              {
-                client: 'Watson & Co Legal',
-                result: '5x',
-                metric: 'Organic Traffic',
-                industry: 'Legal',
-                color: 'from-indigo-600/20 to-indigo-900/40',
-              },
-              {
-                client: 'Harrison Home Interiors',
-                result: '3x',
-                metric: 'Ecommerce Revenue',
-                industry: 'Retail',
-                color: 'from-cyan-600/20 to-cyan-900/40',
-              },
-            ].map((cs) => (
-              <div
-                key={cs.client}
-                className={`rounded-2xl border border-white/10 bg-gradient-to-br ${cs.color} p-8 hover:border-[#2684ef]/40 transition-colors`}
-              >
-                <div className="mb-4">
-                  <span className="text-xs font-semibold uppercase tracking-widest text-white/45">
-                    {cs.industry}
-                  </span>
-                </div>
-                <div className="text-5xl font-black text-white mb-1">{cs.result}</div>
-                <div className="text-[#2684ef] font-bold mb-4">{cs.metric}</div>
-                <div className="text-white/80 font-semibold">{cs.client}</div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <a
-              href="#concept-form"
-              className="inline-flex items-center gap-2 border border-[#2684ef] text-[#2684ef] font-bold px-6 py-3 rounded-xl hover:bg-[#2684ef] hover:text-white transition-colors text-sm"
-            >
-              Get Similar Results →
-            </a>
-          </div>
-        </div>
-      </section>
+      {/* Case Study / Transformations */}
+      <TransformationSection />
 
       {/* Contact section */}
       <section id="contact" className="w-full bg-[#050a14] py-10 md:py-16">
