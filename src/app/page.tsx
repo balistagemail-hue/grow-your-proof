@@ -22,9 +22,6 @@ export default function Home() {
       {/* 3. Phone Mockup */}
       <PhoneMockupSection />
 
-      {/* Services */}
-      <FeatureCarousel />
-
       {/* About Us */}
       <section id="about" className="w-full bg-[#050a14] py-10 md:py-20">
         <div className="max-w-3xl mx-auto px-6">
@@ -57,6 +54,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Services */}
+      <FeatureCarousel />
 
       {/* Value Proposition */}
       <TextRevealByWord text="We build high-converting websites that help your business attract more leads and grow faster." />
