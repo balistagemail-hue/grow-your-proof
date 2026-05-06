@@ -4,7 +4,6 @@ import { CinematicHero } from '@/components/ui/cinematic-hero';
 import { PhoneMockupSection } from '@/components/ui/phone-mockup-section';
 import { TextRevealByWord } from '@/components/ui/text-reveal';
 import { FeatureCarousel } from '@/components/ui/feature-carousel';
-import { ServicesSlider } from '@/components/ui/cards-slider';
 import { Footer } from '@/components/ui/footer-section';
 import { ProcessSection } from '@/components/ui/process-section';
 import { ConceptForm } from '@/components/ui/concept-form';
@@ -81,8 +80,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Services Slider */}
-      <ServicesSlider />
 
       {/* 6. Process Steps */}
       <ProcessSection />
