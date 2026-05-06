@@ -142,7 +142,7 @@ export function CinematicHero({
       />
 
       {/* Content */}
-      <div className="relative z-20 flex flex-col items-start md:items-center justify-center flex-1 px-6 pt-20 pb-12 max-w-6xl mx-auto w-full">
+      <div className="relative z-20 flex flex-col items-start md:items-center justify-start md:justify-center flex-1 px-6 pt-14 md:pt-20 pb-12 max-w-6xl mx-auto w-full">
 
         {/* Eyebrow */}
         <div className="mb-6 flex items-center gap-3">
