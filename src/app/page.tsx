@@ -31,7 +31,7 @@ export default function Home() {
       <FeatureCarousel />
 
       {/* 5. Concept Form */}
-      <section id="concept-form" className="w-full bg-[#07101e] pt-10 pb-20">
+      <section id="concept-form" className="w-full bg-[#07101e] pt-6 pb-10 md:pt-10 md:pb-20">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: copy */}
@@ -88,7 +88,7 @@ export default function Home() {
       <ProcessSection />
 
       {/* 7. Testimonials */}
-      <section id="testimonials" className="w-full bg-[#07101e] py-20">
+      <section id="testimonials" className="w-full bg-[#07101e] py-10 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
@@ -158,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* About section */}
-      <section id="about" className="w-full bg-[#050a14] py-20">
+      <section id="about" className="w-full bg-[#050a14] py-10 md:py-20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -227,7 +227,7 @@ export default function Home() {
       </section>
 
       {/* Case Study teaser section */}
-      <section id="case-study" className="w-full bg-[#07101e] py-20 overflow-hidden">
+      <section id="case-study" className="w-full bg-[#07101e] py-10 md:py-20 overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
@@ -291,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* Contact section */}
-      <section id="contact" className="w-full bg-[#050a14] py-16">
+      <section id="contact" className="w-full bg-[#050a14] py-10 md:py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
             Get In Touch

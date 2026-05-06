@@ -160,7 +160,7 @@ export function ServicesSlider() {
   const handleMouseUp = useCallback(() => setIsDragging(false), []);
 
   return (
-    <section id="services" className="w-full bg-[#07101e] py-20 overflow-hidden">
+    <section id="services" className="w-full bg-[#07101e] py-10 md:py-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-10">
         <div className="flex items-end justify-between">
           <div>

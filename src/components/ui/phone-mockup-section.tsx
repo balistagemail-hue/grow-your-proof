@@ -1,6 +1,13 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
 
 /* ─── Floating desktop widget ──────────────────────────────────────────────── */
 function FloatWidget({
@@ -42,7 +49,7 @@ function PhoneScreen() {
   const SERVICE_IMG = 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=80';
 
   return (
-    <div className="relative w-full h-full flex flex-col overflow-hidden" style={{ background: '#0d1109', fontFamily: "'Georgia', serif" }}>
+    <div className={`relative w-full h-full flex flex-col overflow-hidden ${poppins.className}`} style={{ background: '#0d1109' }}>
 
       {/* ── HERO ── full-bleed villa image */}
       <div className="relative flex-shrink-0 overflow-hidden" style={{ height: '52%' }}>
@@ -219,7 +226,7 @@ export function PhoneMockupSection() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="relative w-full pt-6 pb-24 md:py-28 overflow-hidden flex flex-col items-center justify-center"
+    <section className="relative w-full pt-6 pb-12 md:py-28 overflow-hidden flex flex-col items-center justify-center"
       style={{ background: '#01040f' }}>
 
       {/* Background atmosphere */}
@@ -244,7 +251,7 @@ export function PhoneMockupSection() {
         initial={{ opacity: 0, y: 28 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="text-center mb-14 md:mb-20 relative z-10 px-6"
+        className="text-center mb-8 md:mb-20 relative z-10 px-6"
       >
         <span className="inline-block text-sm font-semibold uppercase mb-4" style={{ color: '#2684ef', letterSpacing: '0.2em', textShadow: '0 0 20px rgba(38,132,239,0.5)' }}>
           Mobile-First Design

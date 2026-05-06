@@ -67,7 +67,7 @@ export function TextRevealByWord({ text, className }: TextRevealByWordProps) {
   }, [words.length]);
 
   return (
-    <section className={cn('relative py-24 bg-[#050a14]', className)}>
+    <section className={cn('relative py-12 md:py-24 bg-[#050a14]', className)}>
       <div
         ref={containerRef}
         className="max-w-4xl mx-auto px-6 text-center"

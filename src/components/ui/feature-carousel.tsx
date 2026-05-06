@@ -125,10 +125,10 @@ export function FeatureCarousel({ features = FEATURES, autoplayInterval = 4000 }
   const activeFeature = features[activeIndex];
 
   return (
-    <section id="method" className="w-full bg-[#050a14] pt-20 pb-10 overflow-hidden">
+    <section id="method" className="w-full bg-[#050a14] pt-10 pb-6 md:pt-20 md:pb-10 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-6 md:mb-12 text-center">
           <span className="inline-block mb-3 text-sm font-semibold uppercase tracking-widest text-[#2684ef]">
             Our Services
           </span>

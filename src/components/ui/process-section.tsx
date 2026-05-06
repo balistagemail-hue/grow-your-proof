@@ -54,7 +54,7 @@ export function ProcessSection() {
   const step = STEPS[active];
 
   return (
-    <section id="process" className="w-full bg-[#050a14] py-20">
+    <section id="process" className="w-full bg-[#050a14] py-10 md:py-20">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
