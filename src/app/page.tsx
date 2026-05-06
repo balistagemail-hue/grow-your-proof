@@ -22,10 +22,7 @@ export default function Home() {
       {/* 3. Phone Mockup */}
       <PhoneMockupSection />
 
-      {/* 4. Value Proposition */}
-      <TextRevealByWord text="We build high-converting websites that help your business attract more leads and grow faster." />
-
-      {/* 4. The Method / FeatureCarousel */}
+      {/* Services */}
       <FeatureCarousel />
 
       {/* About Us */}
@@ -60,6 +57,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Value Proposition */}
+      <TextRevealByWord text="We build high-converting websites that help your business attract more leads and grow faster." />
 
       {/* 5. Concept Form */}
       <section id="concept-form" className="w-full bg-[#07101e] pt-6 pb-10 md:pt-10 md:pb-20">
