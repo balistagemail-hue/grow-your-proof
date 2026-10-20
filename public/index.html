@@ -592,7 +592,6 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   .pstep .ptext{display:contents}
   .pstep .pvis{order:1;width:100%;margin:4px 0}
   .pstep .ptext .btn{order:2}
-  .pstep .mascot{order:3;margin-top:0}
   .pframe{max-width:100%}
 }
 
@@ -600,6 +599,13 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 .h2,.about h2,.why-text h2,.faq-title,.wall2-title,.ptext h3{font-family:var(--display);font-weight:500;font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.025em}
 .wall2-title span{font-weight:500}
 .ptext h3{font-size:clamp(24px,2.6vw,34px);line-height:1.15}
+
+/* small tree next to each step label */
+.phead{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.phead .mascot{width:58px;margin:0;flex:none}
+.phead .mascot.m3{margin-right:34px}
+.phead .mascot.m5{margin-right:30px}
+.phead .mascot.m1,.phead .mascot.m2,.phead .mascot.m4{margin-right:4px}
 
 /* three overlapping phones, middle one in front */
 .phones{position:relative;flex:1 1 460px;min-width:0;max-width:600px;height:620px;display:flex;justify-content:center;align-items:center}
@@ -757,11 +763,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
         <div class="plan-steps">
       <article class="pstep active" data-i="0">
         <div class="ptext">
-          <span class="plabel">Step 1 · Discovery call</span>
-          <h3>Get to know your app</h3>
-          <p>We get to know your app, your users and your growth goals, so every video we make starts from what you actually need.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-          <div class="mascot m1" role="img" aria-label="Grow Your Proof tree in a meeting">
+          <div class="phead"><div class="mascot m1" role="img" aria-label="Grow Your Proof tree in a meeting">
             <img src="tree-cut.png" alt="">
             <svg viewBox="0 0 600 629" aria-hidden="true"><defs><linearGradient id="hsCup" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B6B78"/><stop offset="1" stop-color="#232E37"/></linearGradient><linearGradient id="hsBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A7884"/><stop offset="1" stop-color="#2E3A44"/></linearGradient></defs>
 <path d="M92 250 C 110 40, 525 25, 548 245" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="22" stroke-linecap="round" transform="translate(0 8)"/>
@@ -770,7 +772,10 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 <ellipse cx="552" cy="272" rx="40" ry="58" fill="url(#hsCup)"/><ellipse cx="538" cy="272" rx="22" ry="44" fill="#8E9CA8" opacity=".55"/>
 <path d="M548 318 C 540 380, 470 395, 385 330" fill="none" stroke="#2E3A44" stroke-width="10" stroke-linecap="round"/>
 <ellipse cx="378" cy="326" rx="20" ry="15" fill="#232E37"/></svg>
-          </div>
+          </div><span class="plabel">Step 1 · Discovery call</span></div>
+          <h3>Get to know your app</h3>
+          <p>We get to know your app, your users and your growth goals, so every video we make starts from what you actually need.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
         </div>
         <div class="pvis">
 <div class="pframe"><img class="pimg" src="discovery-call-v.jpg" alt="Discovery call over video with a Grow Your Proof team member" width="760" height="1184" loading="lazy"></div>
@@ -778,17 +783,16 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       </article>
       <article class="pstep" data-i="1">
         <div class="ptext">
-          <span class="plabel">Step 2 · Strategy</span>
-          <h3>Custom Strategy Plan</h3>
-          <p>We create a tailored strategy based on your goals. We research which hooks will work best for your app and write them out with examples, the audience we recommend and the matching scripts, all aligned with your app's stage and targets. You see exactly how we'll grow it before we start.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-          <div class="mascot m2" role="img" aria-label="Grow Your Proof tree writing a plan">
+          <div class="phead"><div class="mascot m2" role="img" aria-label="Grow Your Proof tree writing a plan">
             <img src="tree-cut.png" alt="">
             <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="rotate(10 470 520)"><rect x="380" y="400" width="190" height="230" rx="18" fill="#fff" stroke="#C9D6CD" stroke-width="6"/>
 <rect x="430" y="388" width="90" height="28" rx="10" fill="#18793F"/>
 <path d="M410 465h130M410 505h130M410 545h95" stroke="#9FB5A7" stroke-width="10" stroke-linecap="round"/></g>
 <g class="pencil" transform="rotate(-38 560 470)"><rect x="520" y="380" width="40" height="190" rx="8" fill="#F2C94C"/><rect x="520" y="380" width="40" height="34" rx="8" fill="#F4A9C8"/><path d="M520 568 L540 620 L560 568 Z" fill="#E8C9A0"/><path d="M533 600 L540 620 L547 600 Z" fill="#2B3A4A"/></g></svg>
-          </div>
+          </div><span class="plabel">Step 2 · Strategy</span></div>
+          <h3>Custom Strategy Plan</h3>
+          <p>We create a tailored strategy based on your goals. We research which hooks will work best for your app and write them out with examples, the audience we recommend and the matching scripts, all aligned with your app's stage and targets. You see exactly how we'll grow it before we start.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
         </div>
         <div class="pvis">
 <div class="sui">
@@ -815,11 +819,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       </article>
       <article class="pstep" data-i="2">
         <div class="ptext">
-          <span class="plabel">Step 3 · Production</span>
-          <h3>We manage the creators</h3>
-          <p>We brief and manage the creators, direct every shoot and edit the videos. You don't have to chase anyone.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-          <div class="mascot m3" role="img" aria-label="Grow Your Proof tree talking through a megaphone">
+          <div class="phead"><div class="mascot m3" role="img" aria-label="Grow Your Proof tree talking through a megaphone">
             <img src="tree-cut.png" alt="">
             <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="translate(80 12) rotate(-12 400 300)">
 <rect x="404" y="318" width="30" height="92" rx="12" fill="#FFFFFF" stroke="#D6D9DC" stroke-width="5"/>
@@ -831,7 +831,10 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 <ellipse cx="600" cy="292" rx="9" ry="24" fill="#F3F3F3"/>
 </g>
 <g class="waves" transform="translate(80 12)" fill="none" stroke="#18793F" stroke-width="14" stroke-linecap="round"><path d="M655 215 q 34 50 0 100"/><path d="M700 180 q 56 85 0 170"/></g></svg>
-          </div>
+          </div><span class="plabel">Step 3 · Production</span></div>
+          <h3>We manage the creators</h3>
+          <p>We brief and manage the creators, direct every shoot and edit the videos. You don't have to chase anyone.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
         </div>
         <div class="pvis">
 <div class="pframe"><img class="pimg" src="creator-crm.jpg" alt="UGC creator CRM with each creator's niche, best app category and project status" width="960" height="967" loading="lazy"></div>
@@ -839,15 +842,14 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       </article>
       <article class="pstep" data-i="3">
         <div class="ptext">
-          <span class="plabel">Step 4 · Launch &amp; test</span>
-          <h3>Test hooks in your ads</h3>
-          <p>Your videos go live in your ads, and we test the hooks against each other to find the winners.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-          <div class="mascot m4" role="img" aria-label="Grow Your Proof tree launching an ad">
+          <div class="phead"><div class="mascot m4" role="img" aria-label="Grow Your Proof tree launching an ad">
             <img src="tree-cut.png" alt="">
             <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="rotate(14 480 480)"><rect x="400" y="340" width="160" height="270" rx="30" fill="#0B1220"/><rect x="414" y="360" width="132" height="230" rx="20" fill="#3B8BE5"/><circle cx="480" cy="475" r="42" fill="#fff"/><path d="M468 452 L500 475 L468 498 Z" fill="#18793F"/></g>
 <g class="spark" fill="#F2C94C"><path d="M590 300 l10 26 26 10 -26 10 -10 26 -10 -26 -26 -10 26 -10z"/><path d="M380 330 l6 15 15 6 -15 6 -6 15 -6 -15 -15 -6 15 -6z"/></g></svg>
-          </div>
+          </div><span class="plabel">Step 4 · Launch &amp; test</span></div>
+          <h3>Test hooks in your ads</h3>
+          <p>Your videos go live in your ads, and we test the hooks against each other to find the winners.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
         </div>
         <div class="pvis">
 <div class="pframe"><img class="pimg" src="ads-manager-v.jpg" alt="Ads dashboard with app install campaigns, results, cost per install and ROAS" width="760" height="1009" loading="lazy"></div>
@@ -855,11 +857,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       </article>
       <article class="pstep" data-i="4">
         <div class="ptext">
-          <span class="plabel">Step 5 · Monthly review</span>
-          <h3>Review, then scale</h3>
-          <p>Every month we sit down with you and show exactly how it went: which videos and hooks performed best, what worked less well, and where we focus next. Together we decide the next steps, so your app keeps growing.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-          <div class="mascot m5" role="img" aria-label="Grow Your Proof tree looking at a rising chart">
+          <div class="phead"><div class="mascot m5" role="img" aria-label="Grow Your Proof tree looking at a rising chart">
             <img src="tree-cut.png" alt="">
             <svg viewBox="0 0 600 629" aria-hidden="true"><path d="M690 480 L640 640 M790 480 L840 640 M740 480 L740 640" stroke="#8B6A4A" stroke-width="14" stroke-linecap="round"/>
 <rect x="600" y="150" width="280" height="330" rx="22" fill="#FFFFFF" stroke="#C9D6CD" stroke-width="8"/>
@@ -868,7 +866,10 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 <rect x="665" y="380" width="30" height="58" rx="6" fill="#C9D6CD"/><rect x="715" y="345" width="30" height="93" rx="6" fill="#C9D6CD"/><rect x="765" y="295" width="30" height="143" rx="6" fill="#18793F"/>
 <path class="climb" d="M655 380 L710 335 L745 350 L825 245" fill="none" stroke="#18793F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M800 243 L827 242 L824 270" fill="none" stroke="#18793F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
+          </div><span class="plabel">Step 5 · Monthly review</span></div>
+          <h3>Review, then scale</h3>
+          <p>Every month we sit down with you and show exactly how it went: which videos and hooks performed best, what worked less well, and where we focus next. Together we decide the next steps, so your app keeps growing.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
         </div>
         <div class="pvis">
 <div class="pframe"><img class="pimg" src="monthly-review.jpg" alt="Monthly review call showing a UGC performance report with results, key takeaways and what to focus on next" width="900" height="1350" loading="lazy"></div>
