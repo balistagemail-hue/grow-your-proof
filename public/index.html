@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo.png">
+<title>Grow Your Proof</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="UGC and growth marketing for AI apps. Real creators, tested hooks, more downloads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Layout: centered 1200px column; full-width bands alternate paper / white / ink; pastel gradient from the tree logo frames hero and closing CTA */
+:root{
+  --paper:#FFFFFF; --card:#FFFFFF; --soft:#F3F8F4; --line:#E4E8E4;
+  --ink:#14231A; --muted:#4A574F; --faint:#5E6A62;
+  --green:#18793F; --green-ink:#135F31; --mint:#DDF5E6; --cream:#FFF6DF; --pink:#F7DDEA;
+  --band:#14231A; --band-fg:#FFFFFF; --band-muted:#C9D6CD; --band-accent:#8FE0AE;
+  --amber-bg:#FFF0C7; --amber-fg:#7A4A00; --rose-fg:#8A2752;
+  --shadow:0 24px 48px rgba(20,35,26,.10);
+  --font:'Plus Jakarta Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --display:'Sora','Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;
+  --edge:rgba(24,121,63,.32);
+  --sky-soft:#F1F7FE;
+  --grey-bg:#F3F4F3;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0F1712; --card:#16211A; --soft:#1A2820; --line:#26362C;
+  --ink:#EEF3EF; --muted:#B5C2B9; --faint:#98A69D;
+  --green:#5FCB8A; --green-ink:#8FE0AE; --mint:#1D3A28; --cream:#2A2618; --pink:#33202A;
+  --band:#0A110C; --band-fg:#EEF3EF; --band-muted:#A9B8AE; --band-accent:#8FE0AE;
+  --amber-bg:#3A2E10; --amber-fg:#F2C661; --rose-fg:#F4A9C8;
+  --shadow:0 24px 48px rgba(0,0,0,.35); --edge:rgba(95,203,138,.35); --sky-soft:#111C27; --grey-bg:#1A221D; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0F1712; --card:#16211A; --soft:#1A2820; --line:#26362C;
+  --ink:#EEF3EF; --muted:#B5C2B9; --faint:#98A69D;
+  --green:#5FCB8A; --green-ink:#8FE0AE; --mint:#1D3A28; --cream:#2A2618; --pink:#33202A;
+  --band:#0A110C; --band-fg:#EEF3EF; --band-muted:#A9B8AE; --band-accent:#8FE0AE;
+  --amber-bg:#3A2E10; --amber-fg:#F2C661; --rose-fg:#F4A9C8;
+  --shadow:0 24px 48px rgba(0,0,0,.35); --edge:rgba(95,203,138,.35); --sky-soft:#111C27; --grey-bg:#1A221D; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--font);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:var(--green)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:8px}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:96px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.h2{font-family:var(--display);font-size:clamp(32px,4.2vw,50px);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+.lead{font-size:18px;color:var(--muted);max-width:62ch}
+.head{display:flex;flex-direction:column;gap:14px;max-width:760px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 24px rgba(24,121,63,.28)}
+:root[data-theme="dark"] .btn-primary{color:#0F1712}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn-primary{color:#0F1712}}
+.btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn .arrow{transition:transform .25s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* nav */
+.nav{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:20;--ink:#0B1220;--muted:#2B3A4A;--paper:#FFFFFF;--green:#0B1220}
+.nav .wrap{max-width:1280px;padding-block:16px}
+.navpill{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:10px 10px 10px 18px;border-radius:999px;background:rgba(255,255,255,.55);border:1.5px solid rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(40,90,150,.12);transition:background .3s,box-shadow .3s}
+.nav.scrolled .navpill{background:rgba(255,255,255,.9);box-shadow:0 10px 30px rgba(11,18,32,.14)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;font-size:18px;letter-spacing:-.02em}
+.brand img{width:40px;height:40px;border-radius:50%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.brand:hover img{transform:rotate(-10deg) scale(1.06)}
+.links{display:flex;align-items:center;gap:24px;flex-wrap:wrap;font-weight:600;font-size:15px}
+.links a:not(.btn){color:var(--muted);text-decoration:none;position:relative}
+.links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.links a:not(.btn):hover::after{transform:scaleX(1)}
+.links .btn{min-height:44px;padding:0 20px;font-size:15px}
+@media (max-width:720px){.links a.hide-sm{display:none}}
+
+/* hero */
+/* hero sky: a fixed daytime look in both themes, so it carries its own tokens */
+.hero{position:relative;padding-block:150px 64px;text-align:center;overflow:hidden;
+  background:linear-gradient(180deg,#3B8BE5 0%,#6EAFEF 20%,#A9D0F6 40%,#D4E8FB 58%,#EEF6FE 74%,#FAFCFF 88%,var(--paper) 100%);
+  --card:#FFFFFF;--soft:#F1F6FB;--line:rgba(255,255,255,.95);--ink:#0B1220;--muted:#2B3A4A;--faint:#3E5266;
+  --green:#18793F;--green-ink:#135F31;--mint:#DDF5E6;--pink:#F7DDEA;--rose-fg:#8A2752;--amber-bg:#FFF0C7;--amber-fg:#7A4A00;
+  --shadow:0 24px 48px rgba(30,70,120,.18);color:var(--ink)}
+#sky{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 55%,rgba(0,0,0,.35) 78%,transparent 96%);mask-image:linear-gradient(180deg,#000 0%,#000 55%,rgba(0,0,0,.35) 78%,transparent 96%)}
+.hero .wrap{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:24px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--green-ink);font-size:14px;font-weight:700;padding:8px 16px;border-radius:999px}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(24,121,63,.45)}50%{box-shadow:0 0 0 6px rgba(24,121,63,0)}}
+.hero h1{font-family:var(--display);font-size:clamp(42px,6.6vw,88px);line-height:1.04;letter-spacing:-.035em;font-weight:800;max-width:1000px}
+.hero h1 .w{display:inline-block;animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 .hl{color:inherit}
+@keyframes rise{from{transform:translateY(28px);opacity:.15}to{transform:none;opacity:1}}
+.hero .lead{font-size:20px;max-width:620px;animation:rise .8s .35s cubic-bezier(.2,.8,.2,1) both}
+.ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;animation:rise .8s .5s cubic-bezier(.2,.8,.2,1) both}
+
+/* marquee */
+.trust{width:100%;max-width:1040px;display:flex;flex-direction:column;gap:14px;margin-top:20px;animation:rise .8s .65s cubic-bezier(.2,.8,.2,1) both}
+.trust p{font-size:14px;font-weight:600;color:var(--faint)}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.set{display:flex;gap:16px;padding-right:16px}
+.logo-slot{width:168px;height:60px;border-radius:14px;border:1.5px dashed var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--faint)}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* hero stage */
+.stage{width:100%;max-width:1040px;margin-top:32px;background:linear-gradient(180deg,var(--mint) 0%,var(--cream) 55%,var(--pink) 100%);border-radius:32px;padding:44px 24px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:36px;animation:rise 1s .8s cubic-bezier(.2,.8,.2,1) both}
+.phone{width:240px;height:440px;background:#14231A;border-radius:38px;padding:10px;box-shadow:0 30px 60px rgba(20,35,26,.25);animation:float 6s ease-in-out infinite;flex:none}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(1deg)}}
+.screen{width:100%;height:100%;border-radius:30px;background:linear-gradient(160deg,#2C4A38,#14231A);display:flex;flex-direction:column;justify-content:space-between;padding:20px;text-align:left;position:relative;overflow:hidden}
+.rec{position:absolute;top:14px;right:16px;display:flex;align-items:center;gap:6px;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em}
+.rec i{width:8px;height:8px;border-radius:50%;background:#FF5A5F;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.caption{margin-top:22px;background:#fff;color:#14231A;font-weight:800;font-size:17px;line-height:1.25;padding:12px 14px;border-radius:14px;min-height:72px;transition:opacity .4s,transform .4s}
+.caption.out{opacity:0;transform:translateY(-8px)}
+.rec-area{height:130px;border-radius:14px;background:rgba(255,255,255,.1);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:12px;gap:6px}
+.rec-area span{flex:1;background:rgba(143,224,174,.75);border-radius:4px;animation:bars 1.6s ease-in-out infinite}
+.rec-area span:nth-child(2){animation-delay:.2s}.rec-area span:nth-child(3){animation-delay:.4s}.rec-area span:nth-child(4){animation-delay:.6s}.rec-area span:nth-child(5){animation-delay:.8s}
+@keyframes bars{0%,100%{height:30%}50%{height:90%}}
+.dl{margin-top:10px;background:#18793F;color:#fff;font-weight:700;font-size:14px;text-align:center;padding:10px;border-radius:999px;animation:tap 3s ease-in-out infinite}
+@keyframes tap{0%,80%,100%{transform:scale(1)}88%{transform:scale(.94)}}
+.board{flex:1 1 360px;max-width:520px;min-width:0;background:var(--card);border-radius:24px;padding:24px;text-align:left;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.board-h{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:var(--faint);text-transform:uppercase;letter-spacing:.08em}
+.live{display:inline-flex;align-items:center;gap:6px;color:var(--green);text-transform:none;letter-spacing:0}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:var(--soft);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.row b{font-weight:700;min-width:0}
+.status{flex:none;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px;transition:background .4s,color .4s}
+.s-scaling{background:var(--mint);color:var(--green-ink)}
+.s-testing{background:var(--amber-bg);color:var(--amber-fg)}
+.s-paused{background:var(--pink);color:var(--rose-fg)}
+.board small{font-size:14px;color:var(--faint)}
+
+/* reveal (only applied by JS to below-the-fold elements) */
+.rv{opacity:.001;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* pipeline */
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.steps::before{content:"";position:absolute;left:24px;right:24px;top:-18px;height:3px;border-radius:3px;background:var(--line)}
+.steps .bar{position:absolute;left:24px;top:-18px;height:3px;border-radius:3px;background:var(--green);width:0;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.steps.in .bar{width:calc(100% - 48px)}
+.step{background:var(--card);border:1.5px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .3s,box-shadow .3s}
+.step:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.step .n{font-size:14px;font-weight:800;color:var(--green)}
+.step h3{font-size:18px;font-weight:800}
+.step p{font-size:15px;color:var(--muted)}
+.step.end{background:var(--band);color:var(--band-fg);border-color:var(--band)}
+.step.end .n{color:var(--band-accent)}.step.end p{color:var(--band-muted)}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.steps::before,.steps .bar{display:none}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+
+/* services */
+.white{background:var(--card)}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.svc{background:var(--soft);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:12px;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .35s}
+.svc:hover{transform:translateY(-6px);background:var(--mint)}
+.svc svg{width:34px;height:34px;stroke:var(--green);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.svc:hover svg{transform:scale(1.15) rotate(-6deg)}
+.svc h3{font-size:20px;font-weight:800}
+.svc p{color:var(--muted)}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:24px}
+.proc div{border-top:3px solid var(--line);padding-top:20px;display:flex;flex-direction:column;gap:8px;position:relative}
+.proc div::before{content:"";position:absolute;left:0;top:-3px;height:3px;width:0;background:var(--green);transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.proc.in div::before{width:100%}
+.proc.in div:nth-child(2)::before{transition-delay:.2s}.proc.in div:nth-child(3)::before{transition-delay:.4s}.proc.in div:nth-child(4)::before{transition-delay:.6s}.proc.in div:nth-child(5)::before{transition-delay:.8s}
+.proc h3{font-size:20px;font-weight:800}
+.proc p{color:var(--muted)}
+
+/* before/after */
+.dark{background:var(--band);color:var(--band-fg)}
+.dark .eyebrow{color:var(--band-accent)}
+.ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px}
+.ba>div{border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:16px}
+.ba .without{background:rgba(255,255,255,.06)}
+.ba .with{background:var(--mint);color:var(--ink)}
+.ba h3{font-size:18px;font-weight:800}
+.ba .without h3{color:#F4B4CF}.ba .with h3{color:var(--green-ink)}
+.ba li{list-style:none;display:flex;gap:12px;align-items:flex-start}
+.ba ul{margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.ba .without li{color:var(--band-muted)}
+.ba svg{flex:none;width:20px;height:20px;margin-top:2px}
+
+/* results */
+.quote{background:var(--card);border:1.5px dashed var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:16px}
+.quote p{font-size:18px;color:var(--muted)}
+.quote b{font-size:15px}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:20px;align-items:stretch}
+.plan{border:1.5px solid var(--line);border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:16px;background:var(--card);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.plan:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.plan.hot{background:var(--band);color:var(--band-fg);border-color:var(--band)}
+.plan.hot .muted{color:var(--band-muted)}
+.plan h3{font-size:20px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tag{font-size:13px;font-weight:700;background:var(--band-accent);color:#14231A;padding:4px 10px;border-radius:999px}
+.price{font-size:46px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.price small{font-size:16px;font-weight:500;letter-spacing:0}
+.muted{color:var(--muted)}
+.plan ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;flex-grow:1}
+.plan li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.plan li svg{flex:none;width:18px;height:18px;margin-top:3px;stroke:var(--green)}
+.plan.hot li svg{stroke:var(--band-accent)}
+.plan .btn{width:100%}
+.plan.hot .btn{background:var(--band-accent);color:#14231A}
+.note{text-align:center;color:var(--faint);font-size:15px}
+
+/* faq */
+.faq{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+details{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:0 24px;transition:border-color .3s}
+details[open]{border-color:var(--green)}
+summary{list-style:none;cursor:pointer;font-size:18px;font-weight:700;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary .plus{flex:none;width:28px;height:28px;border-radius:50%;background:var(--soft);display:grid;place-items:center;transition:transform .3s,background .3s}
+details[open] summary .plus{transform:rotate(45deg);background:var(--mint)}
+details p{color:var(--muted);padding-bottom:20px;animation:open .35s ease}
+@keyframes open{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* cta */
+.cta{background:linear-gradient(180deg,var(--mint) 0%,var(--cream) 55%,var(--pink) 100%);border-radius:32px;padding:64px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;position:relative;overflow:hidden}
+.cta img{width:96px;height:96px;border-radius:50%;animation:sway 5s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px;width:100%;max-width:820px;text-align:left}
+.three div{background:var(--card);border-radius:18px;padding:20px}
+.three b{display:block;margin-bottom:4px}
+.three span{font-size:15px;color:var(--muted)}
+.mail{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px}
+.addr{font-weight:700;font-size:17px;background:var(--card);padding:14px 20px;border-radius:999px;user-select:all}
+.copied{font-size:14px;color:var(--green-ink);font-weight:700;min-height:20px}
+
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:14px;color:var(--faint)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+footer .brand{font-size:15px}footer .brand img{width:28px;height:28px}
+
+/* sky overrides */
+.hero .pill{background:rgba(255,255,255,.72);color:#0B1220;border:1.5px solid #fff}
+.hero .pill .dot{background:#2F7DD8}
+.hero .ctas .btn-primary{background:#0B1220;color:#fff;box-shadow:0 12px 28px rgba(11,18,32,.25)}
+.hero .ctas .btn-ghost{background:rgba(255,255,255,.85);border-color:#fff;color:#0B1220}
+.hero .logo-slot{background:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.95);color:#3E5266;transition:transform .3s,background .3s}
+.hero .logo-slot:hover{transform:translateY(-3px);background:#fff}
+.logo-slot img{display:block;height:40px;width:auto;max-width:130px;border-radius:10px}
+.hero .stage{background:rgba(255,255,255,.42);border:1.5px solid rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* white surfaces with green outlines */
+.white,.dark{background:var(--paper);color:var(--ink)}
+.dark .eyebrow{color:var(--green)}
+.svc,.step,.quote,details,.plan,.ba>div{background:var(--card);border:1.5px solid var(--edge)}
+.svc:hover{background:var(--card);border-color:var(--green)}
+.step:hover,.plan:hover,.quote:hover{border-color:var(--green)}
+.quote{border-style:dashed}
+.step.end{background:var(--card);color:var(--ink);border-color:var(--green)}
+.step.end .n{color:var(--green)}.step.end p{color:var(--muted)}
+.ba .without li{color:var(--muted)}
+.ba .without h3{color:var(--rose-fg)}
+.ba .without svg{stroke:var(--rose-fg)}
+.ba .with{border-color:var(--green)}
+.plan.hot{background:var(--card);color:var(--ink);border:2px solid var(--green)}
+.plan.hot .muted{color:var(--muted)}
+.plan.hot li svg{stroke:var(--green)}
+.plan.hot .btn{background:var(--green);color:var(--paper)}
+summary .plus{background:var(--card);border:1.5px solid var(--edge)}
+details[open] summary .plus{background:var(--card);border-color:var(--green)}
+
+/* about block beside the phones */
+.hero .stage{max-width:1200px;justify-content:space-between;align-items:center;padding:48px clamp(20px,4vw,56px);gap:24px}
+.about{flex:1 1 380px;min-width:0;max-width:500px;text-align:left;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.tag-about{background:#0B1220;color:#fff;font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px}
+.about h2{font-family:var(--display);font-size:clamp(34px,4vw,52px);line-height:1.05;letter-spacing:-.025em;font-weight:500;color:#0B1220}
+.about .serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:clamp(34px,4vw,50px);line-height:1;color:#18793F;margin-top:-8px}
+.about-body{font-size:17px;line-height:1.65;color:#2B3A4A;max-width:46ch}
+.about-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.hero .about .btn-dark{background:#0B1220;color:#fff}
+.btn-outline{background:transparent;color:#18793F;border-color:#18793F}
+.btn-outline:hover{background:#fff}
+
+/* stats row */
+.stats{width:100%;max-width:880px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:4px}
+.stat{background:#fff;border:1.5px solid rgba(24,121,63,.32);border-radius:18px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:transform .3s,border-color .3s}
+.stat:hover{transform:translateY(-4px);border-color:#18793F}
+.stat b{font-family:var(--display);font-weight:600;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;color:#0B1220;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span:not(.count){font-size:13px;font-weight:700;color:#18793F}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* why choose us */
+#why{background:var(--sky-soft)}
+.why{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:48px}
+.why-text{flex:1 1 400px;min-width:0;max-width:560px;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.why-text h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.2vw,56px);line-height:1.05;letter-spacing:-.025em}
+.why-text .serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:clamp(34px,4.2vw,54px);line-height:1.05;color:var(--green);margin-top:-6px}
+.why-body{font-size:17px;line-height:1.7;color:var(--muted);max-width:52ch}
+.why-vis{flex:1 1 440px;min-width:0;max-width:560px;display:flex;align-items:center;gap:12px}
+.tree-wrap{position:relative;flex:none;width:150px;transform-origin:50% 96%;animation:sway 6s ease-in-out infinite}
+.tree-wrap img{display:block;width:100%;height:auto;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.why-cards{position:relative;z-index:1}
+.online{position:absolute;left:14.9%;top:28.4%;width:27.7%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%);animation:online 2.6s ease-in-out infinite}
+@keyframes online{0%,100%{box-shadow:0 0 0 0 rgba(52,199,89,.55);background:rgba(52,199,89,0)}50%{box-shadow:0 0 0 10px rgba(52,199,89,0);background:rgba(52,199,89,.35)}}
+.why-cards{flex:1;min-width:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.wcard{background:var(--card);border:1.5px solid var(--edge);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform .3s,border-color .3s}
+.wcard:hover{transform:translateY(-4px);border-color:var(--green)}
+.wcard.center{align-items:center;justify-content:center;text-align:center}
+.wcard.wide{grid-column:1 / -1;align-items:center;text-align:center;padding:24px}
+.wlabel{font-size:14px;color:var(--muted)}
+.wcard b{font-family:var(--display);font-weight:600;font-size:20px}
+.bars{display:flex;align-items:flex-end;gap:10px;height:92px;padding-top:6px}
+.bars i{flex:1;height:var(--h);border-radius:6px;background:var(--line)}
+.bars i.top{background:var(--green)}
+.why-vis.in .bars i{animation:grow 1.2s cubic-bezier(.2,.8,.2,1) both}
+.why-vis.in .bars i:nth-child(2){animation-delay:.1s}.why-vis.in .bars i:nth-child(3){animation-delay:.2s}.why-vis.in .bars i:nth-child(4){animation-delay:.3s}.why-vis.in .bars i:nth-child(5){animation-delay:.4s}
+@keyframes grow{from{height:6%}to{height:var(--h)}}
+.faces{display:flex}
+.faces img{width:40px;height:40px;border-radius:50%;border:2.5px solid var(--card);margin-left:-10px;object-fit:cover}
+.faces img:first-child{margin-left:0}
+.swap{width:64px;height:64px;border-radius:50%;background:var(--mint);display:grid;place-items:center}
+.swap svg{width:28px;height:28px;stroke:var(--green)}
+.wcard em{font-size:18px;color:var(--ink)}
+@media (max-width:480px){.why-vis{flex-direction:column}.tree-wrap{width:120px}}
+
+/* why: spacious layout, tree overlapping the cards */
+#why{background:linear-gradient(180deg,var(--paper) 0%,var(--sky-soft) 14%,var(--sky-soft) 80%,var(--paper) 100%);padding-block:56px 120px}
+#services{padding-bottom:40px}
+.why{gap:64px}
+.why-text{max-width:600px;gap:22px}
+.why-text h2{font-weight:400;font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-.03em}
+.why-text .serif{font-size:clamp(36px,4.3vw,58px);line-height:1.04;margin-top:-4px}
+.why-body{font-size:19px;line-height:1.75}
+.why-text .btn{margin-top:18px}
+.why-vis{display:block;position:relative;flex:1 1 460px;max-width:540px}
+.tree-wrap{position:absolute;z-index:2;left:-96px;top:14%;width:150px}
+.why-cards{gap:20px}
+.wcard{padding:24px;border-radius:22px;min-height:230px}
+.wcard.wide{min-height:190px;justify-content:center;gap:16px}
+.wtitle{font-size:18px;color:var(--ink)}
+.chart{display:flex;gap:14px;align-items:stretch;height:130px;margin-top:auto}
+.axis{display:flex;flex-direction:column;justify-content:space-between;font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums}
+.chart .bars{flex:1;height:100%;gap:0;justify-content:space-between;padding:6px 4px 0}
+.chart .bars i{flex:none;width:8px;border-radius:8px}
+.faces img{width:52px;height:52px}
+.wcard.center b{font-size:22px;font-weight:500}
+.swap{width:84px;height:84px}
+.wcard em{font-size:20px}
+@media (max-width:760px){.tree-wrap{position:relative;left:auto;top:auto;margin:0 auto 12px;display:block}}
+
+/* before / after: the "with" card comes forward while scrolling */
+#diff .head{align-self:center;text-align:center;align-items:center}
+#diff .ba{gap:28px;align-items:stretch}
+#diff .ba>div{border-radius:32px;padding:44px 40px;gap:22px;transition:opacity .8s;will-change:transform}
+#diff .without{background:var(--grey-bg);border-color:transparent;transform:translateX(calc(var(--p,0)*4%)) scale(calc(1 - var(--p,0)*.06));opacity:calc(1 - var(--p,0)*.3)}
+#diff .with{position:relative;z-index:2;background:var(--card);border:2px solid var(--green);transform:translateX(calc(var(--p,0)*-4%)) scale(calc(1 + var(--p,0)*.04));box-shadow:0 calc(var(--p,0)*30px) calc(var(--p,0)*60px) rgba(24,121,63,calc(var(--p,0)*.18))}
+#diff h3{font-family:var(--display);font-size:clamp(26px,3vw,38px);text-align:center;font-weight:700;letter-spacing:-.02em}
+#diff .without h3{color:var(--faint)}
+#diff .with h3{color:var(--green)}
+#diff .sub{text-align:center;font-size:17px;color:var(--ink);margin-top:-12px}
+#diff ul{gap:18px}
+#diff li{align-items:center;font-size:18px;color:var(--ink)}
+#diff li b{font-weight:700;color:var(--green)}
+#diff .without li{color:var(--muted)}
+.qi,.ci{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:15px}
+.qi{background:var(--card);color:var(--faint);border:1px solid var(--line)}
+.ci{background:var(--green)}
+.ci svg{width:18px;height:18px;stroke:var(--paper)}
+@media (max-width:700px){#diff .without,#diff .with{transform:none}}
+
+/* scaling plan: sticky stepper that changes step while scrolling */
+.splan{padding-block:96px 40px}
+.plan-headwrap{margin-bottom:24px}
+.plan-steps{position:relative}
+.pstep{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:center}
+.ptext{display:flex;flex-direction:column;gap:18px;align-items:flex-start;min-width:0}
+.plabel{font-size:15px;font-weight:600;color:var(--green);letter-spacing:.02em}
+.ptext h3{font-family:var(--display);font-weight:600;font-size:clamp(32px,4vw,56px);line-height:1.05;letter-spacing:-.03em}
+.ptext p{font-size:18px;line-height:1.6;color:var(--muted);max-width:46ch}
+.pvis{min-width:0;display:flex;justify-content:center}
+.pshot{display:block;width:100%;max-width:560px;height:auto;border-radius:24px;box-shadow:0 24px 50px rgba(20,35,26,.18)}
+.pshot.ads{max-width:620px;border:1.5px solid var(--line);box-shadow:0 18px 40px rgba(20,35,26,.10)}
+.pshot.review{max-width:440px;max-height:min(600px,72vh);object-fit:cover;object-position:top;box-shadow:0 18px 40px rgba(20,35,26,.16);-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent)}
+.pshot.crm{max-width:500px;max-height:min(600px,72vh);object-fit:cover;object-position:top;border:1.5px solid var(--line);box-shadow:0 18px 40px rgba(20,35,26,.10);-webkit-mask-image:linear-gradient(180deg,#000 80%,transparent);mask-image:linear-gradient(180deg,#000 80%,transparent)}
+.mock{width:100%;max-width:460px;background:var(--grey-bg);border-radius:28px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.mock-h{display:flex;align-items:center;gap:10px;padding:4px 4px 8px}
+.mock-h b{font-size:18px;flex:1}
+.mock-h small{font-size:13px;color:var(--faint)}
+.mdot{width:12px;height:12px;border-radius:50%;background:var(--green)}
+.mdot.live{animation:pulse 2s infinite}
+.agenda{display:flex;flex-direction:column;gap:10px}
+.agenda>div,.crew,.hook,.script{background:var(--card);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;font-size:16px}
+.agenda .todo{color:var(--muted)}
+.crew{justify-content:space-between}
+.crew b{flex:1;font-weight:600;min-width:0}
+.crew .av{width:36px;height:36px;border-radius:50%;flex:none}
+.av.a1{background:#BFE3CC}.av.a2{background:#CFE2FA}.av.a3{background:#F7DDEA}.av.a4{background:#FFF0C7}
+.st{flex:none;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px}
+.s-brief{background:var(--soft);color:var(--muted);border:1px solid var(--line)}
+.hook{flex-direction:column;align-items:flex-start;gap:6px}
+.hook b{font-size:13px;color:var(--green);text-transform:uppercase;letter-spacing:.06em}
+.hook p{font-weight:700}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips span{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.script{flex-direction:column;align-items:flex-start;gap:4px}
+.script small{color:var(--faint)}
+.minibars{background:var(--card);border-radius:16px;height:120px;padding:16px;display:flex;align-items:flex-end;gap:14px}
+.minibars i{flex:1;height:var(--h);border-radius:8px;background:var(--line)}
+.minibars i.top{background:var(--green)}
+.pdots{display:none}
+@media (min-width:900px) and (prefers-reduced-motion: no-preference){
+  .plan-track{height:calc(5 * 80vh + 100vh)}
+  .plan-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center}
+  .plan-sticky>.wrap{width:100%}
+  .plan-steps{height:min(640px,76vh);margin-top:40px}
+  .pstep{position:absolute;inset:0;opacity:0;transform:translateY(28px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+  .pstep.active{opacity:1;transform:none;pointer-events:auto}
+  .pdots{display:flex;justify-content:center;gap:10px;margin-top:28px}
+  .pdot{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer;transition:background .3s,transform .3s}
+  .pdot.on{background:var(--green);transform:scale(1.25)}
+}
+@media (max-width:899px){
+  .plan-steps{display:flex;flex-direction:column;gap:56px}
+  .pstep{grid-template-columns:1fr;gap:24px}
+}
+
+/* every step visual sits in the same thin grey frame */
+.pframe{width:100%;max-width:440px;padding:16px;border:1.5px solid var(--line);border-radius:30px;background:var(--card);-webkit-mask-image:linear-gradient(180deg,#000 84%,transparent);mask-image:linear-gradient(180deg,#000 84%,transparent)}
+.pimg{display:block;width:100%;height:auto;max-height:min(540px,62vh);object-fit:cover;object-position:top;border-radius:18px}
+.sui{max-width:440px}
+/* strategy plan UI mock (step 2) */
+.sui{width:100%;max-width:480px;display:flex;flex-direction:column;gap:10px;padding:20px;border:1.5px solid var(--line);border-radius:30px;background:var(--card);-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent)}
+.sui-top{display:flex;align-items:center;justify-content:flex-end;gap:12px;padding:0 0 4px}
+.sui-app{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#74B3F0,#18793F)}
+.sui-top b{font-family:var(--display);font-size:22px;flex:1}
+.sui-pill{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;background:var(--mint);color:var(--green-ink)}
+.sp-dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+.sui-card{background:var(--grey-bg);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.sui-card small{font-size:13px;color:var(--faint)}
+.sui-card>b{font-size:17px}
+.sui-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sui .chips span{background:var(--card);border:0;color:var(--ink);font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.sui .chips span::before{content:"";width:8px;height:8px;border-radius:50%}
+.sui .chips .g::before{background:var(--green)}.sui .chips .b::before{background:#3B8BE5}.sui .chips .p::before{background:#B05CD6}
+.sum-h{font-family:var(--display);font-size:20px;margin-bottom:4px}
+.sum-g{display:flex;align-items:center;gap:10px;margin-top:4px}
+.sum-g b{font-size:16px}
+.ico{width:16px;height:16px;border-radius:5px}
+.ico.o{background:#F2994A}.ico.g{background:var(--green)}.ico.p{background:#7B61FF}
+.sui-sum ul{margin:0;padding-left:44px;display:flex;flex-direction:column;gap:4px;color:var(--muted);font-size:15px}
+.sui-sum ul.faded{opacity:.6}
+@media (min-width:900px) and (prefers-reduced-motion: no-preference){
+  .pstep .sui>*{opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1)}
+  .pstep.active .sui>*{opacity:1;transform:none}
+  .pstep.active .sui>*:nth-child(2){transition-delay:.12s}.pstep.active .sui>*:nth-child(3){transition-delay:.24s}.pstep.active .sui>*:nth-child(4){transition-delay:.36s}
+}
+
+/* tree mascot with a different prop on every step */
+.mascot{position:relative;width:112px;margin-top:18px;transform-origin:50% 95%;animation:sway 6s ease-in-out infinite}
+.mascot img{display:block;width:100%;height:auto}
+.mascot svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.mascot .waves path{animation:wave 1.4s ease-in-out infinite}
+.mascot .waves path:nth-child(2){animation-delay:.25s}
+@keyframes wave{0%,100%{opacity:.25}50%{opacity:1}}
+.mascot .pencil{animation:write 1.2s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes write{0%,100%{translate:0 0}50%{translate:-10px 6px}}
+.mascot .spark{animation:wave 1.6s ease-in-out infinite}
+.mascot .think{animation:bob 3s ease-in-out infinite}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -10px}}
+.mascot.m5{margin-top:18px}
+.mascot .climb{stroke-dasharray:260;stroke-dashoffset:260;animation:climb 3s ease-in-out infinite}
+@keyframes climb{0%{stroke-dashoffset:260}45%,100%{stroke-dashoffset:0}}
+
+/* before / after metric tiles */
+.mtiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px}
+.mt{border:1.5px solid var(--line);border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:4px 8px;background:var(--card)}
+.mt span{grid-column:1/-1;font-size:15px;color:var(--faint)}
+#diff .with .mt span{color:var(--green)}
+.mt b{font-family:var(--display);font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
+.mt em{font-style:normal;font-size:14px;font-weight:700;color:var(--green-ink);background:var(--mint);padding:4px 10px;border-radius:999px;font-variant-numeric:tabular-nums}
+.mt.wide{grid-column:1 / -1;position:relative;min-height:128px;overflow:visible}
+.mt .big{font-size:clamp(36px,4vw,50px);letter-spacing:-.02em}
+.mt .mascot.money{position:absolute;right:14px;bottom:4px;width:104px;margin:0}
+.mt .big.unknown{color:var(--faint)}
+.ba-note{text-align:center;font-size:14px;color:var(--faint)}
+
+/* FAQ: big centered title, open item on grey with a close cross */
+.faq-title{font-family:var(--display);font-weight:800;font-size:clamp(40px,5.2vw,72px);line-height:1.05;letter-spacing:-.03em;text-align:center;max-width:720px;margin:0 auto}
+.faq{max-width:1000px;gap:14px}
+details.fq{background:var(--card);border:1.5px solid var(--line);border-radius:24px;padding:0 32px;transition:background .3s,border-color .3s}
+details.fq[open]{background:var(--grey-bg);border-color:transparent}
+details.fq summary{font-size:20px;font-weight:600;padding:26px 0}
+details.fq p{font-size:18px;line-height:1.65;padding-bottom:28px;max-width:80ch}
+.fx{flex:none;width:32px;height:32px;display:grid;place-items:center;transition:transform .3s}
+.fx svg{width:26px;height:26px;stroke:var(--green)}
+details.fq[open] .fx{transform:rotate(45deg)}
+details.fq[open] .fx svg{stroke:var(--ink)}
+
+/* footer: page fades back into the blue sky */
+footer.foot{position:relative;overflow:hidden;border-top:0;padding-block:140px 36px;color:#0B1220;font-size:16px;
+  background:linear-gradient(180deg,var(--paper) 0%,#EEF6FE 22%,#CFE5FA 50%,#9CCAF4 78%,#6EAFEF 100%)}
+.foot-sky{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.8;-webkit-mask-image:linear-gradient(0deg,#000 0%,#000 40%,transparent 85%);mask-image:linear-gradient(0deg,#000 0%,#000 40%,transparent 85%)}
+.foot-in{position:relative;z-index:1;display:flex;flex-direction:column;gap:56px}
+footer.foot .wrap{display:flex;flex-direction:column;justify-content:normal;align-items:stretch}
+.foot-top{display:grid;grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr));gap:40px}
+.foot-brand{display:flex;flex-direction:column;gap:18px;max-width:440px}
+footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44px;height:44px}
+.foot-brand p{font-size:17px;line-height:1.65;color:#2B3A4A}
+.foot-col{display:flex;flex-direction:column;gap:14px}
+.foot-col h4{margin:0 0 6px;font-family:var(--display);font-size:22px;font-weight:600;color:#0B1220}
+.foot-col a,.foot-col span{color:#2B3A4A;text-decoration:none;font-size:16px}
+.foot-col a:hover{color:#0B1220;text-decoration:underline}
+.contact span{display:flex;gap:10px;align-items:flex-start}
+.contact svg{width:20px;height:20px;stroke:#0B1220;flex:none;margin-top:2px}
+.socials{display:flex;gap:10px;margin-top:6px}
+.socials a{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);display:grid;place-items:center;transition:transform .25s,background .25s}
+.socials a:hover{transform:translateY(-2px);background:#fff}
+.socials svg{width:22px;height:22px;stroke:#0B1220}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:24px;border-top:1.5px solid rgba(11,18,32,.75);color:#0B1220}
+.foot-bottom div{display:flex;flex-wrap:wrap;gap:24px}
+.foot-bottom a{color:#0B1220;text-decoration:none}
+.foot-bottom a:hover{text-decoration:underline}
+@media (max-width:900px){.foot-top{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-brand{grid-column:1 / -1}}
+@media (max-width:480px){.foot-top{grid-template-columns:1fr}}
+
+/* reviews wall v2: scattered chat messages, videos and stat cards */
+#reviews{overflow-x:clip}
+.wall2{position:relative;height:1040px}
+.wall2-center{position:absolute;left:26%;right:26%;top:37%;display:flex;flex-direction:column;align-items:center;gap:30px;text-align:center;z-index:1;pointer-events:none}
+.wall2-title{font-family:var(--display);font-weight:800;font-size:clamp(36px,3.8vw,58px);line-height:1.02;letter-spacing:-.04em;color:var(--ink)}
+.wall2-title span{display:block;color:var(--green)}
+.wall2-center .btn{pointer-events:auto;min-height:60px;padding:0 32px;font-size:18px}
+.rv-msg,.rv-phone,.rv-stat{position:absolute;left:var(--x);top:var(--y);transform:rotate(var(--r));transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s;z-index:2}
+.rv-msg{width:26%;margin:0;padding:18px 22px 16px;border-radius:20px;background:var(--card);border:1.5px solid var(--line);box-shadow:0 16px 36px rgba(20,35,26,.08)}
+.rv-msg.wide{width:31%}
+.rv-msg.dark{background:#141A17;border-color:#141A17;color:#EEF3EF}
+.rv-msg:hover,.rv-phone:hover,.rv-stat:hover{transform:rotate(0deg) translateY(-12px) scale(1.05);box-shadow:0 30px 60px rgba(20,35,26,.22);z-index:8}
+.rm-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.rm-h .av{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#CFE2FA,#F7DDEA);filter:blur(.6px);flex:none}
+.rv-msg.dark .rm-h .av{background:linear-gradient(135deg,#2C4A38,#4A5D70)}
+.rm-h b{font-size:16px}
+.rm-h small{font-size:13px;opacity:.6}
+.rv-msg blockquote{margin:0;font-size:16px;line-height:1.5}
+.rx{display:flex;gap:8px;margin-top:12px}
+.rx span{display:inline-flex;align-items:center;justify-content:center;width:44px;height:30px;border-radius:999px;background:var(--grey-bg)}
+.rv-msg.dark .rx span{background:#232B27}
+.rx svg{width:18px;height:18px}
+.rv-phone{width:11%;aspect-ratio:9/16;padding:6px;border-radius:24px;background:#0B1220;box-shadow:0 20px 44px rgba(11,18,32,.25);z-index:1}
+.rv-phone video{display:block;width:100%;height:100%;object-fit:cover;border-radius:18px;background:#22344A}
+.rv-stat{width:12%;padding:14px 14px 0;border-radius:18px;background:var(--card);border:1.5px solid var(--line);box-shadow:0 16px 36px rgba(20,35,26,.10);display:flex;flex-direction:column;gap:2px;overflow:hidden;z-index:3}
+.rv-stat small{font-size:13px;color:var(--faint)}
+.rv-stat b{font-family:var(--display);font-size:clamp(20px,2vw,28px);font-weight:700;font-variant-numeric:tabular-nums}
+.rv-stat svg{width:calc(100% + 28px);margin:6px -14px 0;height:54px;display:block}
+@media (max-width:900px){
+  .wall2{height:auto;display:flex;flex-direction:column;gap:14px}
+  .wall2-center{position:static;margin-bottom:20px}
+  .rv-msg,.rv-msg.wide{position:static;width:100%;transform:none}
+  .hide-sm{display:none}
+}
+
+/* three overlapping phones, middle one in front */
+.phones{position:relative;flex:1 1 460px;min-width:0;max-width:600px;height:620px;display:flex;justify-content:center;align-items:center}
+.phone3{position:absolute;width:250px;aspect-ratio:9/19.5;padding:9px;border-radius:42px;background:#0B1220;box-shadow:0 30px 60px rgba(11,18,32,.28)}
+.phone3 video{display:block;width:100%;height:100%;object-fit:cover;border-radius:33px;background:#22344A}
+.phone3.main{z-index:3;width:272px;animation:float 6s ease-in-out infinite}
+.phone3.left{z-index:1;--dx:-160px;--r:-8deg;animation:side 7s ease-in-out infinite}
+.phone3.right{z-index:2;--dx:160px;--r:8deg;animation:side 7s 1.2s ease-in-out infinite}
+.phone3.left,.phone3.right{transform:translateX(var(--dx)) rotate(var(--r)) scale(.86)}
+@keyframes side{0%,100%{transform:translateX(var(--dx)) rotate(var(--r)) scale(.86)}50%{transform:translateX(var(--dx)) translateY(-12px) rotate(var(--r)) scale(.86)}}
+@media (max-width:640px){
+  .phones{height:450px}
+  .phone3{width:172px;padding:7px;border-radius:30px}
+  .phone3 video{border-radius:24px}
+  .phone3.main{width:196px}
+  .phone3.left{--dx:-104px}.phone3.right{--dx:104px}
+}
+.cta{background:linear-gradient(180deg,#74B3F0 0%,#CDE5FA 65%,#EEF7FE 100%);color:#0B1220;--card:#FFFFFF;--ink:#0B1220;--paper:#FFFFFF;--muted:#2B3A4A;--green-ink:#135F31}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap"><div class="navpill">
+    <a class="brand" href="#top"><img src="logo.png" alt="Grow Your Proof logo"><span>Grow Your Proof</span></a>
+    <nav class="links" aria-label="Main">
+      <a class="hide-sm" href="#services">Services</a>
+      <a class="hide-sm" href="#process">How it works</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+    </nav>
+  </div></div>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <canvas id="sky" class="skycv" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1 aria-label="Creative marketing for the next generation of tech."><span class="w" style="animation-delay:.00s">Creative</span> <span class="w" style="animation-delay:.06s">marketing</span> <span class="w" style="animation-delay:.12s">for</span> <span class="w" style="animation-delay:.18s">the</span> <span class="w" style="animation-delay:.24s">next</span> <span class="w" style="animation-delay:.30s">generation</span> <span class="w" style="animation-delay:.36s">of</span> <span class="w" style="animation-delay:.42s">tech.</span></h1>
+    <p class="lead">AI &amp; Tech marketing specialists. Real creators, tested videos, more downloads.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="get-in-touch.html">Get in touch <span class="arrow">→</span></a>
+    </div>
+
+    <div class="trust">
+      <p>Brands we've worked with</p>
+      <div class="marquee">
+        <div class="track">
+          <div class="set">
+            <div class="logo-slot"><img src="client-1.png" alt="Client app logo: smiling sun"></div><div class="logo-slot"><img src="client-2.png" alt="Client app logo: green G"></div><div class="logo-slot"><img src="client-3.png" alt="Triips"></div><div class="logo-slot"><img src="client-4.png" alt="Client app logo: graduation cap"></div><div class="logo-slot"><img src="client-5.png" alt="Client app logo: blue cat"></div><div class="logo-slot"><img src="client-6.png" alt="Client app logo: green U"></div><div class="logo-slot"><img src="client-7.png" alt="Client app logo: purple speech bubble"></div>
+          </div>
+          <div class="set" aria-hidden="true">
+            <div class="logo-slot"><img src="client-1.png" alt=""></div><div class="logo-slot"><img src="client-2.png" alt=""></div><div class="logo-slot"><img src="client-3.png" alt=""></div><div class="logo-slot"><img src="client-4.png" alt=""></div><div class="logo-slot"><img src="client-5.png" alt=""></div><div class="logo-slot"><img src="client-6.png" alt=""></div><div class="logo-slot"><img src="client-7.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="about">
+        <span class="tag-about">About</span>
+        <h2>Built to grow your proof</h2>
+        <p class="serif">Powered by real creators</p>
+        <p class="about-body">Grow Your Proof is a creative marketing studio for AI and tech apps. We come up with the content, write the scripts and hooks, direct the creators, run your ads and analyze which videos perform best. Our team works together on one goal: more visibility for your app, so you win against your competitors.</p>
+        <div class="about-ctas">
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+          <a class="btn btn-outline" href="#services">Our services</a>
+        </div>
+      </div>
+      <div class="phones">
+        <div class="phone3 left"><video src="ugc-2.mp4" poster="ugc-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="UGC example: career app video"></video></div>
+        <div class="phone3 right"><video src="ugc-3.mp4" poster="ugc-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="UGC example: map app video"></video></div>
+        <div class="phone3 main"><video src="ugc-1.mp4" poster="ugc-1.jpg" autoplay muted loop playsinline preload="auto" aria-label="UGC example: creator talking to camera"></video></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b><span class="count" data-to="25">25</span>+</b><span>Apps helped</span></div>
+      <div class="stat"><b>$<span class="count" data-to="80">80</span>K+</b><span>Ad spend managed</span></div>
+      <div class="stat"><b>3–7</b><span>ROAS</span></div>
+      <div class="stat"><b><span class="count" data-to="10">10</span>+</b><span>Tech specialists</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+    <div class="head">
+      <span class="eyebrow">Services</span>
+      <h2 class="h2">Everything your app needs to grow, under one roof</h2>
+      <p class="lead">No generic agency. We only work with AI &amp; tech apps, so we know what makes people download one and keep using it.</p>
+    </div>
+    <div class="grid3">
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg><h3>Content &amp; scripts</h3><p>We come up with the ideas and write every script, with hooks built to stop the scroll in the first three seconds.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg><h3>UGC videos &amp; creators</h3><p>We find the right creators for your audience, brief them and direct every shoot, so you get real people who convert.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg><h3>Ads management</h3><p>We run your campaigns on Meta and TikTok, handle targeting and budgets, and put your best videos to work.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/><path d="M8 11h6M11 8v6"/></svg><h3>Performance analysis</h3><p>We track which videos and hooks drive downloads, cut what doesn't work and scale what does. Clear monthly reports.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>App Store optimization</h3><p>Screenshots, title and description that turn ad clicks into installs.</p></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 010 18"/><path d="M12 3a14 14 0 000 18"/></svg><h3>Market expansion</h3><p>Launch in new countries with local creators and localized ads that feel native.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="why">
+  <div class="wrap why">
+    <div class="why-text">
+      <h2>Why AI &amp; Tech apps choose us</h2>
+      <p class="serif">Focused. Creative.<br>Built to scale.</p>
+      <p class="why-body">We've helped 25+ AI and tech companies grow, and we know what it takes. We focus on real results: more downloads, more sign-ups and more paying customers, driven by content people actually trust. Our team knows the AI and tech world inside and out, so we know how to win attention, stand out from your competitors and build campaigns that keep scaling.</p>
+      <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+    </div>
+    <div class="why-vis" id="whyvis">
+      <div class="tree-wrap" aria-hidden="true">
+        <img src="tree-cut.png" alt="">
+        <span class="online"></span>
+      </div>
+      <div class="why-cards">
+        <div class="wcard">
+          <span class="wtitle">Client ROAS</span>
+          <div class="chart" role="img" aria-label="Client ROAS rising to 7x">
+            <div class="axis"><span>7x</span><span>4x</span><span>1x</span></div>
+            <div class="bars"><i style="--h:42%"></i><i style="--h:68%"></i><i style="--h:30%"></i><i style="--h:50%"></i><i class="top" style="--h:96%"></i></div>
+          </div>
+        </div>
+        <div class="wcard center">
+          <div class="faces" aria-hidden="true"><img src="client-3.png" alt=""><img src="client-5.png" alt=""><img src="client-4.png" alt=""></div>
+          <b>25+ Clients</b>
+          <span class="wlabel">AI &amp; tech apps</span>
+        </div>
+        <div class="wcard wide">
+          <span class="swap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-4-4"/><path d="M20 16H6l4 4"/></svg></span>
+          <em>“Built to grow your proof”</em>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="splan">
+  <div class="wrap plan-headwrap">
+    <div class="head">
+      <span class="eyebrow">How it works</span>
+      <h2 class="h2">Your scaling plan</h2>
+    </div>
+  </div>
+  <div class="plan-track" id="plantrack">
+    <div class="plan-sticky">
+      <div class="wrap">
+        <div class="plan-steps">
+      <article class="pstep active" data-i="0">
+        <div class="ptext">
+          <span class="plabel">Step 1 · Discovery call</span>
+          <h3>Get to know your app</h3>
+          <p>We get to know your app, your users and your growth goals, so every video we make starts from what you actually need.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+          <div class="mascot m1" role="img" aria-label="Grow Your Proof tree in a meeting">
+            <img src="tree-cut.png" alt="">
+            <svg viewBox="0 0 600 629" aria-hidden="true"><defs><linearGradient id="hsCup" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B6B78"/><stop offset="1" stop-color="#232E37"/></linearGradient><linearGradient id="hsBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A7884"/><stop offset="1" stop-color="#2E3A44"/></linearGradient></defs>
+<path d="M92 250 C 110 40, 525 25, 548 245" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="22" stroke-linecap="round" transform="translate(0 8)"/>
+<path d="M92 250 C 110 40, 525 25, 548 245" fill="none" stroke="url(#hsBand)" stroke-width="20" stroke-linecap="round"/>
+<ellipse cx="74" cy="282" rx="40" ry="58" fill="url(#hsCup)"/><ellipse cx="88" cy="282" rx="22" ry="44" fill="#8E9CA8" opacity=".55"/>
+<ellipse cx="552" cy="272" rx="40" ry="58" fill="url(#hsCup)"/><ellipse cx="538" cy="272" rx="22" ry="44" fill="#8E9CA8" opacity=".55"/>
+<path d="M548 318 C 540 380, 470 395, 385 330" fill="none" stroke="#2E3A44" stroke-width="10" stroke-linecap="round"/>
+<ellipse cx="378" cy="326" rx="20" ry="15" fill="#232E37"/></svg>
+          </div>
+        </div>
+        <div class="pvis">
+<div class="pframe"><img class="pimg" src="discovery-call-v.jpg" alt="Discovery call over video with a Grow Your Proof team member" width="760" height="1184" loading="lazy"></div>
+        </div>
+      </article>
+      <article class="pstep" data-i="1">
+        <div class="ptext">
+          <span class="plabel">Step 2 · Strategy</span>
+          <h3>Custom Strategy Plan</h3>
+          <p>We create a tailored strategy based on your goals. We research which hooks will work best for your app and write them out with examples, the audience we recommend and the matching scripts, all aligned with your app's stage and targets. You see exactly how we'll grow it before we start.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+          <div class="mascot m2" role="img" aria-label="Grow Your Proof tree writing a plan">
+            <img src="tree-cut.png" alt="">
+            <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="rotate(10 470 520)"><rect x="380" y="400" width="190" height="230" rx="18" fill="#fff" stroke="#C9D6CD" stroke-width="6"/>
+<rect x="430" y="388" width="90" height="28" rx="10" fill="#18793F"/>
+<path d="M410 465h130M410 505h130M410 545h95" stroke="#9FB5A7" stroke-width="10" stroke-linecap="round"/></g>
+<g class="pencil" transform="rotate(-38 560 470)"><rect x="520" y="380" width="40" height="190" rx="8" fill="#F2C94C"/><rect x="520" y="380" width="40" height="34" rx="8" fill="#F4A9C8"/><path d="M520 568 L540 620 L560 568 Z" fill="#E8C9A0"/><path d="M533 600 L540 620 L547 600 Z" fill="#2B3A4A"/></g></svg>
+          </div>
+        </div>
+        <div class="pvis">
+<div class="sui">
+  <div class="sui-top"><span class="sui-pill"><span class="sp-dot"></span>Strategy ready</span></div>
+  <div class="sui-card">
+    <small>Goals</small>
+    <div class="chips"><span class="g">More installs</span><span class="b">Lower cost per install</span><span class="p">Meta &amp; TikTok</span></div>
+  </div>
+  <div class="sui-two">
+    <div class="sui-card"><small>Strategist</small><b>Grow Your Proof</b></div>
+    <div class="sui-card"><small>Creators</small><b>4 matched</b></div>
+  </div>
+  <div class="sui-card sui-sum">
+    <b class="sum-h">Strategy summary</b>
+    <div class="sum-g"><span class="ico o" aria-hidden="true"></span><b>Target audience</b></div>
+    <ul><li>Busy professionals, 25–40</li><li>Already pay for 2+ productivity apps</li></ul>
+    <div class="sum-g"><span class="ico g" aria-hidden="true"></span><b>Hooks to test</b></div>
+    <ul><li>“I replaced 3 apps with this one”</li><li>“Stop doing this manually”</li></ul>
+    <div class="sum-g"><span class="ico p" aria-hidden="true"></span><b>Scripts</b></div>
+    <ul class="faded"><li>Open on the problem, show the app, end on the result</li><li>3 scripts ready for creators</li></ul>
+  </div>
+</div>
+        </div>
+      </article>
+      <article class="pstep" data-i="2">
+        <div class="ptext">
+          <span class="plabel">Step 3 · Production</span>
+          <h3>We manage the creators</h3>
+          <p>We brief and manage the creators, direct every shoot and edit the videos. You don't have to chase anyone.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+          <div class="mascot m3" role="img" aria-label="Grow Your Proof tree talking through a megaphone">
+            <img src="tree-cut.png" alt="">
+            <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="translate(80 12) rotate(-12 400 300)">
+<rect x="404" y="318" width="30" height="92" rx="12" fill="#FFFFFF" stroke="#D6D9DC" stroke-width="5"/>
+<rect x="338" y="262" width="44" height="60" rx="16" fill="#C9302C"/>
+<rect x="374" y="257" width="54" height="70" rx="8" fill="#FFFFFF" stroke="#D6D9DC" stroke-width="5"/>
+<path d="M426 262 L470 262 L594 200 Q 618 292 594 384 L470 322 L426 322 Z" fill="#E2463F"/>
+<path d="M440 270 L470 270 L580 216" fill="none" stroke="#F4A3A0" stroke-width="9" stroke-linecap="round" opacity=".7"/>
+<ellipse cx="594" cy="292" rx="24" ry="92" fill="#C9302C"/>
+<ellipse cx="600" cy="292" rx="9" ry="24" fill="#F3F3F3"/>
+</g>
+<g class="waves" transform="translate(80 12)" fill="none" stroke="#18793F" stroke-width="14" stroke-linecap="round"><path d="M655 215 q 34 50 0 100"/><path d="M700 180 q 56 85 0 170"/></g></svg>
+          </div>
+        </div>
+        <div class="pvis">
+<div class="pframe"><img class="pimg" src="creator-crm.jpg" alt="UGC creator CRM with each creator's niche, best app category and project status" width="960" height="967" loading="lazy"></div>
+        </div>
+      </article>
+      <article class="pstep" data-i="3">
+        <div class="ptext">
+          <span class="plabel">Step 4 · Launch &amp; test</span>
+          <h3>Test hooks in your ads</h3>
+          <p>Your videos go live in your ads, and we test the hooks against each other to find the winners.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+          <div class="mascot m4" role="img" aria-label="Grow Your Proof tree launching an ad">
+            <img src="tree-cut.png" alt="">
+            <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="rotate(14 480 480)"><rect x="400" y="340" width="160" height="270" rx="30" fill="#0B1220"/><rect x="414" y="360" width="132" height="230" rx="20" fill="#3B8BE5"/><circle cx="480" cy="475" r="42" fill="#fff"/><path d="M468 452 L500 475 L468 498 Z" fill="#18793F"/></g>
+<g class="spark" fill="#F2C94C"><path d="M590 300 l10 26 26 10 -26 10 -10 26 -10 -26 -26 -10 26 -10z"/><path d="M380 330 l6 15 15 6 -15 6 -6 15 -6 -15 -15 -6 15 -6z"/></g></svg>
+          </div>
+        </div>
+        <div class="pvis">
+<div class="pframe"><img class="pimg" src="ads-manager-v.jpg" alt="Ads dashboard with app install campaigns, results, cost per install and ROAS" width="760" height="1009" loading="lazy"></div>
+        </div>
+      </article>
+      <article class="pstep" data-i="4">
+        <div class="ptext">
+          <span class="plabel">Step 5 · Monthly review</span>
+          <h3>Review, then scale</h3>
+          <p>Every month we sit down with you and show exactly how it went: which videos and hooks performed best, what worked less well, and where we focus next. Together we decide the next steps, so your app keeps growing.</p>
+          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
+          <div class="mascot m5" role="img" aria-label="Grow Your Proof tree looking at a rising chart">
+            <img src="tree-cut.png" alt="">
+            <svg viewBox="0 0 600 629" aria-hidden="true"><path d="M690 480 L640 640 M790 480 L840 640 M740 480 L740 640" stroke="#8B6A4A" stroke-width="14" stroke-linecap="round"/>
+<rect x="600" y="150" width="280" height="330" rx="22" fill="#FFFFFF" stroke="#C9D6CD" stroke-width="8"/>
+<rect x="600" y="150" width="280" height="44" rx="22" fill="#18793F"/><rect x="600" y="172" width="280" height="22" fill="#18793F"/>
+<path d="M640 230 V440 H850" fill="none" stroke="#9FB5A7" stroke-width="7" stroke-linecap="round"/>
+<rect x="665" y="380" width="30" height="58" rx="6" fill="#C9D6CD"/><rect x="715" y="345" width="30" height="93" rx="6" fill="#C9D6CD"/><rect x="765" y="295" width="30" height="143" rx="6" fill="#18793F"/>
+<path class="climb" d="M655 380 L710 335 L745 350 L825 245" fill="none" stroke="#18793F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M800 243 L827 242 L824 270" fill="none" stroke="#18793F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="pvis">
+<div class="pframe"><img class="pimg" src="monthly-review.jpg" alt="Monthly review call showing a UGC performance report with results, key takeaways and what to focus on next" width="900" height="1350" loading="lazy"></div>
+        </div>
+      </article>
+        </div>
+        <div class="pdots"><button type="button" class="pdot on" data-i="0" aria-label="Step 1"></button><button type="button" class="pdot" data-i="1" aria-label="Step 2"></button><button type="button" class="pdot" data-i="2" aria-label="Step 3"></button><button type="button" class="pdot" data-i="3" aria-label="Step 4"></button><button type="button" class="pdot" data-i="4" aria-label="Step 5"></button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="diff">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+    <div class="head">
+      <span class="eyebrow">The difference</span>
+      <h2 class="h2">What changes when you work with us</h2>
+    </div>
+    <div class="ba">
+      <div class="without">
+        <h3>Without Grow Your Proof</h3>
+        <p class="sub">Guesswork that costs you time and ad spend</p>
+        <ul>
+          <li><span class="qi" aria-hidden="true">?</span><span>Guessing which hooks work, with no time to test them</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>Ad budget burned on videos that don't convert</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>Weeks lost finding, briefing and chasing creators</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>The same few videos running until results drop</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>No idea which message actually drives downloads</span></li>
+        </ul>
+        <div class="mtiles">
+          <div class="mt"><span>Total views</span><b>909K</b></div>
+          <div class="mt"><span>Engagement rate</span><b>5.8%</b></div>
+          <div class="mt"><span>Installs</span><b>9,803</b></div>
+          <div class="mt"><span>Cost per install</span><b>$1.04</b></div>
+          <div class="mt wide"><span>Which hooks actually work?</span><b class="big unknown">Unknown</b></div>
+        </div>
+      </div>
+      <div class="with">
+        <h3>With Grow Your Proof</h3>
+        <p class="sub">A tested system that turns views into downloads</p>
+        <ul>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>5 hooks</b> tested per batch, then we scale the winners</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>3–7x ROAS</b> on client campaigns</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>First videos in <b>10 working days</b>, creators handled for you</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>12 fresh videos</b> every month, so your ads never go stale</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Built on what worked for <b>25+ AI &amp; tech apps</b>, by <b>10+ specialists</b></span></li>
+        </ul>
+        <div class="mtiles">
+          <div class="mt"><span>Total views</span><b>1.2M</b><em>+32%</em></div>
+          <div class="mt"><span>Engagement rate</span><b>6.8%</b><em>+18%</em></div>
+          <div class="mt"><span>Installs</span><b>12,450</b><em>+27%</em></div>
+          <div class="mt"><span>Cost per install</span><b>$0.82</b><em>−21%</em></div>
+          <div class="mt wide"><span>Ad spend managed</span><b class="big">$80K+</b>
+            <div class="mascot money" role="img" aria-label="Grow Your Proof tree holding a money bag"><img src="tree-cut.png" alt=""><svg viewBox="0 0 600 629" aria-hidden="true"><g transform="translate(-30 0)"><path d="M70 420 C 20 470, -10 560, 40 610 C 80 640, 200 640, 240 610 C 290 560, 260 470, 210 420 Z" fill="#E7B54A"/><path d="M95 380 L185 380 L170 425 L110 425 Z" fill="#D49A2E"/><path d="M100 425 Q 140 440 180 425" fill="none" stroke="#8A5A00" stroke-width="12" stroke-linecap="round"/><path d="M60 470 C 40 520, 50 570, 80 600" fill="none" stroke="#F6D58B" stroke-width="14" stroke-linecap="round" opacity=".8"/><text x="140" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="130" fill="#8A5A00">$</text></g></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="ba-note">Example from a client campaign, October 2024.</p>
+  </div>
+</section>
+
+<section class="band" id="reviews" hidden>
+  <div class="wrap">
+    <div class="wall2">
+      <div class="wall2-center">
+        <h2 class="wall2-title">What our clients <span>are saying</span></h2>
+        <a class="btn btn-dark" href="get-in-touch.html">Start working with us <span class="arrow">→</span></a>
+      </div>
+      <div class="rv-stat hide-sm" style="--x:23%;--y:21%;--r:5deg"><small>Apps helped</small><b>25+</b><svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4 L120 50 L0 50Z" fill="rgba(24,121,63,.14)"/><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4" fill="none" stroke="#18793F" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
+      <figure class="rv-msg dark" style="--x:2%;--y:2%;--r:-4deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+      <figure class="rv-msg" style="--x:1%;--y:27%;--r:1deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+      <div class="rv-phone hide-sm" style="--x:0%;--y:50%;--r:-6deg"><video src="ugc-2.mp4" poster="ugc-2.jpg" autoplay muted loop playsinline preload="none" aria-label="UGC example video"></video></div>
+      <figure class="rv-msg dark hide-sm" style="--x:6%;--y:53%;--r:-3deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+      <figure class="rv-msg hide-sm" style="--x:2%;--y:77%;--r:-3deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+      <figure class="rv-msg wide" style="--x:34%;--y:8%;--r:0deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span></div>
+      </figure>
+      <div class="rv-phone hide-sm" style="--x:55%;--y:69%;--r:3deg"><video src="ugc-3.mp4" poster="ugc-3.jpg" autoplay muted loop playsinline preload="none" aria-label="UGC example video"></video></div>
+      <figure class="rv-msg wide hide-sm" style="--x:31%;--y:74%;--r:2deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span></div>
+      </figure>
+      <div class="rv-phone hide-sm" style="--x:87%;--y:0%;--r:5deg"><video src="ugc-1.mp4" poster="ugc-1.jpg" autoplay muted loop playsinline preload="none" aria-label="UGC example video"></video></div>
+      <figure class="rv-msg" style="--x:63%;--y:7%;--r:3deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+      <figure class="rv-msg dark" style="--x:68%;--y:29%;--r:-4deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+      <div class="rv-stat hide-sm" style="--x:88%;--y:52%;--r:3deg"><small>Ad spend managed</small><b>$80K+</b><svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4 L120 50 L0 50Z" fill="rgba(24,121,63,.14)"/><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4" fill="none" stroke="#18793F" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
+      <figure class="rv-msg hide-sm" style="--x:66%;--y:53%;--r:-3deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+      <div class="rv-stat hide-sm" style="--x:87%;--y:77%;--r:5deg"><small>Client ROAS</small><b>3–7x</b><svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4 L120 50 L0 50Z" fill="rgba(24,121,63,.14)"/><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4" fill="none" stroke="#18793F" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
+      <figure class="rv-msg dark hide-sm" style="--x:65%;--y:76%;--r:0deg">
+        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
+        <blockquote>[Paste the real message from your client here]</blockquote>
+        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:56px">
+    <h2 class="faq-title">Frequently asked questions</h2>
+    <div class="faq">
+      <details class="fq" open><summary>What services does Grow Your Proof offer?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Everything an AI or tech app needs to grow with UGC: content ideas and scripts, hooks built to stop the scroll, creator sourcing and management, filming and editing, ad management on Meta and TikTok, App Store optimization and monthly performance reviews. One team handles it from the first idea to the ad that scales.</p></details>
+      <details class="fq"><summary>Why does UGC work so well for AI and tech apps?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>People trust people. A real person showing how an app fits into their day explains it faster and more convincingly than a polished brand video. That trust is what turns a view into a download, and it is why UGC usually outperforms classic ads for apps.</p></details>
+      <details class="fq"><summary>How do you find the right creators for my app?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>We match creators to your audience, niche and tone of voice. Every creator gets a clear brief and script, and we direct and manage them from first shoot to final edit, so you never have to chase anyone.</p></details>
+      <details class="fq"><summary>Do you also run our ads?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Yes. We launch your videos on Meta and TikTok, test different hooks against each other and scale the winners. You keep full control of your ad account and budget.</p></details>
+      <details class="fq"><summary>How do you measure results?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>We track the numbers that matter for your app: views, engagement, installs, cost per install and return on ad spend. Every month we walk you through what worked, what didn't and where we focus next.</p></details>
+      <details class="fq"><summary>Who owns the videos?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>You get the usage rights to use every video in your ads and on your own channels. We arrange this with the creators upfront, so you can use the content without surprises.</p></details>
+      <details class="fq"><summary>How fast can we get started?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>After a short discovery call we build your custom strategy plan. Your first videos are ready within 10 working days after kickoff.</p></details>
+      <details class="fq"><summary>Do you only work with AI apps?<span class="fx" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>We focus on AI and tech apps, because that is where we know what works. Building a different kind of app? Get in touch and we'll tell you honestly whether we're the right fit.</p></details>
+    </div>
+  </div>
+</section>
+
+<section style="padding-block:0 96px" id="book">
+  <div class="wrap">
+    <div class="cta">
+      <img src="logo.png" alt="">
+      <h2 class="h2" style="max-width:760px">Your first videos in 10 working days</h2>
+      <div class="three">
+        <div><b>1. Book a call</b><span>30 minutes about your app and goals.</span></div>
+        <div><b>2. Approve scripts</b><span>We send hooks and scripts to sign off.</span></div>
+        <div><b>3. Go live</b><span>Videos delivered, ads launched, testing starts.</span></div>
+      </div>
+      <div class="mail">
+        <span class="addr" id="addr">Partner@growyourproof.com</span>
+        <button class="btn btn-dark" id="copy" type="button">Copy email</button>
+      </div>
+      <div class="copied" id="copied" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <canvas class="skycv foot-sky" aria-hidden="true"></canvas>
+  <div class="wrap foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><img src="logo.png" alt=""><span>Grow Your Proof</span></a>
+        <p>At Grow Your Proof, we create marketing for AI and tech apps. In a crowded app store, trust and visibility decide who gets downloaded, and that is exactly what we build for you.</p>
+      </div>
+      <nav class="foot-col" aria-label="Main menu"><h4>Main menu</h4><a href="#top">Home</a><a href="#services">Services</a><a href="#process">How it works</a><a href="get-in-touch.html">Get in touch</a></nav>
+      <nav class="foot-col" aria-label="Other links"><h4>Other links</h4><a href="#faq">FAQ</a></nav>
+      <div class="foot-col contact"><h4>Contact us</h4>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Netherlands</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:Partner@growyourproof.com">Partner@growyourproof.com</a></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg><a href="tel:+31642563863">+31 6 42563863</a></span>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 All rights reserved by Grow Your Proof</span>
+      <div><a href="#">Terms &amp; Conditions</a><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// drifting clouds, drawn once per cloud into an offscreen canvas, then moved
+document.querySelectorAll('canvas.skycv').forEach(function(c){ if (!c.getContext) return;
+  var ctx = c.getContext('2d'), dpr = Math.min(window.devicePixelRatio || 1, 2), W = 0, H = 0, clouds = [];
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function rnd(a, b){ return a + Math.random() * (b - a); }
+  function makeCloud(w){
+    var h = w * 0.58, oc = document.createElement('canvas');
+    oc.width = Math.ceil(w * dpr); oc.height = Math.ceil(h * dpr);
+    var o = oc.getContext('2d'); o.scale(dpr, dpr);
+    var n = 10 + Math.floor(Math.random() * 5), puffs = [];
+    for (var i = 0; i < n; i++){
+      var t = i / (n - 1), arch = Math.sin(Math.PI * t);
+      puffs.push({ x: w * 0.14 + t * w * 0.72 + rnd(-.03, .03) * w,
+                   y: h * 0.70 - arch * h * 0.30 + rnd(-.04, .04) * h,
+                   r: w * (0.11 + 0.11 * arch) * rnd(.85, 1.15) });
+    }
+    puffs.sort(function(a, b){ return a.y - b.y; });
+    if ('filter' in o) o.filter = 'blur(1.2px)';
+    puffs.forEach(function(p){
+      var g = o.createRadialGradient(p.x - p.r * .3, p.y - p.r * .45, p.r * .1, p.x, p.y, p.r);
+      g.addColorStop(0, 'rgba(255,255,255,1)');
+      g.addColorStop(.62, 'rgba(250,252,255,.98)');
+      g.addColorStop(1, 'rgba(200,224,248,.92)');
+      o.fillStyle = g; o.beginPath(); o.arc(p.x, p.y, p.r, 0, Math.PI * 2); o.fill();
+    });
+    return { img: oc, w: w, h: h };
+  }
+  function layout(){
+    W = c.clientWidth; H = c.clientHeight; if (!W || !H) return;
+    c.width = Math.ceil(W * dpr); c.height = Math.ceil(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var specs = [[-.08,.10,.30],[.30,.00,.13],[.62,.16,.12],[.80,.06,.24],[.86,.30,.32],[-.12,.34,.36],[.02,.58,.26],[.72,.56,.30],[.38,.76,.30]];
+    clouds = specs.map(function(s){
+      var w = Math.max(150, W * s[2]), cl = makeCloud(w);
+      cl.x = s[0] * W; cl.y = s[1] * H; cl.v = rnd(.06, .14) * (w / 320); return cl;
+    });
+    draw();
+  }
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < clouds.length; i++){ var cl = clouds[i]; ctx.drawImage(cl.img, cl.x, cl.y, cl.w, cl.h); }
+  }
+  function tick(){
+    for (var i = 0; i < clouds.length; i++){ var cl = clouds[i]; cl.x += cl.v; if (cl.x > W + 40) cl.x = -cl.w - 40; }
+    draw(); requestAnimationFrame(tick);
+  }
+  layout();
+  var rt; addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(layout, 150); });
+  if (!still) requestAnimationFrame(tick);
+});
+
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // sticky nav border
+  var nav = document.getElementById('nav');
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 8); }, {passive:true});
+
+  // reveal on scroll: only for elements below the first screen, so the page is complete at rest
+  var targets = document.querySelectorAll('.head, .step, .svc, .proc, .ba > div, .quote, .plan, details, .cta, .three div');
+  var steps = document.getElementById('steps');
+  var proc = document.getElementById('proc');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:'0px 0px -40px 0px'});
+    var fold = innerHeight;
+    targets.forEach(function(el){
+      var parent = el.parentElement, idx = Array.prototype.indexOf.call(parent.children, el);
+      if (el.getBoundingClientRect().top > fold) {
+        el.classList.add('rv');
+        el.style.transitionDelay = (Math.max(0, idx - 1) % 6) * 0.08 + 's';
+        io.observe(el);
+      }
+    });
+    [steps, proc, document.getElementById('whyvis')].forEach(function(el){ if (el) io.observe(el); });
+  } else {
+    if (steps) steps.classList.add('in'); if (proc) proc.classList.add('in');
+  }
+
+  if (reduce) return;
+
+  // count up numbers when they scroll into view
+  var counts = document.querySelectorAll('.count[data-to]');
+  if ('IntersectionObserver' in window) {
+    var co = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        var el = e.target, to = parseFloat(el.getAttribute('data-to')), t0 = performance.now(), dur = 1400;
+        (function step(now){
+          var p = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 3)));
+          el.textContent = v.toLocaleString('en-US');
+          if (p < 1) requestAnimationFrame(step);
+        })(t0);
+      });
+    }, {threshold:.6});
+    counts.forEach(function(el){ if (el.getBoundingClientRect().top > innerHeight) { el.textContent = '0'; co.observe(el); } });
+  }
+
+})();
+
+// before/after: scroll progress drives the "with" card forward
+(function(){
+  var sec = document.getElementById('diff'); if (!sec) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var ticking = false;
+  function upd(){
+    ticking = false;
+    var r = sec.getBoundingClientRect(), vh = innerHeight;
+    var p = (vh - r.top) / (vh * 0.75);
+    p = Math.max(0, Math.min(1, p));
+    sec.style.setProperty('--p', p.toFixed(3));
+  }
+  addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(upd); } }, {passive:true});
+  addEventListener('resize', upd);
+  upd();
+})();
+
+// scaling plan: pick the active step from scroll position
+(function(){
+  var track = document.getElementById('plantrack'); if (!track) return;
+  var steps = track.querySelectorAll('.pstep'), dots = track.querySelectorAll('.pdot'), cur = 0;
+  var mq = window.matchMedia('(min-width:900px) and (prefers-reduced-motion: no-preference)');
+  function set(i){
+    if (i === cur) return; cur = i;
+    steps.forEach(function(el, k){ el.classList.toggle('active', k === i); });
+    dots.forEach(function(el, k){ el.classList.toggle('on', k === i); });
+  }
+  function upd(){
+    if (!mq.matches) return;
+    var r = track.getBoundingClientRect(), span = track.offsetHeight - innerHeight;
+    var p = Math.max(0, Math.min(0.9999, -r.top / span));
+    set(Math.floor(p * steps.length));
+  }
+  var t = false;
+  addEventListener('scroll', function(){ if (!t){ t = true; requestAnimationFrame(function(){ t = false; upd(); }); } }, {passive:true});
+  addEventListener('resize', upd);
+  dots.forEach(function(d){
+    d.addEventListener('click', function(){
+      var i = +d.getAttribute('data-i'), span = track.offsetHeight - innerHeight;
+      var top = track.getBoundingClientRect().top + scrollY + span * (i + 0.5) / steps.length;
+      scrollTo({ top: top, behavior: 'smooth' });
+    });
+  });
+  upd();
+})();
+
+// copy email
+document.getElementById('copy').addEventListener('click', function(){
+  var text = document.getElementById('addr').textContent;
+  var msg = document.getElementById('copied');
+  function sel(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('addr')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); msg.textContent = 'Selected. Press Ctrl+C or Cmd+C to copy.'; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){ msg.textContent = 'Email copied'; }, sel);
+  } else { sel(); }
+});
+</script>
+
+</body>
+</html>
