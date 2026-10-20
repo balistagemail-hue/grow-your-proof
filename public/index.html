@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
 <link rel="icon" href="logo.png">
 <title>Grow Your Proof</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -22,22 +23,9 @@
   --display:'Sora','Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif;
   --edge:rgba(24,121,63,.32);
   --sky-soft:#F1F7FE;
+  color-scheme:light;
   --grey-bg:#F3F4F3;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#0F1712; --card:#16211A; --soft:#1A2820; --line:#26362C;
-  --ink:#EEF3EF; --muted:#B5C2B9; --faint:#98A69D;
-  --green:#5FCB8A; --green-ink:#8FE0AE; --mint:#1D3A28; --cream:#2A2618; --pink:#33202A;
-  --band:#0A110C; --band-fg:#EEF3EF; --band-muted:#A9B8AE; --band-accent:#8FE0AE;
-  --amber-bg:#3A2E10; --amber-fg:#F2C661; --rose-fg:#F4A9C8;
-  --shadow:0 24px 48px rgba(0,0,0,.35); --edge:rgba(95,203,138,.35); --sky-soft:#111C27; --grey-bg:#1A221D; color-scheme:dark }}
-:root[data-theme="dark"]{
-  --paper:#0F1712; --card:#16211A; --soft:#1A2820; --line:#26362C;
-  --ink:#EEF3EF; --muted:#B5C2B9; --faint:#98A69D;
-  --green:#5FCB8A; --green-ink:#8FE0AE; --mint:#1D3A28; --cream:#2A2618; --pink:#33202A;
-  --band:#0A110C; --band-fg:#EEF3EF; --band-muted:#A9B8AE; --band-accent:#8FE0AE;
-  --amber-bg:#3A2E10; --amber-fg:#F2C661; --rose-fg:#F4A9C8;
-  --shadow:0 24px 48px rgba(0,0,0,.35); --edge:rgba(95,203,138,.35); --sky-soft:#111C27; --grey-bg:#1A221D; color-scheme:dark }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -58,8 +46,6 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 28px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s;border:1.5px solid transparent;cursor:pointer;font-family:inherit}
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 24px rgba(24,121,63,.28)}
-:root[data-theme="dark"] .btn-primary{color:#0F1712}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn-primary{color:#0F1712}}
 .btn-ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
 .btn-dark{background:var(--ink);color:var(--paper)}
 .btn .arrow{transition:transform .25s}
