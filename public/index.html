@@ -41,7 +41,7 @@
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--font);overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--font);overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
 a{color:var(--green)}
 :focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:8px}
@@ -557,6 +557,39 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   .wall2-center{position:static;margin-bottom:20px}
   .rv-msg,.rv-msg.wide{position:static;width:100%;transform:none}
   .hide-sm{display:none}
+}
+
+/* phone layout fixes */
+@media (max-width:720px){
+  .navpill{flex-wrap:nowrap;padding:8px 8px 8px 12px}
+  .nav .brand{font-size:16px;gap:8px;white-space:nowrap}
+  .nav .brand img{width:32px;height:32px}
+  .links .btn{min-height:40px;padding:0 16px;font-size:14px;white-space:nowrap}
+  .band{padding-block:56px}
+  .hero{padding-block:112px 32px}
+  .hero .wrap{gap:18px}
+  .hero .stage{padding:24px 16px;gap:8px;margin-top:16px}
+  .phones{order:-1}
+  .about{gap:14px}
+  .stats{margin-top:0}
+  #why{padding-block:40px 64px}
+  .why{gap:32px}
+  .splan{padding-block:56px 16px}
+  .plan-steps{gap:40px}
+  #diff .ba>div{padding:28px 20px}
+  .mt{grid-template-columns:1fr}
+  .mt em{justify-self:start}
+  .mt.wide{padding-right:110px;min-height:120px}
+  .mt .mascot.money{width:84px;right:10px}
+  footer.foot{padding-block:96px 28px}
+}
+@media (max-width:899px){
+  .pstep{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+  .pstep .ptext{display:contents}
+  .pstep .pvis{order:1;width:100%;margin:4px 0}
+  .pstep .ptext .btn{order:2}
+  .pstep .mascot{order:3;margin-top:0}
+  .pframe{max-width:100%}
 }
 
 /* three overlapping phones, middle one in front */
