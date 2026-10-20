@@ -10,13 +10,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Grow Your Proof | Websites That Turn Visitors Into Customers",
+  title: "Grow Your Proof | UGC & Growth Marketing for AI and Tech Apps",
   description:
-    "We build premium, high-converting websites for ambitious businesses that want more leads, stronger trust, and faster growth.",
-  icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-  },
+    "UGC and growth marketing for AI and tech apps. Real creators, tested hooks and ads that turn views into downloads.",
 };
 
 export default function RootLayout({
