@@ -97,6 +97,8 @@ a{color:var(--green)}
   .card-top{padding:20px 20px 0}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+.legal{margin:14px 0 0 44px;font-size:14px;color:var(--faint)}
+@media (max-width:640px){.legal{margin-left:0}}
 </style>
 </head>
 <body>
@@ -189,6 +191,7 @@ a{color:var(--green)}
         <div class="fields" style="margin-top:22px"><div class="field"><label for="f-notes">Anything that helps us prepare?</label><textarea id="f-notes" name="notes" placeholder="Goals, current results, links to ads you like…"></textarea></div></div>
         <div class="err" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17v.01"/></svg><span id="send-err">Something went wrong. Please email us at Partner@growyourproof.com.</span></div>
         <div class="actions"><button type="submit" class="ok" id="send">Send &amp; choose a time</button></div>
+        <p class="legal">By sending this form you agree to our <a href="privacy-policy" target="_blank">privacy policy</a>.</p>
       </section>
 
       <section class="q done" data-step="6" data-type="done">
