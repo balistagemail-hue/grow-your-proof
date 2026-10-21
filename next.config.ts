@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
         { source: "/privacy-policy", destination: "/privacy-policy.html" },
         { source: "/cookie-policy", destination: "/cookie-policy.html" },
         { source: "/terms-and-conditions", destination: "/terms-and-conditions.html" },
+        { source: "/signature", destination: "/signature.html" },
       ],
       afterFiles: [],
       fallback: [],
