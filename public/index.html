@@ -1178,8 +1178,9 @@ document.querySelectorAll('canvas.skycv').forEach(function(c){ if (!c.getContext
     ticking = false;
     var ba = sec.querySelector('.ba') || sec;
     var r = ba.getBoundingClientRect(), vh = innerHeight;
-    // stays 0 while both cards are being read; starts once their bottom edge is on screen
-    var p = (vh * 0.95 - r.bottom) / (vh * 0.45);
+    // stays 0 until the middle of the cards reaches the middle of the screen
+    var mid = r.top + r.height / 2;
+    var p = (vh * 0.5 - mid) / (vh * 0.35);
     p = Math.max(0, Math.min(1, p));
     p = p * p * (3 - 2 * p);
     sec.style.setProperty('--p', p.toFixed(3));
