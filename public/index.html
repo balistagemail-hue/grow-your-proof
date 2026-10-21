@@ -620,17 +620,15 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 .team-serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-size:clamp(34px,4.2vw,56px);line-height:1;color:var(--green);margin-top:-4px}
 .team-marquee{overflow:hidden;padding-block:16px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .team-track{display:flex;width:max-content;animation:scroll 40s linear infinite}
-.team-marquee:hover .team-track{animation-play-state:paused}
-.team-set{display:flex;gap:20px;padding-right:20px}
-.tm{margin:0;width:260px;flex:none;background:#fff;border:1.5px solid rgba(255,255,255,.9);border-radius:22px;padding:12px 12px 18px;box-shadow:0 14px 34px rgba(30,70,120,.10);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
-.tm:hover{transform:translateY(-8px) scale(1.05);box-shadow:0 26px 50px rgba(30,70,120,.20)}
-.tm-img{border-radius:14px;overflow:hidden;aspect-ratio:4/5;background:#CFE5FA}
-.tm-img img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.tm:hover .tm-img img{transform:scale(1.04)}
-.tm figcaption{display:flex;flex-direction:column;gap:2px;padding:14px 6px 0}
-.tm b{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:26px;line-height:1.1;color:#0B1220}
-.tm span{font-size:16px;color:#2B3A4A}
-@media (max-width:720px){.team{padding-block:48px 56px}.tm{width:200px}.tm b{font-size:22px}.tm span{font-size:14px}}
+.team-set{display:flex;gap:16px;padding-right:16px}
+.tm{margin:0;width:200px;flex:none;background:#fff;border:1.5px solid rgba(255,255,255,.9);border-radius:18px;padding:10px 10px 14px;box-shadow:0 10px 26px rgba(30,70,120,.08)}
+.tm-img{border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:#CFE5FA}
+.tm-img img{display:block;width:100%;height:100%;object-fit:cover;transform-origin:50% 35%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tm:hover .tm-img img{transform:scale(1.12)}
+.tm figcaption{display:flex;flex-direction:column;gap:2px;padding:12px 4px 0}
+.tm b{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:22px;line-height:1.1;color:#0B1220}
+.tm span{font-size:14px;color:#2B3A4A}
+@media (max-width:720px){.team{padding-block:48px 56px}.tm{width:160px}.tm b{font-size:19px}.tm span{font-size:13px}}
 @media (prefers-reduced-motion: reduce){.team-track{animation:none}.team-marquee{overflow-x:auto}}
 
 /* three overlapping phones, middle one in front */
