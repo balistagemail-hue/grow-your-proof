@@ -370,6 +370,7 @@ section[id]{scroll-margin-top:96px}
 @media (min-width:901px) and (prefers-reduced-motion: no-preference){
   #diff .ba{position:relative}
   #diff .ba>div{transition:opacity .4s ease}
+  #diff{padding-bottom:max(96px,45vh)}
   #diff .without{position:relative;z-index:1;transform:translateX(calc(var(--p,0) * (50% + 14px))) scale(calc(1 - var(--p,0) * .12));opacity:calc(1 - var(--p,0) * 1.15);will-change:transform,opacity}
   #diff .with{transform:translateX(calc(var(--p,0) * (-50% - 14px))) scale(calc(1 + var(--p,0) * .03));box-shadow:0 calc(var(--p,0) * 30px) calc(var(--p,0) * 60px) rgba(24,121,63,calc(var(--p,0) * .18));will-change:transform}
 }
@@ -1177,8 +1178,8 @@ document.querySelectorAll('canvas.skycv').forEach(function(c){ if (!c.getContext
     ticking = false;
     var ba = sec.querySelector('.ba') || sec;
     var r = ba.getBoundingClientRect(), vh = innerHeight;
-    // 0 when the cards enter the screen, 1 when their top reaches the upper quarter
-    var p = (vh * 0.85 - r.top) / (vh * 0.6);
+    // stays 0 while both cards are being read; starts once their bottom edge is on screen
+    var p = (vh * 0.95 - r.bottom) / (vh * 0.45);
     p = Math.max(0, Math.min(1, p));
     p = p * p * (3 - 2 * p);
     sec.style.setProperty('--p', p.toFixed(3));
