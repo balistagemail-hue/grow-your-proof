@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
         { source: "/cookie-policy", destination: "/cookie-policy.html" },
         { source: "/terms-and-conditions", destination: "/terms-and-conditions.html" },
         { source: "/signature", destination: "/signature.html" },
+        { source: "/signature-bs", destination: "/signature-bs.html" },
       ],
       afterFiles: [],
       fallback: [],
