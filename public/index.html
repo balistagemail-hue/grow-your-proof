@@ -750,47 +750,80 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 @media (max-width:640px){.vspend{padding:3.4cqw;border-radius:3cqw}.vspend span{font-size:max(11px,3cqw)}.vspend b{font-size:max(20px,6cqw)}.vsearch{font-size:max(13px,3.8cqw);padding:2.6cqw 4cqw}.vnone{font-size:max(12px,3.4cqw);padding:2cqw 0}.vnone b{font-size:max(30px,11cqw)}}
 .vplayer{aspect-ratio:4/3!important}
 .vsc{inset:0 0 34cqw 0!important}
-.vmas{position:absolute;left:5cqw;bottom:13cqw;width:19cqw;height:19cqw;z-index:2;pointer-events:none}
-.mbody{width:100%;height:100%;transform-origin:50% 100%}
-.mbody img{width:100%;height:100%;display:block;filter:drop-shadow(0 .8cqw 1cqw rgba(0,0,0,.35))}
-.macc,.mdol{position:absolute;opacity:0;transition:opacity .3s}
-.macc{width:55%;height:55%}
-.mdol{font-family:var(--display);font-weight:800;color:#FF8A7A;font-size:max(14px,3.4cqw)}
-.mag{left:55%;top:8%;transform-origin:20% 20%}
-.pen{left:58%;top:22%;transform-origin:20% 90%}
-.clip{left:58%;top:22%}
-.meg{left:58%;top:10%;transform-origin:10% 50%}
+.vmas{position:absolute;left:3cqw;bottom:11cqw;width:24cqw;height:24cqw;z-index:2;pointer-events:none}
+.vmas svg{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 .8cqw 1cqw rgba(0,0,0,.35))}
+.vmas svg *{transform-box:view-box}
+.m-root{transform-origin:256px 480px}
+.m-body{transform-origin:256px 470px;animation:mbreath 3.2s ease-in-out infinite}
+.m-armL{transform-origin:214px 412px}.m-armR{transform-origin:304px 412px}
+.m-eye{transform-box:fill-box!important;transform-origin:center;animation:mblink 4.4s infinite}
+.m-eye.e2{animation-delay:.08s}
+.m-look{animation:mglance 7s ease-in-out infinite}
+.m-smile{transform-box:fill-box!important;transform-origin:center}
+.macc,.mdol{opacity:0;transition:opacity .3s}
+.macc{transform-box:view-box}
+.mdol{position:absolute;font-family:var(--display);font-weight:800;color:#FF8A7A;font-size:max(14px,3.4cqw)}
+.mdol.d1{left:62%;top:18%}.mdol.d2{left:80%;top:38%}.mdol.d3{left:50%;top:46%}
 .vplayer[data-sc="2"] .mag,.vplayer[data-sc="4"] .mag,.vplayer[data-sc="5"] .pen,.vplayer[data-sc="6"] .clip,.vplayer[data-sc="7"] .meg{opacity:1}
-.vplayer[data-sc="0"] .mdol,.vplayer[data-sc="1"] .mdol{opacity:1}
-.vplayer[data-sc="0"] .mbody{animation:mworry .35s ease-in-out infinite}
-.vplayer[data-sc="1"] .mbody{animation:msad 2.4s ease-in-out infinite}
-.vplayer[data-sc="2"] .mbody{animation:msway 2.6s ease-in-out infinite}
-.vplayer[data-sc="3"] .mbody,.vplayer[data-sc="4"] .mbody,.vplayer[data-sc="7"] .mbody{animation:mhop .9s ease-in-out infinite}
-.vplayer[data-sc="5"] .mbody{animation:msway 1.6s ease-in-out infinite}
-.vplayer[data-sc="6"] .mbody{animation:mnod 1.3s ease-in-out infinite}
-.vplayer[data-sc="8"] .mbody{animation:mbig 1.2s ease-in-out infinite}
-.vplayer[data-sc="2"] .mag{animation:msearch 2.6s ease-in-out infinite}
-.vplayer[data-sc="4"] .mag{animation:msearch .9s ease-in-out infinite}
-.vplayer[data-sc="5"] .pen{animation:mwrite .5s ease-in-out infinite}
-.vplayer[data-sc="7"] .meg{animation:mshout .9s ease-in-out infinite}
-.mdol.d1{left:70%;top:20%}.mdol.d2{left:88%;top:40%}.mdol.d3{left:60%;top:50%}
-.vplayer[data-sc="0"] .mdol,.vplayer[data-sc="1"] .mdol{animation:mfly 1.8s ease-in infinite}
+.vplayer[data-sc="0"] .mdol,.vplayer[data-sc="1"] .mdol{opacity:1;animation:mfly 1.8s ease-in infinite}
 .mdol.d2{animation-delay:.6s!important}.mdol.d3{animation-delay:1.2s!important}
-@keyframes mhop{0%,100%{transform:translateY(0) scale(1.06,.92)}40%{transform:translateY(-38%) scale(.94,1.08)}70%{transform:translateY(0) scale(1.04,.95)}}
-@keyframes mbig{0%,100%{transform:translateY(0) rotate(0) scale(1.05,.93)}35%{transform:translateY(-45%) rotate(-10deg) scale(.94,1.08)}65%{transform:translateY(-30%) rotate(10deg)}}
-@keyframes mworry{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
-@keyframes msad{0%,100%{transform:rotate(-8deg) scale(.95) translateY(3%)}50%{transform:rotate(-5deg) scale(.97) translateY(0)}}
+.vplayer[data-sc="8"] .vmas{opacity:0}
+.vplayer[data-sc="8"] .vsc{inset:0 0 14cqw 0!important}
+.vplayer[data-sc="0"] .m-root{animation:mworry .3s ease-in-out infinite}
+.vplayer[data-sc="1"] .m-root{animation:msad 2.4s ease-in-out infinite}
+.vplayer[data-sc="2"] .m-root{animation:msway 2.4s ease-in-out infinite}
+.vplayer[data-sc="3"] .m-root,.vplayer[data-sc="7"] .m-root{animation:mhop .85s ease-in-out infinite}
+.vplayer[data-sc="4"] .m-root{animation:mhopx 1.7s ease-in-out infinite}
+.vplayer[data-sc="5"] .m-root{animation:msway 1.5s ease-in-out infinite}
+.vplayer[data-sc="6"] .m-root{animation:mnod 1.3s ease-in-out infinite}
+.vplayer[data-sc="1"] .m-smile{transform:scaleY(-1) translateY(-38px)}
+.vplayer[data-sc="0"] .m-armL,.vplayer[data-sc="0"] .m-armR{animation:mflail .22s ease-in-out infinite alternate}
+.vplayer[data-sc="1"] .m-armL{transform:rotate(-16deg)}.vplayer[data-sc="1"] .m-armR{transform:rotate(16deg)}
+.vplayer[data-sc="2"] .m-armL,.vplayer[data-sc="3"] .m-armL,.vplayer[data-sc="4"] .m-armL,.vplayer[data-sc="7"] .m-armL{animation:mwaveL .85s ease-in-out infinite}
+.vplayer[data-sc="3"] .m-armR{animation:mwaveR .85s ease-in-out infinite}
+.vplayer[data-sc="5"] .m-armR{animation:mwriteArm .5s ease-in-out infinite}
+.vplayer[data-sc="6"] .m-armR{animation:mhold 1.3s ease-in-out infinite}
+.vplayer[data-sc="7"] .m-armR{animation:mshoutArm .85s ease-in-out infinite}
+.vplayer[data-sc="2"] .m-armR,.vplayer[data-sc="4"] .m-armR{animation:msearchArm 1.6s ease-in-out infinite}
+.vplayer[data-sc="2"] .m-look,.vplayer[data-sc="4"] .m-look{animation:mscan 1.4s ease-in-out infinite}
+.vplayer[data-sc="3"] .m-eye{animation:mhappy 4.4s infinite}
+@keyframes mbreath{0%,100%{transform:scale(1,1)}50%{transform:scale(1.025,.975)}}
+@keyframes mblink{0%,90%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+@keyframes mglance{0%,40%,100%{transform:translate(0,0)}50%,60%{transform:translate(-7px,2px)}75%,85%{transform:translate(8px,-2px)}}
+@keyframes mscan{0%,100%{transform:translate(-9px,2px)}50%{transform:translate(9px,-1px)}}
+@keyframes mhappy{0%,90%,100%{transform:scaleY(.72)}94%{transform:scaleY(.08)}}
+@keyframes mhop{0%,100%{transform:translateY(0) scale(1.08,.9)}25%{transform:translateY(-14%) scale(.95,1.07) rotate(-3deg)}45%{transform:translateY(-34%) scale(.93,1.1) rotate(3deg)}70%{transform:translateY(0) scale(1.08,.9)}85%{transform:translateY(-4%) scale(1,1)}}
+@keyframes mhopx{0%{transform:translate(0,0) scale(1.08,.9)}20%{transform:translate(8%,-30%) scale(.94,1.08) rotate(5deg)}40%{transform:translate(16%,0) scale(1.08,.9)}60%{transform:translate(8%,-30%) scale(.94,1.08) rotate(-5deg)}80%,100%{transform:translate(0,0) scale(1.08,.9)}}
+@keyframes mworry{0%,100%{transform:rotate(-5deg) translateX(-1%)}50%{transform:rotate(5deg) translateX(1%)}}
+@keyframes msad{0%,100%{transform:rotate(-8deg) scale(.95) translateY(3%)}50%{transform:rotate(-4deg) scale(.97,.95) translateY(5%)}}
 @keyframes msway{0%,100%{transform:rotate(-6deg) translateX(-4%)}50%{transform:rotate(6deg) translateX(4%)}}
-@keyframes mnod{0%,100%{transform:rotate(0) translateY(0)}30%{transform:rotate(6deg) translateY(4%)}60%{transform:rotate(-3deg)}}
-@keyframes msearch{0%,100%{transform:translate(-30%,0) rotate(-14deg)}50%{transform:translate(35%,12%) rotate(16deg)}}
-@keyframes mwrite{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(12%,-6%) rotate(6deg)}}
-@keyframes mshout{0%,100%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.18) rotate(6deg)}}
+@keyframes mnod{0%,100%{transform:rotate(0) translateY(0)}30%{transform:rotate(7deg) translateY(5%)}60%{transform:rotate(-3deg)}}
+@keyframes mwaveL{0%,100%{transform:rotate(0)}50%{transform:rotate(55deg)}}
+@keyframes mwaveR{0%,100%{transform:rotate(0)}50%{transform:rotate(-55deg)}}
+@keyframes mflail{from{transform:rotate(-30deg)}to{transform:rotate(30deg)}}
+@keyframes msearchArm{0%,100%{transform:rotate(4deg)}50%{transform:rotate(-24deg)}}
+@keyframes mwriteArm{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(12deg)}}
+@keyframes mhold{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(-4deg)}}
+@keyframes mshoutArm{0%,100%{transform:rotate(-16deg)}50%{transform:rotate(-34deg)}}
 @keyframes mfly{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(70%,-130%) rotate(25deg);opacity:0}}
+.vlogo{display:flex;align-items:center;gap:1.6cqw;margin-top:.6cqw;position:relative}
+.vlogo img{width:max(44px,9cqw);height:max(44px,9cqw)}
+.vlogo span{font-family:var(--display);font-weight:800;font-size:max(20px,5.2cqw);letter-spacing:-.03em}
+.vlogo::after{content:"";position:absolute;left:0;top:50%;width:max(44px,9cqw);height:max(44px,9cqw);margin-top:calc(max(44px,9cqw)/-2);border-radius:50%;border:3px solid var(--band-accent);opacity:0}
+.vsc.on .vtx>.vlogo{animation:vpop .8s 6.86s cubic-bezier(.2,1.6,.4,1) both}
+.vsc.on .vtx>.vlogo img{animation:mhop .9s 6.86s ease-in-out 3}
+.vsc.on .vtx>.vlogo::after{animation:vring 1s 6.86s ease-out both}
+.vsc.on .vtx>.vcta,.vsc.on .vtx>.vurl{animation:vrise .6s cubic-bezier(.2,.8,.2,1) both}
+.vsc.on .vtx>.vcta{animation-delay:7.5s}.vsc.on .vtx>.vurl{animation-delay:7.8s}
+.vurl{font-size:max(11px,1.8cqw);color:var(--band-muted);font-weight:600;margin:0}
+@keyframes vpop{0%{opacity:0;transform:scale(.3) rotate(-8deg)}100%{opacity:1;transform:none}}
+@keyframes vring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(3.2)}}
 @media (max-width:640px){
   .vplayer{aspect-ratio:5/8!important}
   .vsc{inset:0 0 46cqw 0!important}
-  .vmas{width:26cqw;height:26cqw;left:5cqw;bottom:17cqw}
+  .vmas{width:32cqw;height:32cqw;left:3cqw;bottom:15cqw}
   .mdol{font-size:max(16px,5cqw)}
+  .vlogo img{width:max(48px,16cqw);height:max(48px,16cqw)}.vlogo span{font-size:max(22px,8cqw)}.vurl{font-size:max(12px,3.4cqw)}
 }
 @media (prefers-reduced-motion:reduce){.vmas *{animation:none!important}}
 @media (prefers-reduced-motion:reduce){.vsc.on .vtx>*,.vsc.on .vvis>*,.vsc.on .vchart .bar,.vsc.on .vchart .best-tag{animation:none;opacity:1;transform:none}}
@@ -900,7 +933,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
         <div class="vtx"><small>The problem</small><h4>And most of it just <em>disappears.</em></h4><p>Nobody knows what actually works.</p></div>
         <div class="vvis"><div class="chip bad">No clear strategy</div><div class="chip bad">No idea which videos work</div><div class="chip bad">No way to see what pays off</div><div class="chip bad">Money gone, no growth</div></div>
       </div>
-      <div class="vsc" data-d="6">
+      <div class="vsc" data-d="6.0">
         <div class="vtx"><small>The problem</small><h4>Or they don't know how to get <em>found online.</em></h4><p>A great product, and nobody sees it.</p></div>
         <div class="vvis"><div class="vsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>your brand</span></div><div class="vnone"><b>0</b> people found you today</div></div>
       </div>
@@ -912,7 +945,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
         <div class="vtx"><small>Step 1</small><h4>We find <em>your creators.</em></h4><p>Real people who fit your audience. We brief them and direct every shoot.</p></div>
         <div class="vvis"><div class="vcard"><b>1</b>We find the creators<span>sourced</span></div><div class="vcard"><b>2</b>We brief them<span>managed</span></div><div class="vcard"><b>3</b>We direct every shoot<span>approved</span></div></div>
       </div>
-      <div class="vsc" data-d="6">
+      <div class="vsc" data-d="6.0">
         <div class="vtx"><small>Step 2</small><h4>We write <em>every script.</em></h4><p>Hooks built to stop the scroll in the first three seconds.</p></div>
         <div class="vvis"><div class="vscript"><span class="tag">HOOK</span><div class="hk">“Nobody tells you this about growing an app…”</div><div class="ln" style="width:92%"></div><div class="ln" style="width:78%"></div><div class="ln" style="width:60%"></div></div></div>
       </div>
@@ -924,20 +957,41 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
         <div class="vtx"><small>Step 4</small><h4>Best videos become <em>ads.</em></h4><p>We put the winners behind a budget on Meta and TikTok, so they reach even more people.</p></div>
         <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:22%"></div><div class="bar" style="height:36%"></div><div class="bar" style="height:54%"></div><div class="bar" style="height:76%"></div><div class="bar best" style="height:98%"></div></div><div class="vcap">More reach, more installs, every week</div></div>
       </div>
-      <div class="vsc center" data-d="7.2">
-        <div class="vtx"><small>Grow Your Proof</small><h4>More visibility. <em>Zero hassle.</em></h4><p>We handle the whole social media side.</p><span class="vcta">Get in touch</span></div>
+      <div class="vsc center" data-d="9.6">
+        <div class="vtx"><h4>More visibility. <em>Zero hassle.</em></h4><div class="vlogo"><img src="icon-512.png" alt=""><span>Grow Your Proof</span></div><span class="vcta">Get in touch</span><p class="vurl">growyourproof.com</p></div>
       </div>
       <div class="vmas" aria-hidden="true">
         <span class="mdol d1">$</span><span class="mdol d2">$</span><span class="mdol d3">$</span>
-        <div class="mbody"><img src="icon-512.png" alt="" width="512" height="512"></div>
-        <svg class="macc mag" viewBox="0 0 64 64" fill="none" stroke-linecap="round"><circle cx="26" cy="26" r="16" fill="rgba(255,255,255,.55)" stroke="#14231A" stroke-width="5"/><path d="M38 38l18 18" stroke="#8B5A2B" stroke-width="8"/></svg>
-        <svg class="macc pen" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 52l4-14L44 10l10 10-28 28z" fill="#FFD36E" stroke="#14231A" stroke-width="4"/><path d="M12 52l4-14 10 10z" fill="#F7DDEA" stroke="#14231A" stroke-width="4"/></svg>
-        <svg class="macc clip" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="44" height="52" rx="6" fill="#fff" stroke="#14231A" stroke-width="4"/><path d="M20 46V36M30 46V26M40 46V32" stroke="#18793F" stroke-width="6"/></svg>
-        <svg class="macc meg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 26h12l22-12v36L20 38H8z" fill="#8FE0AE" stroke="#14231A" stroke-width="4"/><path d="M50 22c4 4 4 16 0 20M56 16c8 8 8 24 0 32" stroke="#8FE0AE" stroke-width="4"/></svg>
+        <svg viewBox="0 0 512 512" overflow="visible">
+          <g class="m-root">
+            <g class="m-body">
+              <image href="tree-blank.png" x="0" y="0" width="512" height="512"/>
+              <g class="m-face">
+                <ellipse cx="160" cy="262" rx="26" ry="14" fill="#FF8FA8" opacity=".38"/><ellipse cx="372" cy="226" rx="26" ry="14" fill="#FF8FA8" opacity=".38"/>
+                <g class="m-look">
+                  <g class="m-eye"><ellipse cx="203" cy="201" rx="23" ry="30" fill="#141414"/><circle cx="192" cy="190" r="8" fill="#fff"/><circle cx="212" cy="214" r="3.5" fill="#fff"/></g>
+                  <g class="m-eye e2"><ellipse cx="331" cy="167" rx="23" ry="30" fill="#141414"/><circle cx="320" cy="156" r="8" fill="#fff"/><circle cx="340" cy="180" r="3.5" fill="#fff"/></g>
+                </g>
+                <g class="m-mouth">
+                  <path class="m-smile" id="vsmile" d="M226 236Q281 284 337 228" stroke="#141414" stroke-width="13" stroke-linecap="round" fill="none"/>
+                  <ellipse id="vmouth" cx="281" cy="246" rx="31" ry="2" fill="#2B0E14" opacity="0"/>
+                  <ellipse id="vtongue" cx="281" cy="258" rx="17" ry="0" fill="#FF7A8C"/>
+                </g>
+              </g>
+            </g>
+            <g class="m-armL"><path d="M214 412C182 400 152 394 120 400" stroke="#6B3A18" stroke-width="27" stroke-linecap="round" fill="none"/><path d="M214 412C182 400 152 394 120 400" stroke="#B8703F" stroke-width="17" stroke-linecap="round" fill="none"/><circle cx="112" cy="401" r="21" fill="#B8703F" stroke="#6B3A18" stroke-width="5"/></g>
+            <g class="m-armR"><path d="M304 412C336 400 366 394 398 400" stroke="#6B3A18" stroke-width="27" stroke-linecap="round" fill="none"/><path d="M304 412C336 400 366 394 398 400" stroke="#B8703F" stroke-width="17" stroke-linecap="round" fill="none"/><circle cx="406" cy="401" r="21" fill="#B8703F" stroke="#6B3A18" stroke-width="5"/>
+              <g class="macc mag" transform="translate(398 372)"><g class="acc-in"><circle cx="30" cy="-20" r="34" fill="rgba(255,255,255,.55)" stroke="#14231A" stroke-width="9"/><path d="M6 6L-24 44" stroke="#8B5A2B" stroke-width="14" stroke-linecap="round"/></g></g>
+              <g class="macc pen" transform="translate(400 392)"><g class="acc-in"><path d="M-6 52l8-28 52-52 20 20-52 52z" fill="#FFD36E" stroke="#14231A" stroke-width="7" stroke-linejoin="round"/><path d="M-6 52l8-28 20 20z" fill="#F7DDEA" stroke="#14231A" stroke-width="7" stroke-linejoin="round"/></g></g>
+              <g class="macc clip" transform="translate(392 325)"><g class="acc-in"><rect x="0" y="0" width="84" height="100" rx="12" fill="#fff" stroke="#14231A" stroke-width="7"/><path d="M20 82V62M42 82V38M64 82V54" stroke="#18793F" stroke-width="11" stroke-linecap="round"/></g></g>
+              <g class="macc meg" transform="translate(400 352)"><g class="acc-in"><path d="M0 16h22l40-22v70L22 40H0z" fill="#8FE0AE" stroke="#14231A" stroke-width="7" stroke-linejoin="round"/><path d="M76 8c8 8 8 30 0 38M88 -4c16 16 16 54 0 70" stroke="#8FE0AE" stroke-width="7" stroke-linecap="round" fill="none"/></g></g>
+            </g>
+          </g>
+        </svg>
       </div>
       <audio id="vaud" src="voice.m4a" preload="metadata"></audio>
       <button type="button" class="vbig" id="vbig" aria-label="Play video with sound"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></b><span>Play with sound</span></button>
-      <div class="vctl"><button type="button" id="vplay" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><span class="vtm" id="vtime">0:00 / 1:06</span><div class="vprog" id="vprog" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="vbar"></i></div><button type="button" id="vmute" aria-label="Turn sound off"></button></div>
+      <div class="vctl"><button type="button" id="vplay" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><span class="vtm" id="vtime">0:00 / 1:08</span><div class="vprog" id="vprog" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="vbar"></i></div><button type="button" id="vmute" aria-label="Turn sound off"></button></div>
     </div>
   </div>
 </section>
@@ -1501,6 +1555,25 @@ document.getElementById('copy').addEventListener('click', function(){
   var PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',PAUSE='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
   var SOUND='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>',MUTED='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path d="M16 9l5 6M21 9l-5 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>';
   var t=0,playing=false,last=0,idx=-1,raf=0;
+  var ac=null,an=null,gn=null,buf=null,hasGraph=false,muted=false,mo=0;
+  var mm=document.getElementById('vmouth'),mt=document.getElementById('vtongue'),ms=document.getElementById('vsmile');
+  function setMouth(m){ if(!mm) return; mm.setAttribute('ry',(1.5+m*27).toFixed(1)); mt.setAttribute('ry',(m*11).toFixed(1)); mm.setAttribute('opacity',m>0.05?1:0); ms.setAttribute('opacity',m>0.1?0:1); }
+  function initAudio(){
+    if(ac||!aud) return;
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext; if(!AC) return;
+      ac=new AC(); var src=ac.createMediaElementSource(aud); an=ac.createAnalyser(); an.fftSize=512; gn=ac.createGain();
+      src.connect(an); src.connect(gn); gn.connect(ac.destination); buf=new Uint8Array(an.fftSize);
+      gn.gain.value=muted?0:1; aud.muted=false; hasGraph=true;
+    }catch(e){ hasGraph=false; ac=null; }
+  }
+  function mouthStep(){
+    var m;
+    if(hasGraph&&an){ an.getByteTimeDomainData(buf); var s2=0; for(var i=0;i<buf.length;i++){var v=(buf[i]-128)/128;s2+=v*v;} m=Math.min(1,Math.sqrt(s2/buf.length)*6); mo+=(m-mo)*.55; m=mo; }
+    else { m=(Math.sin(t*19)*.5+.5)*(Math.sin(t*7.3)*.5+.5)*1.15; }
+    setMouth(m);
+  }
+  function setMuted(v){ muted=v; if(hasGraph){gn.gain.value=v?0:1;}else if(aud){aud.muted=v;} mute.innerHTML=v?MUTED:SOUND; mute.setAttribute('aria-label',v?'Turn sound on':'Turn sound off'); }
   function fmt(x){x=Math.floor(x);return Math.floor(x/60)+':'+('0'+(x%60)).slice(-2);}
   function sceneAt(x){for(var i=starts.length-1;i>=0;i--){if(x>=starts[i])return i;}return 0;}
   function show(i,force){
@@ -1519,27 +1592,28 @@ document.getElementById('copy').addEventListener('click', function(){
     btn.innerHTML=playing?PAUSE:PLAY; btn.setAttribute('aria-label',playing?'Pause video':'Play video');
     root.classList.toggle('playing',playing);
   }
-  function finish(){playing=false;cancelAnimationFrame(raf);t=total;render();root.classList.add('ended');root.classList.remove('started');setBtn();big.querySelector('span').textContent='Watch again';}
+  function finish(){playing=false;cancelAnimationFrame(raf);setMouth(0);t=total;render();root.classList.add('ended');root.classList.remove('started');setBtn();big.querySelector('span').textContent='Watch again';}
   function tick(ts){
     if(!playing) return;
     var dt=(ts-last)/1000; last=ts;
     if(aud&&!aud.paused&&!aud.ended&&aud.readyState>2){ t=aud.currentTime; } else if(!aud||aud.paused||aud.readyState<=2){ if(!aud||aud.error||aud.readyState===0){t+=dt;} }
     if(t>=total-0.05){finish();return;}
-    render(); raf=requestAnimationFrame(tick);
+    mouthStep(); render(); raf=requestAnimationFrame(tick);
   }
   function play(){
     if(t>=total-0.05){t=0;render(true);}
     root.classList.add('started');root.classList.remove('ended');
     playing=true; last=performance.now(); setBtn();
+    initAudio(); if(ac&&ac.state==='suspended'){ ac.resume(); }
     if(aud){ try{aud.currentTime=t;}catch(e){} var p=aud.play(); if(p&&p.catch){p.catch(function(){});} }
     raf=requestAnimationFrame(tick);
   }
-  function pause(){playing=false;cancelAnimationFrame(raf);if(aud)aud.pause();setBtn();}
+  function pause(){playing=false;cancelAnimationFrame(raf);if(aud)aud.pause();setMouth(0);setBtn();}
   function toggle(){ if(playing)pause(); else play(); }
   btn.addEventListener('click',toggle);
   big.addEventListener('click',function(){big.querySelector('span').textContent='Play with sound';play();});
   mute.addEventListener('click',function(){
-    aud.muted=!aud.muted; mute.innerHTML=aud.muted?MUTED:SOUND; mute.setAttribute('aria-label',aud.muted?'Turn sound on':'Turn sound off');
+    setMuted(!muted);
   });
   function seekTo(x){
     t=Math.max(0,Math.min(total-.05,x)); if(aud){try{aud.currentTime=t;}catch(e){}}
