@@ -655,6 +655,73 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   .rv{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* welcome video */
+.vid-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+.vid-text{display:flex;flex-direction:column;gap:18px}
+.vid-text ul{list-style:none;padding:0;margin:10px 0 0;display:flex;flex-direction:column;gap:14px;border-top:1.5px dashed var(--line);padding-top:24px}
+.vid-text li{display:flex;gap:12px;align-items:flex-start;font-weight:600;font-size:17px}
+.vid-text li i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--mint);display:grid;place-items:center;margin-top:1px}
+.vid-text li i svg{width:14px;height:14px;stroke:var(--green)}
+.vplayer{position:relative;border-radius:28px;overflow:hidden;background:#14231A;color:#fff;box-shadow:var(--shadow);container-type:inline-size;aspect-ratio:16/9;isolation:isolate}
+.vplayer::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 10%,rgba(143,224,174,.22),transparent 70%),radial-gradient(50% 60% at 5% 100%,rgba(24,121,63,.35),transparent 70%);z-index:-1}
+.vsc{position:absolute;inset:0 0 14cqw 0;display:none;align-items:center;gap:4cqw;padding:5cqw 6cqw 0}
+.vsc.on{display:flex}
+.vtx{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:1.6cqw}
+.vtx small{font-size:max(10px,1.6cqw);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--band-accent)}
+.vtx h4{margin:0;font-family:var(--display);font-size:max(20px,5.2cqw);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+.vtx h4 em{font-style:normal;color:var(--band-accent)}
+.vtx p{margin:0;font-size:max(12px,2.1cqw);line-height:1.45;color:var(--band-muted)}
+.vvis{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:1.4cqw}
+.vsc.center{justify-content:center;text-align:center}
+.vsc.center .vtx{align-items:center;flex:0 1 auto}
+.vsc.center .vtx h4{font-size:max(22px,6.2cqw)}
+.vsc.center .vtx p{max-width:70%}
+.vcta{display:inline-flex;margin-top:1cqw;background:var(--band-accent);color:#14231A;font-weight:800;font-size:max(12px,2cqw);padding:1.2cqw 3cqw;border-radius:999px}
+.chip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:1.1cqw 2.4cqw;font-weight:700;font-size:max(11px,1.9cqw);display:flex;align-items:center;gap:1.2cqw}
+.chip::before{content:"";width:1.2cqw;height:1.2cqw;min-width:7px;min-height:7px;border-radius:50%;background:var(--band-accent)}
+.vcard{background:#fff;color:var(--ink);border-radius:1.8cqw;padding:1.4cqw 2cqw;display:flex;align-items:center;gap:1.6cqw;font-weight:700;font-size:max(11px,1.8cqw)}
+.vcard b{width:4.4cqw;height:4.4cqw;min-width:24px;min-height:24px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--green);font-size:max(11px,1.8cqw)}
+.vcard span{color:var(--muted);font-weight:600;margin-left:auto;font-size:max(10px,1.5cqw)}
+.vscript{background:#fff;color:var(--ink);border-radius:1.8cqw;padding:2cqw;display:flex;flex-direction:column;gap:1.1cqw}
+.vscript .tag{align-self:flex-start;background:var(--mint);color:var(--green-ink);font-weight:800;font-size:max(9px,1.4cqw);padding:.4cqw 1.2cqw;border-radius:999px;letter-spacing:.06em}
+.vscript .ln{height:1.1cqw;min-height:5px;border-radius:99px;background:#DDE5DF}
+.vscript .hk{font-weight:800;font-size:max(12px,2cqw);line-height:1.3}
+.vchart{background:#fff;color:var(--ink);border-radius:1.8cqw;padding:2cqw 2cqw 1.4cqw;display:flex;align-items:flex-end;gap:1.6cqw;height:19cqw;position:relative}
+.vchart .bar{flex:1;border-radius:.8cqw .8cqw 0 0;background:#CFE0D4;transform-origin:bottom;transform:scaleY(0)}
+.vchart .bar.best{background:var(--green)}
+.vchart .best-tag{position:absolute;top:1.2cqw;right:1.6cqw;background:var(--green);color:#fff;font-weight:800;font-size:max(9px,1.4cqw);padding:.5cqw 1.3cqw;border-radius:999px;opacity:0}
+.vcap{font-size:max(10px,1.5cqw);color:var(--band-muted);font-weight:600}
+.vctl{position:absolute;left:0;right:0;bottom:0;height:14cqw;min-height:48px;display:flex;align-items:center;gap:2.4cqw;padding:0 4cqw;background:linear-gradient(transparent,rgba(0,0,0,.35))}
+.vctl button{all:unset;cursor:pointer;width:max(32px,4.4cqw);height:max(32px,4.4cqw);display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.14)}
+.vctl button:focus-visible{outline:2px solid var(--band-accent);outline-offset:2px}
+.vctl button svg{width:55%;height:55%;fill:#fff}
+.vctl .vtm{font-size:max(11px,1.8cqw);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vprog{flex:1;height:max(6px,.9cqw);border-radius:99px;background:rgba(255,255,255,.22);cursor:pointer;position:relative}
+.vprog i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:99px;background:var(--band-accent)}
+.vsc.on .vtx>*{animation:vrise .7s cubic-bezier(.2,.8,.2,1) both}
+.vsc.on .vtx>*:nth-child(2){animation-delay:.15s}.vsc.on .vtx>*:nth-child(3){animation-delay:.35s}.vsc.on .vtx>*:nth-child(4){animation-delay:.55s}
+.vsc.on .vvis>*{animation:vrise .6s cubic-bezier(.2,.8,.2,1) both}
+.vsc.on .vvis>*:nth-child(1){animation-delay:.5s}.vsc.on .vvis>*:nth-child(2){animation-delay:1s}.vsc.on .vvis>*:nth-child(3){animation-delay:1.5s}.vsc.on .vvis>*:nth-child(4){animation-delay:2s}
+.vsc.on .vchart .bar{animation:vbar .8s cubic-bezier(.2,.8,.2,1) both}
+.vsc.on .vchart .bar:nth-child(1){animation-delay:.6s}.vsc.on .vchart .bar:nth-child(2){animation-delay:.75s}.vsc.on .vchart .bar:nth-child(3){animation-delay:.9s}.vsc.on .vchart .bar:nth-child(4){animation-delay:1.05s}.vsc.on .vchart .bar:nth-child(5){animation-delay:1.2s}
+.vsc.on .vchart .best-tag{animation:vrise .5s 2.6s both}
+@keyframes vrise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes vbar{to{transform:scaleY(1)}}
+@media (max-width:900px){.vid-grid{grid-template-columns:1fr;gap:32px}}
+@media (max-width:640px){
+  .vplayer{aspect-ratio:4/5}
+  .vsc{flex-direction:column;justify-content:center;align-items:stretch;gap:5cqw;padding:7cqw 7cqw 0;inset:0 0 18cqw 0}
+  .vtx{flex:0 0 auto;gap:2.6cqw}.vtx small{font-size:max(11px,3cqw)}.vtx h4{font-size:9cqw}.vtx p{font-size:max(13px,3.8cqw)}
+  .vsc.center .vtx h4{font-size:10cqw}.vsc.center .vtx p{max-width:100%}
+  .vvis{flex:0 0 auto;gap:2.4cqw}
+  .chip{font-size:max(12px,3.6cqw);padding:2cqw 4cqw}.vcard{font-size:max(12px,3.6cqw);padding:2.4cqw 3.6cqw;border-radius:3cqw}.vcard b{font-size:max(12px,3.6cqw)}.vcard span{font-size:max(10px,3cqw)}
+  .vscript{padding:3.6cqw;border-radius:3cqw}.vscript .hk{font-size:max(13px,3.8cqw)}.vscript .tag{font-size:max(10px,2.6cqw)}
+  .vchart{height:32cqw;border-radius:3cqw}.vchart .best-tag{font-size:max(10px,2.6cqw)}.vcap{font-size:max(11px,3cqw)}
+  .vcta{font-size:max(13px,3.8cqw);padding:2.4cqw 6cqw}
+  .vctl{height:18cqw}.vctl .vtm{font-size:max(11px,3cqw)}.vctl button{width:max(36px,8cqw);height:max(36px,8cqw)}
+}
+@media (prefers-reduced-motion:reduce){.vsc.on .vtx>*,.vsc.on .vvis>*,.vsc.on .vchart .bar,.vsc.on .vchart .best-tag{animation:none;opacity:1;transform:none}}
 </style>
 
 </head>
@@ -718,6 +785,50 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       <div class="stat"><b>$<span class="count" data-to="80">80</span>K+</b><span>Ad spend managed</span></div>
       <div class="stat"><b>3–7</b><span>ROAS</span></div>
       <div class="stat"><b><span class="count" data-to="10">10</span>+</b><span>Tech specialists</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how-video" style="background:var(--soft)">
+  <div class="wrap vid-grid">
+    <div class="vid-text">
+      <span class="eyebrow">In one minute</span>
+      <h2 class="h2">See how Grow Your Proof works</h2>
+      <p class="lead">We take over the whole social media side of your brand, so you can focus on building your app.</p>
+      <ul>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Website, creators, scripts and ads in one team</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>A weekly meeting on which videos perform best</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Your best videos turned into ads for even more reach</li>
+      </ul>
+    </div>
+    <div class="vplayer" id="vid" role="region" aria-label="Animated explainer: how Grow Your Proof works">
+      <div class="vsc center" data-d="6">
+        <div class="vtx"><small>Grow Your Proof</small><h4>We take over your <em>whole social media side.</em></h4><p>So you can focus on your app.</p></div>
+      </div>
+      <div class="vsc" data-d="8">
+        <div class="vtx"><small>The goal</small><h4>More <em>visibility</em> online for your brand.</h4><p>One team that handles everything that gets you seen.</p></div>
+        <div class="vvis"><div class="chip">Website design &amp; development</div><div class="chip">UGC videos</div><div class="chip">Creator management</div><div class="chip">Ads on Meta &amp; TikTok</div></div>
+      </div>
+      <div class="vsc" data-d="9">
+        <div class="vtx"><small>Step 1</small><h4>We find <em>your creators.</em></h4><p>Real people who fit your audience. We brief them and direct every shoot.</p></div>
+        <div class="vvis"><div class="vcard"><b>1</b>We find the creators<span>sourced</span></div><div class="vcard"><b>2</b>We brief them<span>managed</span></div><div class="vcard"><b>3</b>We direct every shoot<span>approved</span></div></div>
+      </div>
+      <div class="vsc" data-d="8">
+        <div class="vtx"><small>Step 2</small><h4>We write <em>every script.</em></h4><p>Hooks built to stop the scroll in the first three seconds.</p></div>
+        <div class="vvis"><div class="vscript"><span class="tag">HOOK</span><div class="hk">“Nobody tells you this about growing an app…”</div><div class="ln" style="width:92%"></div><div class="ln" style="width:78%"></div><div class="ln" style="width:60%"></div></div></div>
+      </div>
+      <div class="vsc" data-d="10">
+        <div class="vtx"><small>Step 3</small><h4>Every week, <em>we meet.</em></h4><p>We explain which videos perform best and what we make next.</p></div>
+        <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:38%"></div><div class="bar" style="height:55%"></div><div class="bar best" style="height:92%"></div><div class="bar" style="height:46%"></div><div class="bar" style="height:30%"></div><span class="best-tag">Best performer</span></div><div class="vcap">Weekly report: which videos and hooks drive downloads</div></div>
+      </div>
+      <div class="vsc" data-d="9">
+        <div class="vtx"><small>Step 4</small><h4>Best videos become <em>ads.</em></h4><p>We put the winners behind a budget on Meta and TikTok, so they reach even more people.</p></div>
+        <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:22%"></div><div class="bar" style="height:36%"></div><div class="bar" style="height:54%"></div><div class="bar" style="height:76%"></div><div class="bar best" style="height:98%"></div></div><div class="vcap">More reach, more installs, every week</div></div>
+      </div>
+      <div class="vsc center" data-d="10">
+        <div class="vtx"><small>Grow Your Proof</small><h4>More visibility. <em>Zero hassle.</em></h4><p>Websites, creators, scripts and ads. We handle the whole social media side.</p><span class="vcta">Get in touch</span></div>
+      </div>
+      <div class="vctl"><button type="button" id="vplay" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><span class="vtm" id="vtime">0:00 / 1:00</span><div class="vprog" id="vprog" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="vbar"></i></div></div>
     </div>
   </div>
 </section>
@@ -1290,5 +1401,61 @@ document.getElementById('copy').addEventListener('click', function(){
 });
 </script>
 
+<script>
+(function(){
+  var root=document.getElementById('vid'); if(!root) return;
+  var scs=[].slice.call(root.querySelectorAll('.vsc')),starts=[],total=0;
+  scs.forEach(function(s){starts.push(total);total+=+s.getAttribute('data-d');});
+  var btn=document.getElementById('vplay'),bar=document.getElementById('vbar'),time=document.getElementById('vtime'),prog=document.getElementById('vprog');
+  var PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',PAUSE='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
+  var t=0,playing=false,last=0,idx=-1,raf=0,userPaused=false;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fmt(x){x=Math.floor(x);return Math.floor(x/60)+':'+('0'+(x%60)).slice(-2);}
+  function sceneAt(x){for(var i=starts.length-1;i>=0;i--){if(x>=starts[i])return i;}return 0;}
+  function show(i,force){
+    if(i===idx&&!force) return;
+    scs.forEach(function(s,k){s.classList.remove('on');});
+    void root.offsetWidth;
+    scs[i].classList.add('on'); idx=i;
+  }
+  function render(force){
+    show(sceneAt(t),force);
+    bar.style.width=(t/total*100)+'%';
+    time.textContent=fmt(t)+' / '+fmt(total);
+    prog.setAttribute('aria-valuenow',Math.round(t/total*100));
+  }
+  function setBtn(){btn.innerHTML=playing?PAUSE:PLAY;btn.setAttribute('aria-label',playing?'Pause video':'Play video');}
+  function tick(ts){
+    if(!playing) return;
+    t+=(ts-last)/1000; last=ts;
+    if(t>=total){t=total-0.001;playing=false;setBtn();render();return;}
+    render(); raf=requestAnimationFrame(tick);
+  }
+  function play(){
+    if(t>=total-0.01){t=0;render(true);}
+    playing=true; last=performance.now(); setBtn(); raf=requestAnimationFrame(tick);
+  }
+  function pause(){playing=false;cancelAnimationFrame(raf);setBtn();}
+  btn.addEventListener('click',function(){ if(playing){userPaused=true;pause();}else{userPaused=false;play();} });
+  function seekTo(clientX){
+    var r=prog.getBoundingClientRect(); t=Math.max(0,Math.min(.999,(clientX-r.left)/r.width))*total; render(true);
+    if(playing){last=performance.now();}
+  }
+  prog.addEventListener('click',function(e){seekTo(e.clientX);});
+  prog.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){t=Math.min(total-.01,t+5);render(true);}
+    if(e.key==='ArrowLeft'){t=Math.max(0,t-5);render(true);}
+  });
+  render(true); setBtn();
+  if('IntersectionObserver' in window && !reduce){
+    new IntersectionObserver(function(en){
+      en.forEach(function(x){
+        if(x.isIntersecting){ if(!userPaused&&!playing&&t<total-0.01) play(); }
+        else if(playing){ pause(); }
+      });
+    },{threshold:.5}).observe(root);
+  }
+})();
+</script>
 </body>
 </html>
