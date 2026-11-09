@@ -721,6 +721,15 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   .vcta{font-size:max(13px,3.8cqw);padding:2.4cqw 6cqw}
   .vctl{height:18cqw}.vctl .vtm{font-size:max(11px,3cqw)}.vctl button{width:max(36px,8cqw);height:max(36px,8cqw)}
 }
+.vbig{all:unset;cursor:pointer;position:absolute;inset:0 0 14cqw 0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2cqw;background:rgba(10,20,14,.55);backdrop-filter:blur(2px)}
+.vbig b{width:max(64px,11cqw);height:max(64px,11cqw);border-radius:50%;background:var(--band-accent);display:grid;place-items:center;transition:transform .25s}
+.vbig:hover b{transform:scale(1.08)}
+.vbig b svg{width:42%;height:42%;fill:#14231A;margin-left:6%}
+.vbig span{font-weight:800;font-size:max(13px,2.2cqw)}
+.vbig:focus-visible b{outline:3px solid #fff;outline-offset:3px}
+.vplayer.started .vbig{display:none}
+.vctl #vmute{order:5}
+@media (max-width:640px){.vbig{inset:0 0 18cqw 0}.vbig span{font-size:max(14px,4cqw)}}
 @media (prefers-reduced-motion:reduce){.vsc.on .vtx>*,.vsc.on .vvis>*,.vsc.on .vchart .bar,.vsc.on .vchart .best-tag{animation:none;opacity:1;transform:none}}
 </style>
 
@@ -789,50 +798,6 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   </div>
 </section>
 
-<section class="band" id="how-video" style="background:var(--soft)">
-  <div class="wrap vid-grid">
-    <div class="vid-text">
-      <span class="eyebrow">In one minute</span>
-      <h2 class="h2">See how Grow Your Proof works</h2>
-      <p class="lead">We take over the whole social media side of your brand, so you can focus on building your app.</p>
-      <ul>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Website, creators, scripts and ads in one team</li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>A weekly meeting on which videos perform best</li>
-        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Your best videos turned into ads for even more reach</li>
-      </ul>
-    </div>
-    <div class="vplayer" id="vid" role="region" aria-label="Animated explainer: how Grow Your Proof works">
-      <div class="vsc center" data-d="6">
-        <div class="vtx"><small>Grow Your Proof</small><h4>We take over your <em>whole social media side.</em></h4><p>So you can focus on your app.</p></div>
-      </div>
-      <div class="vsc" data-d="8">
-        <div class="vtx"><small>The goal</small><h4>More <em>visibility</em> online for your brand.</h4><p>One team that handles everything that gets you seen.</p></div>
-        <div class="vvis"><div class="chip">Website design &amp; development</div><div class="chip">UGC videos</div><div class="chip">Creator management</div><div class="chip">Ads on Meta &amp; TikTok</div></div>
-      </div>
-      <div class="vsc" data-d="9">
-        <div class="vtx"><small>Step 1</small><h4>We find <em>your creators.</em></h4><p>Real people who fit your audience. We brief them and direct every shoot.</p></div>
-        <div class="vvis"><div class="vcard"><b>1</b>We find the creators<span>sourced</span></div><div class="vcard"><b>2</b>We brief them<span>managed</span></div><div class="vcard"><b>3</b>We direct every shoot<span>approved</span></div></div>
-      </div>
-      <div class="vsc" data-d="8">
-        <div class="vtx"><small>Step 2</small><h4>We write <em>every script.</em></h4><p>Hooks built to stop the scroll in the first three seconds.</p></div>
-        <div class="vvis"><div class="vscript"><span class="tag">HOOK</span><div class="hk">“Nobody tells you this about growing an app…”</div><div class="ln" style="width:92%"></div><div class="ln" style="width:78%"></div><div class="ln" style="width:60%"></div></div></div>
-      </div>
-      <div class="vsc" data-d="10">
-        <div class="vtx"><small>Step 3</small><h4>Every week, <em>we meet.</em></h4><p>We explain which videos perform best and what we make next.</p></div>
-        <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:38%"></div><div class="bar" style="height:55%"></div><div class="bar best" style="height:92%"></div><div class="bar" style="height:46%"></div><div class="bar" style="height:30%"></div><span class="best-tag">Best performer</span></div><div class="vcap">Weekly report: which videos and hooks drive downloads</div></div>
-      </div>
-      <div class="vsc" data-d="9">
-        <div class="vtx"><small>Step 4</small><h4>Best videos become <em>ads.</em></h4><p>We put the winners behind a budget on Meta and TikTok, so they reach even more people.</p></div>
-        <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:22%"></div><div class="bar" style="height:36%"></div><div class="bar" style="height:54%"></div><div class="bar" style="height:76%"></div><div class="bar best" style="height:98%"></div></div><div class="vcap">More reach, more installs, every week</div></div>
-      </div>
-      <div class="vsc center" data-d="10">
-        <div class="vtx"><small>Grow Your Proof</small><h4>More visibility. <em>Zero hassle.</em></h4><p>Websites, creators, scripts and ads. We handle the whole social media side.</p><span class="vcta">Get in touch</span></div>
-      </div>
-      <div class="vctl"><button type="button" id="vplay" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><span class="vtm" id="vtime">0:00 / 1:00</span><div class="vprog" id="vprog" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="vbar"></i></div></div>
-    </div>
-  </div>
-</section>
-
 <section class="band" id="services">
   <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
     <div class="head">
@@ -847,6 +812,52 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/><path d="M8 11h6M11 8v6"/></svg><h3>Performance analysis</h3><p>We track which videos and hooks drive downloads, cut what doesn't work and scale what does. Clear monthly reports.</p></div>
       <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>App Store optimization</h3><p>Screenshots, title and description that turn ad clicks into installs.</p></div>
       <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/></svg><h3>Website design &amp; development</h3><p>We design and build fast, good-looking websites and landing pages that turn visitors into downloads, sign-ups and customers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how-video" style="background:var(--soft)">
+  <div class="wrap vid-grid">
+    <div class="vid-text">
+      <span class="eyebrow">In one minute, with sound</span>
+      <h2 class="h2">See how Grow Your Proof works</h2>
+      <p class="lead">We take over the whole social media side of your brand, so you can focus on building your app.</p>
+      <ul>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Website, creators, scripts and ads in one team</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>A weekly meeting on which videos perform best</li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></i>Your best videos turned into ads for even more reach</li>
+      </ul>
+    </div>
+    <div class="vplayer" id="vid" role="region" aria-label="Animated explainer: how Grow Your Proof works">
+      <div class="vsc center" data-d="7.9">
+        <div class="vtx"><small>Grow Your Proof</small><h4>We take over your <em>whole social media side.</em></h4><p>So you can focus on your app.</p></div>
+      </div>
+      <div class="vsc" data-d="10.8">
+        <div class="vtx"><small>The goal</small><h4>More <em>visibility</em> online for your brand.</h4><p>One team that handles everything that gets you seen.</p></div>
+        <div class="vvis"><div class="chip">Website design &amp; development</div><div class="chip">UGC videos</div><div class="chip">Creator management</div><div class="chip">Ads on Meta &amp; TikTok</div></div>
+      </div>
+      <div class="vsc" data-d="7.6">
+        <div class="vtx"><small>Step 1</small><h4>We find <em>your creators.</em></h4><p>Real people who fit your audience. We brief them and direct every shoot.</p></div>
+        <div class="vvis"><div class="vcard"><b>1</b>We find the creators<span>sourced</span></div><div class="vcard"><b>2</b>We brief them<span>managed</span></div><div class="vcard"><b>3</b>We direct every shoot<span>approved</span></div></div>
+      </div>
+      <div class="vsc" data-d="6.5">
+        <div class="vtx"><small>Step 2</small><h4>We write <em>every script.</em></h4><p>Hooks built to stop the scroll in the first three seconds.</p></div>
+        <div class="vvis"><div class="vscript"><span class="tag">HOOK</span><div class="hk">“Nobody tells you this about growing an app…”</div><div class="ln" style="width:92%"></div><div class="ln" style="width:78%"></div><div class="ln" style="width:60%"></div></div></div>
+      </div>
+      <div class="vsc" data-d="7">
+        <div class="vtx"><small>Step 3</small><h4>Every week, <em>we meet.</em></h4><p>We explain which videos perform best and what we make next.</p></div>
+        <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:38%"></div><div class="bar" style="height:55%"></div><div class="bar best" style="height:92%"></div><div class="bar" style="height:46%"></div><div class="bar" style="height:30%"></div><span class="best-tag">Best performer</span></div><div class="vcap">Weekly report: which videos and hooks drive downloads</div></div>
+      </div>
+      <div class="vsc" data-d="6.5">
+        <div class="vtx"><small>Step 4</small><h4>Best videos become <em>ads.</em></h4><p>We put the winners behind a budget on Meta and TikTok, so they reach even more people.</p></div>
+        <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:22%"></div><div class="bar" style="height:36%"></div><div class="bar" style="height:54%"></div><div class="bar" style="height:76%"></div><div class="bar best" style="height:98%"></div></div><div class="vcap">More reach, more installs, every week</div></div>
+      </div>
+      <div class="vsc center" data-d="9.6">
+        <div class="vtx"><small>Grow Your Proof</small><h4>More visibility. <em>Zero hassle.</em></h4><p>Websites, creators, scripts and ads. We handle the whole social media side.</p><span class="vcta">Get in touch</span></div>
+      </div>
+      <audio id="vaud" src="voice.m4a" preload="metadata"></audio>
+      <button type="button" class="vbig" id="vbig" aria-label="Play video with sound"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></b><span>Play with sound</span></button>
+      <div class="vctl"><button type="button" id="vplay" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><span class="vtm" id="vtime">0:00 / 0:56</span><div class="vprog" id="vprog" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="vbar"></i></div><button type="button" id="vmute" aria-label="Turn sound off"></button></div>
     </div>
   </div>
 </section>
@@ -1406,15 +1417,15 @@ document.getElementById('copy').addEventListener('click', function(){
   var root=document.getElementById('vid'); if(!root) return;
   var scs=[].slice.call(root.querySelectorAll('.vsc')),starts=[],total=0;
   scs.forEach(function(s){starts.push(total);total+=+s.getAttribute('data-d');});
-  var btn=document.getElementById('vplay'),bar=document.getElementById('vbar'),time=document.getElementById('vtime'),prog=document.getElementById('vprog');
+  var aud=document.getElementById('vaud'),btn=document.getElementById('vplay'),big=document.getElementById('vbig'),mute=document.getElementById('vmute'),bar=document.getElementById('vbar'),time=document.getElementById('vtime'),prog=document.getElementById('vprog');
   var PLAY='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',PAUSE='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>';
-  var t=0,playing=false,last=0,idx=-1,raf=0,userPaused=false;
-  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var SOUND='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path d="M15.5 8.5a5 5 0 010 7M18 6a8.5 8.5 0 010 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>',MUTED='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path d="M16 9l5 6M21 9l-5 6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>';
+  var t=0,playing=false,last=0,idx=-1,raf=0;
   function fmt(x){x=Math.floor(x);return Math.floor(x/60)+':'+('0'+(x%60)).slice(-2);}
   function sceneAt(x){for(var i=starts.length-1;i>=0;i--){if(x>=starts[i])return i;}return 0;}
   function show(i,force){
     if(i===idx&&!force) return;
-    scs.forEach(function(s,k){s.classList.remove('on');});
+    scs.forEach(function(s){s.classList.remove('on');});
     void root.offsetWidth;
     scs[i].classList.add('on'); idx=i;
   }
@@ -1424,36 +1435,44 @@ document.getElementById('copy').addEventListener('click', function(){
     time.textContent=fmt(t)+' / '+fmt(total);
     prog.setAttribute('aria-valuenow',Math.round(t/total*100));
   }
-  function setBtn(){btn.innerHTML=playing?PAUSE:PLAY;btn.setAttribute('aria-label',playing?'Pause video':'Play video');}
+  function setBtn(){
+    btn.innerHTML=playing?PAUSE:PLAY; btn.setAttribute('aria-label',playing?'Pause video':'Play video');
+    root.classList.toggle('playing',playing);
+  }
+  function finish(){playing=false;cancelAnimationFrame(raf);t=total;render();root.classList.add('ended');root.classList.remove('started');setBtn();big.querySelector('span').textContent='Watch again';}
   function tick(ts){
     if(!playing) return;
-    t+=(ts-last)/1000; last=ts;
-    if(t>=total){t=total-0.001;playing=false;setBtn();render();return;}
+    var dt=(ts-last)/1000; last=ts;
+    if(aud&&!aud.paused&&!aud.ended&&aud.readyState>2){ t=aud.currentTime; } else if(!aud||aud.paused||aud.readyState<=2){ if(!aud||aud.error||aud.readyState===0){t+=dt;} }
+    if(t>=total-0.05){finish();return;}
     render(); raf=requestAnimationFrame(tick);
   }
   function play(){
-    if(t>=total-0.01){t=0;render(true);}
-    playing=true; last=performance.now(); setBtn(); raf=requestAnimationFrame(tick);
+    if(t>=total-0.05){t=0;render(true);}
+    root.classList.add('started');root.classList.remove('ended');
+    playing=true; last=performance.now(); setBtn();
+    if(aud){ try{aud.currentTime=t;}catch(e){} var p=aud.play(); if(p&&p.catch){p.catch(function(){});} }
+    raf=requestAnimationFrame(tick);
   }
-  function pause(){playing=false;cancelAnimationFrame(raf);setBtn();}
-  btn.addEventListener('click',function(){ if(playing){userPaused=true;pause();}else{userPaused=false;play();} });
-  function seekTo(clientX){
-    var r=prog.getBoundingClientRect(); t=Math.max(0,Math.min(.999,(clientX-r.left)/r.width))*total; render(true);
-    if(playing){last=performance.now();}
-  }
-  prog.addEventListener('click',function(e){seekTo(e.clientX);});
-  prog.addEventListener('keydown',function(e){
-    if(e.key==='ArrowRight'){t=Math.min(total-.01,t+5);render(true);}
-    if(e.key==='ArrowLeft'){t=Math.max(0,t-5);render(true);}
+  function pause(){playing=false;cancelAnimationFrame(raf);if(aud)aud.pause();setBtn();}
+  function toggle(){ if(playing)pause(); else play(); }
+  btn.addEventListener('click',toggle);
+  big.addEventListener('click',function(){big.querySelector('span').textContent='Play with sound';play();});
+  mute.addEventListener('click',function(){
+    aud.muted=!aud.muted; mute.innerHTML=aud.muted?MUTED:SOUND; mute.setAttribute('aria-label',aud.muted?'Turn sound on':'Turn sound off');
   });
-  render(true); setBtn();
-  if('IntersectionObserver' in window && !reduce){
-    new IntersectionObserver(function(en){
-      en.forEach(function(x){
-        if(x.isIntersecting){ if(!userPaused&&!playing&&t<total-0.01) play(); }
-        else if(playing){ pause(); }
-      });
-    },{threshold:.5}).observe(root);
+  function seekTo(x){
+    t=Math.max(0,Math.min(total-.05,x)); if(aud){try{aud.currentTime=t;}catch(e){}}
+    render(true); if(playing)last=performance.now();
+  }
+  prog.addEventListener('click',function(e){var r=prog.getBoundingClientRect();seekTo((e.clientX-r.left)/r.width*total);});
+  prog.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'){seekTo(t+5);} if(e.key==='ArrowLeft'){seekTo(t-5);}
+  });
+  if(aud) aud.addEventListener('ended',function(){ if(playing) finish(); });
+  mute.innerHTML=SOUND; render(true); setBtn();
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){en.forEach(function(x){ if(!x.isIntersecting&&playing) pause(); });},{threshold:.2}).observe(root);
   }
 })();
 </script>
