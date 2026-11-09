@@ -715,7 +715,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   .vtx{flex:0 0 auto;gap:2.6cqw}.vtx small{font-size:max(11px,3cqw)}.vtx h4{font-size:9cqw}.vtx p{font-size:max(13px,3.8cqw)}
   .vsc.center .vtx h4{font-size:10cqw}.vsc.center .vtx p{max-width:100%}
   .vvis{flex:0 0 auto;gap:2.4cqw}
-  .chip{font-size:max(12px,3.6cqw);padding:2cqw 4cqw}.vcard{font-size:max(12px,3.6cqw);padding:2.4cqw 3.6cqw;border-radius:3cqw}.vcard b{font-size:max(12px,3.6cqw)}.vcard span{font-size:max(10px,3cqw)}
+  .chip{font-size:max(12px,3.6cqw);padding:1.7cqw 4cqw}.vcard{font-size:max(12px,3.6cqw);padding:2.4cqw 3.6cqw;border-radius:3cqw}.vcard b{font-size:max(12px,3.6cqw)}.vcard span{font-size:max(10px,3cqw)}
   .vscript{padding:3.6cqw;border-radius:3cqw}.vscript .hk{font-size:max(13px,3.8cqw)}.vscript .tag{font-size:max(10px,2.6cqw)}
   .vchart{height:32cqw;border-radius:3cqw}.vchart .best-tag{font-size:max(10px,2.6cqw)}.vcap{font-size:max(11px,3cqw)}
   .vcta{font-size:max(13px,3.8cqw);padding:2.4cqw 6cqw}
@@ -730,6 +730,69 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 .vplayer.started .vbig{display:none}
 .vctl #vmute{order:5}
 @media (max-width:640px){.vbig{inset:0 0 18cqw 0}.vbig span{font-size:max(14px,4cqw)}}
+.vspend{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:1.8cqw;padding:1.8cqw 2.2cqw;display:flex;flex-direction:column;gap:.8cqw}
+.vspend span{font-size:max(10px,1.6cqw);color:var(--band-muted);font-weight:600}
+.vspend b{font-family:var(--display);font-size:max(20px,4.4cqw);letter-spacing:-.02em}
+.vfill{height:max(6px,.9cqw);border-radius:99px;background:rgba(255,255,255,.15);overflow:hidden}
+.vfill i{display:block;height:100%;width:0;background:#FF8A7A;border-radius:99px}
+.vsc.on .vfill i{animation:vfillx 3.2s .8s cubic-bezier(.3,.7,.2,1) forwards}
+@keyframes vfillx{to{width:100%}}
+.vspend.res b.q{color:#FF8A7A;letter-spacing:.2em;animation:vpulse 1.4s 2s infinite}
+@keyframes vpulse{50%{opacity:.35}}
+.chip.bad::before{background:#FF8A7A}
+.chip.bad{border-color:rgba(255,138,122,.35)}
+.vsearch{background:#fff;color:var(--ink);border-radius:999px;padding:1.4cqw 2.4cqw;display:flex;align-items:center;gap:1.4cqw;font-weight:700;font-size:max(12px,2cqw)}
+.vsearch svg{width:max(16px,2.4cqw);height:max(16px,2.4cqw);flex:none}
+.vsearch span{border-right:2px solid var(--ink);padding-right:.6cqw;animation:vcaret 1s steps(1) infinite}
+@keyframes vcaret{50%{border-color:transparent}}
+.vnone{text-align:center;color:var(--band-muted);font-weight:600;font-size:max(12px,2cqw);padding:2.2cqw 0}
+.vnone b{display:block;font-family:var(--display);font-size:max(32px,8cqw);color:#FF8A7A;line-height:1}
+@media (max-width:640px){.vspend{padding:3.4cqw;border-radius:3cqw}.vspend span{font-size:max(11px,3cqw)}.vspend b{font-size:max(20px,6cqw)}.vsearch{font-size:max(13px,3.8cqw);padding:2.6cqw 4cqw}.vnone{font-size:max(12px,3.4cqw);padding:2cqw 0}.vnone b{font-size:max(30px,11cqw)}}
+.vplayer{aspect-ratio:4/3!important}
+.vsc{inset:0 0 34cqw 0!important}
+.vmas{position:absolute;left:5cqw;bottom:13cqw;width:19cqw;height:19cqw;z-index:2;pointer-events:none}
+.mbody{width:100%;height:100%;transform-origin:50% 100%}
+.mbody img{width:100%;height:100%;display:block;filter:drop-shadow(0 .8cqw 1cqw rgba(0,0,0,.35))}
+.macc,.mdol{position:absolute;opacity:0;transition:opacity .3s}
+.macc{width:55%;height:55%}
+.mdol{font-family:var(--display);font-weight:800;color:#FF8A7A;font-size:max(14px,3.4cqw)}
+.mag{left:55%;top:8%;transform-origin:20% 20%}
+.pen{left:58%;top:22%;transform-origin:20% 90%}
+.clip{left:58%;top:22%}
+.meg{left:58%;top:10%;transform-origin:10% 50%}
+.vplayer[data-sc="2"] .mag,.vplayer[data-sc="4"] .mag,.vplayer[data-sc="5"] .pen,.vplayer[data-sc="6"] .clip,.vplayer[data-sc="7"] .meg{opacity:1}
+.vplayer[data-sc="0"] .mdol,.vplayer[data-sc="1"] .mdol{opacity:1}
+.vplayer[data-sc="0"] .mbody{animation:mworry .35s ease-in-out infinite}
+.vplayer[data-sc="1"] .mbody{animation:msad 2.4s ease-in-out infinite}
+.vplayer[data-sc="2"] .mbody{animation:msway 2.6s ease-in-out infinite}
+.vplayer[data-sc="3"] .mbody,.vplayer[data-sc="4"] .mbody,.vplayer[data-sc="7"] .mbody{animation:mhop .9s ease-in-out infinite}
+.vplayer[data-sc="5"] .mbody{animation:msway 1.6s ease-in-out infinite}
+.vplayer[data-sc="6"] .mbody{animation:mnod 1.3s ease-in-out infinite}
+.vplayer[data-sc="8"] .mbody{animation:mbig 1.2s ease-in-out infinite}
+.vplayer[data-sc="2"] .mag{animation:msearch 2.6s ease-in-out infinite}
+.vplayer[data-sc="4"] .mag{animation:msearch .9s ease-in-out infinite}
+.vplayer[data-sc="5"] .pen{animation:mwrite .5s ease-in-out infinite}
+.vplayer[data-sc="7"] .meg{animation:mshout .9s ease-in-out infinite}
+.mdol.d1{left:70%;top:20%}.mdol.d2{left:88%;top:40%}.mdol.d3{left:60%;top:50%}
+.vplayer[data-sc="0"] .mdol,.vplayer[data-sc="1"] .mdol{animation:mfly 1.8s ease-in infinite}
+.mdol.d2{animation-delay:.6s!important}.mdol.d3{animation-delay:1.2s!important}
+@keyframes mhop{0%,100%{transform:translateY(0) scale(1.06,.92)}40%{transform:translateY(-38%) scale(.94,1.08)}70%{transform:translateY(0) scale(1.04,.95)}}
+@keyframes mbig{0%,100%{transform:translateY(0) rotate(0) scale(1.05,.93)}35%{transform:translateY(-45%) rotate(-10deg) scale(.94,1.08)}65%{transform:translateY(-30%) rotate(10deg)}}
+@keyframes mworry{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes msad{0%,100%{transform:rotate(-8deg) scale(.95) translateY(3%)}50%{transform:rotate(-5deg) scale(.97) translateY(0)}}
+@keyframes msway{0%,100%{transform:rotate(-6deg) translateX(-4%)}50%{transform:rotate(6deg) translateX(4%)}}
+@keyframes mnod{0%,100%{transform:rotate(0) translateY(0)}30%{transform:rotate(6deg) translateY(4%)}60%{transform:rotate(-3deg)}}
+@keyframes msearch{0%,100%{transform:translate(-30%,0) rotate(-14deg)}50%{transform:translate(35%,12%) rotate(16deg)}}
+@keyframes mwrite{0%,100%{transform:translate(0,0) rotate(-6deg)}50%{transform:translate(12%,-6%) rotate(6deg)}}
+@keyframes mshout{0%,100%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.18) rotate(6deg)}}
+@keyframes mfly{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(70%,-130%) rotate(25deg);opacity:0}}
+@media (max-width:640px){
+  .vplayer{aspect-ratio:5/8!important}
+  .vsc{inset:0 0 46cqw 0!important}
+  .vmas{width:26cqw;height:26cqw;left:5cqw;bottom:17cqw}
+  .mdol{font-size:max(16px,5cqw)}
+}
+@media (prefers-reduced-motion:reduce){.vmas *{animation:none!important}}
 @media (prefers-reduced-motion:reduce){.vsc.on .vtx>*,.vsc.on .vvis>*,.vsc.on .vchart .bar,.vsc.on .vchart .best-tag{animation:none;opacity:1;transform:none}}
 </style>
 
@@ -819,7 +882,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 <section class="band" id="how-video" style="background:var(--soft)">
   <div class="wrap vid-grid">
     <div class="vid-text">
-      <span class="eyebrow">In one minute, with sound</span>
+      <span class="eyebrow">Watch with sound</span>
       <h2 class="h2">See how Grow Your Proof works</h2>
       <p class="lead">We take over the whole social media side of your brand, so you can focus on building your app.</p>
       <ul>
@@ -829,22 +892,31 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       </ul>
     </div>
     <div class="vplayer" id="vid" role="region" aria-label="Animated explainer: how Grow Your Proof works">
-      <div class="vsc center" data-d="7.9">
-        <div class="vtx"><small>Grow Your Proof</small><h4>We take over your <em>whole social media side.</em></h4><p>So you can focus on your app.</p></div>
+      <div class="vsc" data-d="7.4">
+        <div class="vtx"><small>The problem</small><h4>Brands burn <em>thousands</em> on ads every month.</h4><p>Boosted posts, random creators, big budgets.</p></div>
+        <div class="vvis"><div class="vspend"><span>Ad spend this month</span><b>$12,400</b><div class="vfill"><i></i></div></div><div class="vspend res"><span>Downloads &amp; customers</span><b class="q">? ? ?</b></div></div>
       </div>
-      <div class="vsc" data-d="10.8">
-        <div class="vtx"><small>The goal</small><h4>More <em>visibility</em> online for your brand.</h4><p>One team that handles everything that gets you seen.</p></div>
+      <div class="vsc" data-d="8.6">
+        <div class="vtx"><small>The problem</small><h4>And most of it just <em>disappears.</em></h4><p>Nobody knows what actually works.</p></div>
+        <div class="vvis"><div class="chip bad">No clear strategy</div><div class="chip bad">No idea which videos work</div><div class="chip bad">No way to see what pays off</div><div class="chip bad">Money gone, no growth</div></div>
+      </div>
+      <div class="vsc" data-d="6.1">
+        <div class="vtx"><small>The problem</small><h4>Or they don't know how to get <em>found online.</em></h4><p>A great product, and nobody sees it.</p></div>
+        <div class="vvis"><div class="vsearch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>your brand</span></div><div class="vnone"><b>0</b> people found you today</div></div>
+      </div>
+      <div class="vsc" data-d="10.9">
+        <div class="vtx"><small>The solution</small><h4>We take over your <em>whole social media side.</em></h4><p>More visibility, handled by one team.</p></div>
         <div class="vvis"><div class="chip">Website design &amp; development</div><div class="chip">UGC videos</div><div class="chip">Creator management</div><div class="chip">Ads on Meta &amp; TikTok</div></div>
       </div>
       <div class="vsc" data-d="7.6">
         <div class="vtx"><small>Step 1</small><h4>We find <em>your creators.</em></h4><p>Real people who fit your audience. We brief them and direct every shoot.</p></div>
         <div class="vvis"><div class="vcard"><b>1</b>We find the creators<span>sourced</span></div><div class="vcard"><b>2</b>We brief them<span>managed</span></div><div class="vcard"><b>3</b>We direct every shoot<span>approved</span></div></div>
       </div>
-      <div class="vsc" data-d="6.5">
+      <div class="vsc" data-d="6">
         <div class="vtx"><small>Step 2</small><h4>We write <em>every script.</em></h4><p>Hooks built to stop the scroll in the first three seconds.</p></div>
         <div class="vvis"><div class="vscript"><span class="tag">HOOK</span><div class="hk">“Nobody tells you this about growing an app…”</div><div class="ln" style="width:92%"></div><div class="ln" style="width:78%"></div><div class="ln" style="width:60%"></div></div></div>
       </div>
-      <div class="vsc" data-d="7">
+      <div class="vsc" data-d="6.5">
         <div class="vtx"><small>Step 3</small><h4>Every week, <em>we meet.</em></h4><p>We explain which videos perform best and what we make next.</p></div>
         <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:38%"></div><div class="bar" style="height:55%"></div><div class="bar best" style="height:92%"></div><div class="bar" style="height:46%"></div><div class="bar" style="height:30%"></div><span class="best-tag">Best performer</span></div><div class="vcap">Weekly report: which videos and hooks drive downloads</div></div>
       </div>
@@ -852,12 +924,20 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
         <div class="vtx"><small>Step 4</small><h4>Best videos become <em>ads.</em></h4><p>We put the winners behind a budget on Meta and TikTok, so they reach even more people.</p></div>
         <div class="vvis"><div class="vchart" aria-hidden="true"><div class="bar" style="height:22%"></div><div class="bar" style="height:36%"></div><div class="bar" style="height:54%"></div><div class="bar" style="height:76%"></div><div class="bar best" style="height:98%"></div></div><div class="vcap">More reach, more installs, every week</div></div>
       </div>
-      <div class="vsc center" data-d="9.6">
-        <div class="vtx"><small>Grow Your Proof</small><h4>More visibility. <em>Zero hassle.</em></h4><p>Websites, creators, scripts and ads. We handle the whole social media side.</p><span class="vcta">Get in touch</span></div>
+      <div class="vsc center" data-d="6.6">
+        <div class="vtx"><small>Grow Your Proof</small><h4>More visibility. <em>Zero hassle.</em></h4><p>We handle the whole social media side.</p><span class="vcta">Get in touch</span></div>
+      </div>
+      <div class="vmas" aria-hidden="true">
+        <span class="mdol d1">$</span><span class="mdol d2">$</span><span class="mdol d3">$</span>
+        <div class="mbody"><img src="icon-512.png" alt="" width="512" height="512"></div>
+        <svg class="macc mag" viewBox="0 0 64 64" fill="none" stroke-linecap="round"><circle cx="26" cy="26" r="16" fill="rgba(255,255,255,.55)" stroke="#14231A" stroke-width="5"/><path d="M38 38l18 18" stroke="#8B5A2B" stroke-width="8"/></svg>
+        <svg class="macc pen" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 52l4-14L44 10l10 10-28 28z" fill="#FFD36E" stroke="#14231A" stroke-width="4"/><path d="M12 52l4-14 10 10z" fill="#F7DDEA" stroke="#14231A" stroke-width="4"/></svg>
+        <svg class="macc clip" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="44" height="52" rx="6" fill="#fff" stroke="#14231A" stroke-width="4"/><path d="M20 46V36M30 46V26M40 46V32" stroke="#18793F" stroke-width="6"/></svg>
+        <svg class="macc meg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 26h12l22-12v36L20 38H8z" fill="#8FE0AE" stroke="#14231A" stroke-width="4"/><path d="M50 22c4 4 4 16 0 20M56 16c8 8 8 24 0 32" stroke="#8FE0AE" stroke-width="4"/></svg>
       </div>
       <audio id="vaud" src="voice.m4a" preload="metadata"></audio>
       <button type="button" class="vbig" id="vbig" aria-label="Play video with sound"><b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></b><span>Play with sound</span></button>
-      <div class="vctl"><button type="button" id="vplay" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><span class="vtm" id="vtime">0:00 / 0:56</span><div class="vprog" id="vprog" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="vbar"></i></div><button type="button" id="vmute" aria-label="Turn sound off"></button></div>
+      <div class="vctl"><button type="button" id="vplay" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><span class="vtm" id="vtime">0:00 / 1:06</span><div class="vprog" id="vprog" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="vbar"></i></div><button type="button" id="vmute" aria-label="Turn sound off"></button></div>
     </div>
   </div>
 </section>
@@ -1427,7 +1507,7 @@ document.getElementById('copy').addEventListener('click', function(){
     if(i===idx&&!force) return;
     scs.forEach(function(s){s.classList.remove('on');});
     void root.offsetWidth;
-    scs[i].classList.add('on'); idx=i;
+    scs[i].classList.add('on'); idx=i; root.setAttribute('data-sc',i);
   }
   function render(force){
     show(sceneAt(t),force);
