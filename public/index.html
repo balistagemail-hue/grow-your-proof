@@ -848,6 +848,31 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 .split-card{background:var(--mint);border-radius:32px;padding:48px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
 .split-card p{color:var(--ink);font-size:17px}
 @media (max-width:900px){.fmt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ben-grid{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:28px}.split-card{padding:32px 24px}}
+
+/* milkshake-style: data band, plan band, dark services, final CTA */
+.data-band{background:var(--band);color:#fff;padding-block:88px;text-align:center}
+.data-band small{display:block;font-size:15px;color:var(--band-muted);margin-bottom:18px}
+.data-band blockquote{margin:0 auto;max-width:780px;font-family:var(--display);font-weight:700;font-size:clamp(26px,3.6vw,44px);line-height:1.2;letter-spacing:-.02em}
+.data-by{display:block;margin-top:22px;font-weight:700;font-size:14px;color:var(--band-accent)}
+.data-chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.data-chips span{border:1.5px solid rgba(143,224,174,.4);color:var(--band-accent);border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px}
+.plan-band{background:var(--mint);padding-block:72px;text-align:center}
+.plan-band .wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.plan-band p{max-width:560px;font-size:17px}
+.svc-dark{background:var(--band)!important;color:var(--band-fg)}
+.svc-dark#services{padding-bottom:96px}
+.svc-dark .eyebrow{color:var(--band-accent)}
+.svc-dark .h2{color:#fff}
+.svc-dark .lead{color:var(--band-muted)}
+.svc-dark .svc{background:var(--mint);color:var(--ink)}
+.svc-dark .svc h3{color:var(--ink)}
+.svc-dark .svc p{color:var(--muted)}
+.svc-btn{align-self:flex-start;margin-top:auto;background:var(--band);color:#fff;font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;text-decoration:none}
+.cta2{max-width:820px;margin:0 auto;background:var(--mint);border-radius:32px;padding:56px 32px;box-shadow:14px 14px 0 var(--band);display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.cta2 p{font-size:18px}
+.cta2 .mail{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.cta2 .addr{font-weight:700}
+@media (max-width:640px){.data-band{padding-block:56px}.cta2{padding:40px 22px;box-shadow:8px 8px 0 var(--band)}}
 </style>
 
 </head>
@@ -857,7 +882,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
     <a class="brand" href="#top"><img src="logo.png" alt="Grow Your Proof logo"><span>Grow Your Proof</span></a>
     <nav class="links" aria-label="Main">
       <a class="hide-sm" href="#services">Services</a>
-      <a class="hide-sm" href="#process">How it works</a>
+      <a class="hide-sm" href="#formats">Videos</a>
       <a class="hide-sm" href="#faq">FAQ</a>
       <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
     </nav>
@@ -916,295 +941,37 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   </div>
 </section>
 
-<section class="band dark" id="diff">
-  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
-    <div class="head">
-      <span class="eyebrow">The difference</span>
-      <h2 class="h2">What changes when you work with us</h2>
-    </div>
-    <div class="ba">
-      <div class="without">
-        <h3>Without Grow Your Proof</h3>
-        <p class="sub">Guesswork that costs you time and ad spend</p>
-        <ul>
-          <li><span class="qi" aria-hidden="true">?</span><span>Guessing which hooks work, with no time to test them</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>Ad budget burned on videos that don't convert</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>Ads rejected or accounts flagged because of one wrong claim</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>The same few videos running until results drop</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>No idea which message brings in real, funded accounts</span></li>
-        </ul>
-        <div class="mtiles">
-          <div class="mt"><span>Cost per new account</span><b>?</b></div>
-          <div class="mt"><span>Completed ID checks</span><b>?</b></div>
-          <div class="mt"><span>Funded accounts</span><b>?</b></div>
-          <div class="mt"><span>Hook win rate</span><b>?</b></div>
-          <div class="mt wide"><span>Which hooks actually work?</span><b class="big unknown">Unknown</b></div>
-        </div>
-      </div>
-      <div class="with">
-        <h3>With Grow Your Proof</h3>
-        <p class="sub">A tested system that turns views into new accounts</p>
-        <ul>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>5 hooks</b> tested per batch, then we scale the winners</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>Compliance sign-off</b> on every script before we film</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Studio shoots with <b>many different faces</b>, handled for you</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>12 fresh videos</b> every month, so your ads never go stale</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Built for <b>licensed fintech, trading &amp; investing apps</b></span></li>
-        </ul>
-        <div class="mtiles">
-          <div class="mt"><span>Cost per new account</span><b>Tracked</b></div>
-          <div class="mt"><span>Completed ID checks</span><b>Tracked</b></div>
-          <div class="mt"><span>Funded accounts</span><b>Tracked</b></div>
-          <div class="mt"><span>Hook win rate</span><b>Tracked</b></div>
-          <div class="mt wide"><span>Your ad budget</span><b class="big">Stays yours</b>
-            <div class="mascot money" role="img" aria-label="Grow Your Proof tree holding a money bag"><img src="tree-cut.png" alt=""><svg viewBox="0 0 600 629" aria-hidden="true"><g transform="translate(-30 0)"><path d="M70 420 C 20 470, -10 560, 40 610 C 80 640, 200 640, 240 610 C 290 560, 260 470, 210 420 Z" fill="#E7B54A"/><path d="M95 380 L185 380 L170 425 L110 425 Z" fill="#D49A2E"/><path d="M100 425 Q 140 440 180 425" fill="none" stroke="#8A5A00" stroke-width="12" stroke-linecap="round"/><path d="M60 470 C 40 520, 50 570, 80 600" fill="none" stroke="#F6D58B" stroke-width="14" stroke-linecap="round" opacity=".8"/><text x="140" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="130" fill="#8A5A00">$</text></g></svg></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="ba-note">What we track for you every week.</p>
+<section class="data-band" id="data">
+  <div class="wrap">
+    <small>Measured, not guessed</small>
+    <blockquote>“We judge every video on one thing: does it bring in real, funded accounts?”</blockquote>
+    <span class="data-by">How we measure</span>
+    <div class="data-chips"><span>Cost per new account</span><span>Completed ID checks</span><span>Funded accounts</span><span>Hook win rate</span></div>
   </div>
 </section>
 
-<section class="band" id="services">
+<section class="plan-band" id="markets">
+  <div class="wrap">
+    <h2 class="h2">Many faces, many markets</h2>
+    <p>We cast presenters of different ages and backgrounds, so you can test who your audience trusts in each market you advertise in.</p>
+    <a class="btn btn-dark" href="#services">See our services <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<section class="band svc-dark" id="services">
   <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
-    <div class="head">
+    <div class="head" style="align-self:center;text-align:center;align-items:center">
       <span class="eyebrow">Services</span>
       <h2 class="h2">Everything your fintech app needs to grow, under one roof</h2>
       <p class="lead">No generic agency. We only work with licensed fintech, trading and investing apps, so we know the rules and what makes people open an account.</p>
     </div>
     <div class="grid3">
-      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg><h3>Compliance-first scripts</h3><p>We write every script and hook with your compliance rules in mind: no profit promises, the risk warning included, and your team signs off before we film.</p></div>
-      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg><h3>Studio-shot videos, many faces</h3><p>We shoot professional and UGC-style videos in our studio with presenters of different ages and backgrounds, so you can test which face and hook works best.</p></div>
-      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg><h3>Ads management</h3><p>We run your campaigns on Meta and TikTok for licensed advertisers, handle targeting and budgets, and put your best videos to work. You keep control of your ad accounts and approvals.</p></div>
-      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/><path d="M8 11h6M11 8v6"/></svg><h3>Performance analysis</h3><p>We track what matters for your app: cost per new account, completed identity checks and, where your data allows, funded accounts. A weekly call and a clear monthly report.</p></div>
-      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>App Store optimization</h3><p>Screenshots, title and description that turn ad clicks into installs.</p></div>
-      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/></svg><h3>Website design &amp; development</h3><p>Fast, clear websites and landing pages for your app, with the risk warnings and legal pages your market requires.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="process" class="splan">
-  <div class="plan-track" id="plantrack">
-    <div class="plan-sticky">
-      <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">How it works</span>
-      <h2 class="h2">Your scaling plan</h2>
-    </div>
-        <div class="plan-steps">
-      <article class="pstep active" data-i="0">
-        <div class="ptext">
-          <div class="phead"><div class="mascot m1" role="img" aria-label="Grow Your Proof tree in a meeting">
-            <img src="tree-cut.png" alt="">
-            <svg viewBox="0 0 600 629" aria-hidden="true"><defs><linearGradient id="hsCup" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B6B78"/><stop offset="1" stop-color="#232E37"/></linearGradient><linearGradient id="hsBand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6A7884"/><stop offset="1" stop-color="#2E3A44"/></linearGradient></defs>
-<path d="M92 250 C 110 40, 525 25, 548 245" fill="none" stroke="rgba(0,0,0,.18)" stroke-width="22" stroke-linecap="round" transform="translate(0 8)"/>
-<path d="M92 250 C 110 40, 525 25, 548 245" fill="none" stroke="url(#hsBand)" stroke-width="20" stroke-linecap="round"/>
-<ellipse cx="74" cy="282" rx="40" ry="58" fill="url(#hsCup)"/><ellipse cx="88" cy="282" rx="22" ry="44" fill="#8E9CA8" opacity=".55"/>
-<ellipse cx="552" cy="272" rx="40" ry="58" fill="url(#hsCup)"/><ellipse cx="538" cy="272" rx="22" ry="44" fill="#8E9CA8" opacity=".55"/>
-<path d="M548 318 C 540 380, 470 395, 385 330" fill="none" stroke="#2E3A44" stroke-width="10" stroke-linecap="round"/>
-<ellipse cx="378" cy="326" rx="20" ry="15" fill="#232E37"/></svg>
-          </div><span class="plabel">Step 1 · Discovery call</span></div>
-          <h3>Get to know your app</h3>
-          <p>In a free 30-minute call we get to know your app, your licence and markets, your audience and your growth goals. We look at what you are already running, which ads were approved and which were not, and where the biggest opportunities are.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-        </div>
-        <div class="pvis">
-<div class="pframe"><img class="pimg" src="discovery-call-v.jpg" alt="Discovery call over video with a Grow Your Proof team member" width="760" height="1184" loading="lazy"></div>
-        </div>
-      </article>
-      <article class="pstep" data-i="1">
-        <div class="ptext">
-          <div class="phead"><div class="mascot m2" role="img" aria-label="Grow Your Proof tree holding a plan">
-            <img src="tree-cut.png" alt="">
-            <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="rotate(10 470 520)"><rect x="380" y="400" width="190" height="230" rx="18" fill="#fff" stroke="#C9D6CD" stroke-width="6"/>
-<rect x="430" y="388" width="90" height="28" rx="10" fill="#18793F"/>
-<path d="M410 465h130M410 505h130M410 545h95" stroke="#9FB5A7" stroke-width="10" stroke-linecap="round"/></g>
-</svg>
-          </div><span class="plabel">Step 2 · Strategy</span></div>
-          <h3>Custom Strategy Plan</h3>
-          <p>We create a tailored strategy: the audience we recommend, the hooks worth testing and the matching scripts, all inside your compliance rules. You see exactly how we will grow your app, and your compliance team signs off on the scripts before we start filming.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-        </div>
-        <div class="pvis">
-<div class="sui">
-  <div class="sui-top"><span class="sui-pill"><span class="sp-dot"></span>Strategy ready</span></div>
-  <div class="sui-card">
-    <small>Goals</small>
-    <div class="chips"><span class="g">More new accounts</span><span class="b">Lower cost per account</span><span class="p">Meta &amp; TikTok</span></div>
-  </div>
-  <div class="sui-two">
-    <div class="sui-card"><small>Strategist</small><b>Grow Your Proof</b></div>
-    <div class="sui-card"><small>Presenters</small><b>4 matched</b></div>
-  </div>
-  <div class="sui-card sui-sum">
-    <b class="sum-h">Strategy summary</b>
-    <div class="sum-g"><span class="ico o" aria-hidden="true"></span><b>Target audience</b></div>
-    <ul><li>First-time investors, 25–40</li><li>Already use a banking app</li></ul>
-    <div class="sum-g"><span class="ico g" aria-hidden="true"></span><b>Hooks to test</b></div>
-    <ul><li>“What I wish I knew before my first investment”</li><li>“How this app actually works”</li></ul>
-    <div class="sum-g"><span class="ico p" aria-hidden="true"></span><b>Scripts</b></div>
-    <ul class="faded"><li>Open on a question, show the app, end with the risk warning</li><li>3 scripts ready for sign-off</li></ul>
-  </div>
-</div>
-        </div>
-      </article>
-      <article class="pstep" data-i="2">
-        <div class="ptext">
-          <div class="phead"><div class="mascot m3" role="img" aria-label="Grow Your Proof tree talking through a megaphone">
-            <img src="tree-cut.png" alt="">
-            <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="translate(80 12) rotate(-12 400 300)">
-<rect x="404" y="318" width="30" height="92" rx="12" fill="#FFFFFF" stroke="#D6D9DC" stroke-width="5"/>
-<rect x="338" y="262" width="44" height="60" rx="16" fill="#C9302C"/>
-<rect x="374" y="257" width="54" height="70" rx="8" fill="#FFFFFF" stroke="#D6D9DC" stroke-width="5"/>
-<path d="M426 262 L470 262 L594 200 Q 618 292 594 384 L470 322 L426 322 Z" fill="#E2463F"/>
-<path d="M440 270 L470 270 L580 216" fill="none" stroke="#F4A3A0" stroke-width="9" stroke-linecap="round" opacity=".7"/>
-<ellipse cx="594" cy="292" rx="24" ry="92" fill="#C9302C"/>
-<ellipse cx="600" cy="292" rx="9" ry="24" fill="#F3F3F3"/>
-</g>
-<g class="waves" transform="translate(80 12)" fill="none" stroke="#18793F" stroke-width="14" stroke-linecap="round"><path d="M655 215 q 34 50 0 100"/><path d="M700 180 q 56 85 0 170"/></g></svg>
-          </div><span class="plabel">Step 3 · Production</span></div>
-          <h3>We shoot in our studio</h3>
-          <p>We match your app with presenters who fit your audience, brief them on the approved scripts and direct the shoot in our studio. We edit the videos, add captions and the required risk warnings, and prepare every version for your ads. You get finished content without chasing anyone.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-        </div>
-        <div class="pvis">
-<div class="pframe"><img class="pimg" src="creator-crm.jpg" alt="UGC creator CRM with each creator's niche, best app category and project status" width="960" height="967" loading="lazy"></div>
-        </div>
-      </article>
-      <article class="pstep" data-i="3">
-        <div class="ptext">
-          <div class="phead"><div class="mascot m4" role="img" aria-label="Grow Your Proof tree launching an ad">
-            <img src="tree-cut.png" alt="">
-            <svg viewBox="0 0 600 629" aria-hidden="true"><g transform="rotate(14 480 480)"><rect x="400" y="340" width="160" height="270" rx="30" fill="#0B1220"/><rect x="414" y="360" width="132" height="230" rx="20" fill="#3B8BE5"/><circle cx="480" cy="475" r="42" fill="#fff"/><path d="M468 452 L500 475 L468 498 Z" fill="#18793F"/></g>
-<g class="spark" fill="#F2C94C"><path d="M590 300 l10 26 26 10 -26 10 -10 26 -10 -26 -26 -10 26 -10z"/><path d="M380 330 l6 15 15 6 -15 6 -6 15 -6 -15 -15 -6 15 -6z"/></g></svg>
-          </div><span class="plabel">Step 4 · Launch &amp; test</span></div>
-          <h3>Test hooks in your ads</h3>
-          <p>Your videos go live on Meta and TikTok, and we test different hooks against each other. We track views, cost per new account and the quality of the accounts you get, cut what does not perform and put more budget behind the winners.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-        </div>
-        <div class="pvis">
-<div class="pframe"><img class="pimg" src="ads-manager-v.jpg" alt="Ads dashboard with app install campaigns, results, cost per install and ROAS" width="760" height="1009" loading="lazy"></div>
-        </div>
-      </article>
-      <article class="pstep" data-i="4">
-        <div class="ptext">
-          <div class="phead"><div class="mascot m5" role="img" aria-label="Grow Your Proof tree looking at a rising chart">
-            <img src="tree-cut.png" alt="">
-            <svg viewBox="0 0 600 629" aria-hidden="true"><path d="M690 480 L640 640 M790 480 L840 640 M740 480 L740 640" stroke="#8B6A4A" stroke-width="14" stroke-linecap="round"/>
-<rect x="600" y="150" width="280" height="330" rx="22" fill="#FFFFFF" stroke="#C9D6CD" stroke-width="8"/>
-<rect x="600" y="150" width="280" height="44" rx="22" fill="#18793F"/><rect x="600" y="172" width="280" height="22" fill="#18793F"/>
-<path d="M640 230 V440 H850" fill="none" stroke="#9FB5A7" stroke-width="7" stroke-linecap="round"/>
-<rect x="665" y="380" width="30" height="58" rx="6" fill="#C9D6CD"/><rect x="715" y="345" width="30" height="93" rx="6" fill="#C9D6CD"/><rect x="765" y="295" width="30" height="143" rx="6" fill="#18793F"/>
-<path class="climb" d="M655 380 L710 335 L745 350 L825 245" fill="none" stroke="#18793F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M800 243 L827 242 L824 270" fill="none" stroke="#18793F" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div><span class="plabel">Step 5 · Monthly review</span></div>
-          <h3>Review, then scale</h3>
-          <p>Every month we sit down with you and show exactly how it went: which videos and hooks performed best, what worked less well, and where we focus next. Together we decide the next steps, so your app keeps growing.</p>
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-        </div>
-        <div class="pvis">
-<div class="pframe"><img class="pimg" src="monthly-review.jpg" alt="Monthly review call showing a UGC performance report with results, key takeaways and what to focus on next" width="900" height="1350" loading="lazy"></div>
-        </div>
-      </article>
-        </div>
-        <div class="pdots"><button type="button" class="pdot on" data-i="0" aria-label="Step 1"></button><button type="button" class="pdot" data-i="1" aria-label="Step 2"></button><button type="button" class="pdot" data-i="2" aria-label="Step 3"></button><button type="button" class="pdot" data-i="3" aria-label="Step 4"></button><button type="button" class="pdot" data-i="4" aria-label="Step 5"></button></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="team" id="team">
-  <div class="wrap team-head">
-    <span class="tag-team">Team</span>
-    <h2 class="h2">Meet the team</h2>
-    <p class="serif team-serif">Behind your growth</p>
-  </div>
-  <div class="team-marquee">
-    <div class="team-track">
-      <div class="team-set">
-          <figure class="tm"><div class="tm-img"><img src="team-elle-v2.jpg" alt="Elle, Business Development Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Elle</b><span>Business Development Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-jay.jpg" alt="Jay, Head of Design" width="520" height="650" loading="lazy"></div><figcaption><b>Jay</b><span>Head of Design</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-nina.jpg" alt="Nina, Social Media Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Nina</b><span>Social Media Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-leon.jpg" alt="Leon, Graphic Designer" width="520" height="650" loading="lazy"></div><figcaption><b>Leon</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-lily.jpg" alt="Lily, Graphic Designer" width="520" height="650" loading="lazy"></div><figcaption><b>Lily</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-bobby.jpg" alt="Bobby, HR Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Bobby</b><span>HR Manager</span></figcaption></figure>
-      </div>
-      <div class="team-set" aria-hidden="true">
-          <figure class="tm"><div class="tm-img"><img src="team-elle-v2.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Elle</b><span>Business Development Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-jay.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Jay</b><span>Head of Design</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-nina.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Nina</b><span>Social Media Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-leon.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Leon</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-lily.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Lily</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-bobby.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Bobby</b><span>HR Manager</span></figcaption></figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="reviews" hidden>
-  <div class="wrap">
-    <div class="wall2">
-      <div class="wall2-center">
-        <h2 class="wall2-title">What our clients <span>are saying</span></h2>
-        <a class="btn btn-dark" href="get-in-touch.html">Start working with us <span class="arrow">→</span></a>
-      </div>
-      <div class="rv-stat hide-sm" style="--x:23%;--y:21%;--r:5deg"><small>Apps helped</small><b>25+</b><svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4 L120 50 L0 50Z" fill="rgba(24,121,63,.14)"/><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4" fill="none" stroke="#18793F" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
-      <figure class="rv-msg dark" style="--x:2%;--y:2%;--r:-4deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span></div>
-      </figure>
-      <figure class="rv-msg" style="--x:1%;--y:27%;--r:1deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
-      </figure>
-      <div class="rv-phone hide-sm" style="--x:0%;--y:50%;--r:-6deg"><video src="ugc-2.mp4" poster="ugc-2.jpg" autoplay muted loop playsinline preload="none" aria-label="UGC example video"></video></div>
-      <figure class="rv-msg dark hide-sm" style="--x:6%;--y:53%;--r:-3deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
-      </figure>
-      <figure class="rv-msg hide-sm" style="--x:2%;--y:77%;--r:-3deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span></div>
-      </figure>
-      <figure class="rv-msg wide" style="--x:34%;--y:8%;--r:0deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span></div>
-      </figure>
-      <div class="rv-phone hide-sm" style="--x:55%;--y:69%;--r:3deg"><video src="ugc-3.mp4" poster="ugc-3.jpg" autoplay muted loop playsinline preload="none" aria-label="UGC example video"></video></div>
-      <figure class="rv-msg wide hide-sm" style="--x:31%;--y:74%;--r:2deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span></div>
-      </figure>
-      <div class="rv-phone hide-sm" style="--x:87%;--y:0%;--r:5deg"><video src="ugc-1.mp4" poster="ugc-1.jpg" autoplay muted loop playsinline preload="none" aria-label="UGC example video"></video></div>
-      <figure class="rv-msg" style="--x:63%;--y:7%;--r:3deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
-      </figure>
-      <figure class="rv-msg dark" style="--x:68%;--y:29%;--r:-4deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
-      </figure>
-      <div class="rv-stat hide-sm" style="--x:88%;--y:52%;--r:3deg"><small>Ad spend managed</small><b>$80K+</b><svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4 L120 50 L0 50Z" fill="rgba(24,121,63,.14)"/><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4" fill="none" stroke="#18793F" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
-      <figure class="rv-msg hide-sm" style="--x:66%;--y:53%;--r:-3deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.4 1.1 4.2 2.4C11.8 6.1 13.2 5 15.2 5c3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="#E5484D"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
-      </figure>
-      <div class="rv-stat hide-sm" style="--x:87%;--y:77%;--r:5deg"><small>Client ROAS</small><b>3–7x</b><svg viewBox="0 0 120 50" preserveAspectRatio="none" aria-hidden="true"><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4 L120 50 L0 50Z" fill="rgba(24,121,63,.14)"/><path d="M0 46 L18 40 L32 42 L50 30 L66 33 L84 18 L100 20 L120 4" fill="none" stroke="#18793F" stroke-width="2.5" stroke-linejoin="round"/></svg></div>
-      <figure class="rv-msg dark hide-sm" style="--x:65%;--y:76%;--r:0deg">
-        <div class="rm-h"><span class="av" aria-hidden="true"></span><b>[Client name]</b><small>[App]</small></div>
-        <blockquote>[Paste the real message from your client here]</blockquote>
-        <div class="rx"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 5 5.5 5 10.5A5 5 0 017 12.5C7 10 8.5 8.6 9.5 7.5 9.7 9.5 11 10.5 11 10.5 11 7 12 4.5 12 2z" fill="#F2994A"/><path d="M12 13c.6 1.6 2.2 2.2 2.2 4a2.2 2.2 0 01-4.4 0c0-1.2.9-2 2.2-4z" fill="#F2C94C"/></svg></span><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10v11H3V10zM9 21h8.5a2 2 0 002-1.6l1.4-7A2 2 0 0019 10h-5l.8-4.3A2 2 0 0012.9 3.5L9 9z" fill="#F2C94C"/></svg></span></div>
-      </figure>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg><h3>Compliance-first scripts</h3><p>We write every script and hook with your compliance rules in mind: no profit promises, the risk warning included, and your team signs off before we film.</p><a class="svc-btn" href="get-in-touch.html">Talk to us <span aria-hidden="true">→</span></a></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10l5-3v10l-5-3"/></svg><h3>Studio-shot videos, many faces</h3><p>We shoot professional and UGC-style videos in our studio with presenters of different ages and backgrounds, so you can test which face and hook works best.</p><a class="svc-btn" href="get-in-touch.html">Talk to us <span aria-hidden="true">→</span></a></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg><h3>Ads management</h3><p>We run your campaigns on Meta and TikTok for licensed advertisers, handle targeting and budgets, and put your best videos to work. You keep control of your ad accounts and approvals.</p><a class="svc-btn" href="get-in-touch.html">Talk to us <span aria-hidden="true">→</span></a></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/><path d="M8 11h6M11 8v6"/></svg><h3>Performance analysis</h3><p>We track what matters for your app: cost per new account, completed identity checks and, where your data allows, funded accounts. A weekly call and a clear monthly report.</p><a class="svc-btn" href="get-in-touch.html">Talk to us <span aria-hidden="true">→</span></a></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>App Store optimization</h3><p>Screenshots, title and description that turn ad clicks into installs.</p><a class="svc-btn" href="get-in-touch.html">Talk to us <span aria-hidden="true">→</span></a></div>
+      <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/></svg><h3>Website design &amp; development</h3><p>Fast, clear websites and landing pages for your app, with the risk warnings and legal pages your market requires.</p><a class="svc-btn" href="get-in-touch.html">Talk to us <span aria-hidden="true">→</span></a></div>
     </div>
   </div>
 </section>
@@ -1226,24 +993,21 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   </div>
 </section>
 
-<section style="padding-block:0 96px" id="book">
+<section id="book" style="padding-block:24px 96px">
   <div class="wrap">
-    <div class="cta">
-      <img src="logo.png" alt="">
-      <h2 class="h2" style="max-width:760px">From first call to your first studio shoot</h2>
-      <div class="three">
-        <div><b>1. Book a call</b><span>30 minutes about your app and goals.</span></div>
-        <div><b>2. Approve scripts</b><span>We send hooks and scripts to sign off.</span></div>
-        <div><b>3. Go live</b><span>Videos delivered, ads launched, testing starts.</span></div>
-      </div>
+    <div class="cta2">
+      <h2 class="h2">Compliant creative that converts.</h2>
+      <p>Let's plan your first studio shoot.</p>
+      <a class="btn btn-dark" href="get-in-touch.html">Get in touch <span class="arrow">→</span></a>
       <div class="mail">
         <span class="addr" id="addr">Partner@growyourproof.com</span>
-        <button class="btn btn-dark" id="copy" type="button">Copy email</button>
+        <button class="btn btn-outline" id="copy" type="button">Copy email</button>
       </div>
       <div class="copied" id="copied" aria-live="polite"></div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer class="foot">
@@ -1254,7 +1018,7 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
         <a class="brand" href="#top"><img src="logo.png" alt=""><span>Grow Your Proof</span></a>
         <p>At Grow Your Proof, we create video ads and paid social for licensed fintech, trading and investing apps. In finance, trust decides who gets chosen, and that is exactly what we build for you. Grow Your Proof is a marketing agency and does not give financial or investment advice.</p>
       </div>
-      <nav class="foot-col" aria-label="Main menu"><h4>Main menu</h4><a href="#top">Home</a><a href="#services">Services</a><a href="#process">How it works</a><a href="get-in-touch.html">Get in touch</a></nav>
+      <nav class="foot-col" aria-label="Main menu"><h4>Main menu</h4><a href="#top">Home</a><a href="#services">Services</a><a href="#formats">Videos</a><a href="get-in-touch.html">Get in touch</a></nav>
       <nav class="foot-col" aria-label="Other links"><h4>Other links</h4><a href="#faq">FAQ</a></nav>
       <div class="foot-col contact"><h4>Contact us</h4>
         <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Netherlands</span>
