@@ -827,6 +827,27 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
 }
 @media (prefers-reduced-motion:reduce){.vmas *{animation:none!important}}
 @media (prefers-reduced-motion:reduce){.vsc.on .vtx>*,.vsc.on .vvis>*,.vsc.on .vchart .bar,.vsc.on .vchart .best-tag{animation:none;opacity:1;transform:none}}
+
+/* milkshake-style layout blocks */
+.fmt-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 20px}
+.fmt{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px}
+.fmt figcaption{background:var(--band);color:var(--band-accent);font-weight:800;font-size:14px;padding:8px 18px;border-radius:12px;text-align:center}
+.ph{width:100%;aspect-ratio:9/16;border-radius:22px;background:linear-gradient(160deg,#1c3326,#0f1b14);border:1.5px solid rgba(143,224,174,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--band-muted);font-size:13px;font-weight:600;text-align:center;padding:12px;overflow:hidden;position:relative}
+.ph svg{width:34px;height:34px;fill:var(--band-accent)}
+.ph video,.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.benefit{background:var(--band);color:var(--band-fg);padding-block:72px}
+.ben-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.ben{background:var(--mint);color:var(--ink);border-radius:24px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.ben-ic{width:44px;height:44px;border-radius:50%;background:var(--green);display:grid;place-items:center}
+.ben-ic svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ben h3{font-family:var(--display);font-size:22px;font-weight:800}
+.ben p{color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:center}
+.split-ph{display:flex;gap:16px;justify-content:center}
+.split-ph .ph{max-width:210px}
+.split-card{background:var(--mint);border-radius:32px;padding:48px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.split-card p{color:var(--ink);font-size:17px}
+@media (max-width:900px){.fmt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ben-grid{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:28px}.split-card{padding:32px 24px}}
 </style>
 
 </head>
@@ -853,30 +874,95 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       <a class="btn btn-primary" href="get-in-touch.html">Get in touch <span class="arrow">→</span></a>
     </div>
 
-    <div class="stage">
-      <div class="about">
-        <span class="tag-about">About</span>
-        <h2>Built to grow your proof</h2>
-        <p class="serif">Built for finance</p>
-        <p class="about-body">Grow Your Proof is a creative marketing studio for licensed fintech, trading and investing apps. We write compliance-first scripts, shoot professional and UGC-style videos in our studio with many different faces, run your ads on Meta and TikTok, and show you every week which videos perform best.</p>
-        <div class="about-ctas">
-          <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-          <a class="btn btn-outline" href="#services">Our services</a>
-        </div>
-      </div>
-      <div class="phones">
-        <div class="phone3 left"><video src="ugc-2.mp4" poster="ugc-2.jpg" autoplay muted loop playsinline preload="metadata" aria-label="UGC example: career app video"></video></div>
-        <div class="phone3 right"><video src="ugc-3.mp4" poster="ugc-3.jpg" autoplay muted loop playsinline preload="metadata" aria-label="UGC example: map app video"></video></div>
-        <div class="phone3 main"><video src="ugc-1.mp4" poster="ugc-1.jpg" autoplay muted loop playsinline preload="auto" aria-label="UGC example: creator talking to camera"></video></div>
-      </div>
-    </div>
-
     <div class="stats">
       <div class="stat"><b>Licensed</b><span>clients only</span></div>
       <div class="stat"><b>Compliance</b><span>sign-off on every script</span></div>
       <div class="stat"><b>Studio</b><span>shot, many faces</span></div>
       <div class="stat"><b>Weekly</b><span>performance review</span></div>
     </div>
+  </div>
+</section>
+
+<section class="band" id="formats">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+    <div class="head" style="align-self:center;text-align:center;align-items:center">
+      <span class="eyebrow">What we make</span>
+      <h2 class="h2">Videos people trust, and act on</h2>
+      <p class="lead">One studio, many formats. Every video is written with your compliance rules in mind.</p>
+    </div>
+    <!-- To add a sample video: replace the <div class="ph">...</div> content with <video src="your-file.mp4" poster="your-poster.jpg" autoplay muted loop playsinline></video> -->
+    <div class="fmt-grid"><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>Explainer to camera</figcaption></figure><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>Studio interview</figcaption></figure><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>App walkthrough</figcaption></figure><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>Myth vs. fact</figcaption></figure><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>Beginner's guide</figcaption></figure><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>Q&amp;A</figcaption></figure><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>Listicle</figcaption></figure><figure class="fmt"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><figcaption>Branded UGC</figcaption></figure></div>
+  </div>
+</section>
+
+<section class="benefit" id="benefits">
+  <div class="wrap">
+    <div class="ben-grid">
+      <div class="ben"><span class="ben-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7l6 6 4-4 8 8"/><path d="M15 17h6v-6"/></svg></span><h3>Lower your cost per account</h3><p>Find the hooks and faces that cut through the noise, then put the budget behind what works.</p></div>
+      <div class="ben"><span class="ben-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Stay inside the rules</h3><p>Clear messaging that explains your app, builds trust and stays within your compliance rules.</p></div>
+      <div class="ben"><span class="ben-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M16 14.2c2.8 0 5 2 5 5.3"/></svg></span><h3>Many faces, one studio</h3><p>Presenters of different ages and backgrounds, filmed in one studio, so you can test who your audience trusts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="compliant">
+  <div class="wrap split">
+    <div class="split-ph"><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div><div class="ph" role="img" aria-label="Sample video coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Sample video coming soon</span></div></div>
+    <div class="split-card">
+      <h2 class="h2">Compliant, relevant, ready to scale</h2>
+      <p>Grow Your Proof is a creative marketing studio for licensed fintech, trading and investing apps. We write compliance-first scripts, shoot professional and UGC-style videos in our studio with many different faces, run your ads on Meta and TikTok, and show you every week which videos perform best.</p>
+      <div class="about-ctas"><a class="btn btn-dark" href="get-in-touch.html">Get in touch</a><a class="btn btn-outline" href="#services">Our services</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="diff">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
+    <div class="head">
+      <span class="eyebrow">The difference</span>
+      <h2 class="h2">What changes when you work with us</h2>
+    </div>
+    <div class="ba">
+      <div class="without">
+        <h3>Without Grow Your Proof</h3>
+        <p class="sub">Guesswork that costs you time and ad spend</p>
+        <ul>
+          <li><span class="qi" aria-hidden="true">?</span><span>Guessing which hooks work, with no time to test them</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>Ad budget burned on videos that don't convert</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>Ads rejected or accounts flagged because of one wrong claim</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>The same few videos running until results drop</span></li>
+          <li><span class="qi" aria-hidden="true">?</span><span>No idea which message brings in real, funded accounts</span></li>
+        </ul>
+        <div class="mtiles">
+          <div class="mt"><span>Cost per new account</span><b>?</b></div>
+          <div class="mt"><span>Completed ID checks</span><b>?</b></div>
+          <div class="mt"><span>Funded accounts</span><b>?</b></div>
+          <div class="mt"><span>Hook win rate</span><b>?</b></div>
+          <div class="mt wide"><span>Which hooks actually work?</span><b class="big unknown">Unknown</b></div>
+        </div>
+      </div>
+      <div class="with">
+        <h3>With Grow Your Proof</h3>
+        <p class="sub">A tested system that turns views into new accounts</p>
+        <ul>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>5 hooks</b> tested per batch, then we scale the winners</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>Compliance sign-off</b> on every script before we film</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Studio shoots with <b>many different faces</b>, handled for you</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>12 fresh videos</b> every month, so your ads never go stale</span></li>
+          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Built for <b>licensed fintech, trading &amp; investing apps</b></span></li>
+        </ul>
+        <div class="mtiles">
+          <div class="mt"><span>Cost per new account</span><b>Tracked</b></div>
+          <div class="mt"><span>Completed ID checks</span><b>Tracked</b></div>
+          <div class="mt"><span>Funded accounts</span><b>Tracked</b></div>
+          <div class="mt"><span>Hook win rate</span><b>Tracked</b></div>
+          <div class="mt wide"><span>Your ad budget</span><b class="big">Stays yours</b>
+            <div class="mascot money" role="img" aria-label="Grow Your Proof tree holding a money bag"><img src="tree-cut.png" alt=""><svg viewBox="0 0 600 629" aria-hidden="true"><g transform="translate(-30 0)"><path d="M70 420 C 20 470, -10 560, 40 610 C 80 640, 200 640, 240 610 C 290 560, 260 470, 210 420 Z" fill="#E7B54A"/><path d="M95 380 L185 380 L170 425 L110 425 Z" fill="#D49A2E"/><path d="M100 425 Q 140 440 180 425" fill="none" stroke="#8A5A00" stroke-width="12" stroke-linecap="round"/><path d="M60 470 C 40 520, 50 570, 80 600" fill="none" stroke="#F6D58B" stroke-width="14" stroke-linecap="round" opacity=".8"/><text x="140" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="130" fill="#8A5A00">$</text></g></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="ba-note">What we track for you every week.</p>
   </div>
 </section>
 
@@ -894,59 +980,6 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
       <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/><path d="M8 11h6M11 8v6"/></svg><h3>Performance analysis</h3><p>We track what matters for your app: cost per new account, completed identity checks and, where your data allows, funded accounts. A weekly call and a clear monthly report.</p></div>
       <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg><h3>App Store optimization</h3><p>Screenshots, title and description that turn ad clicks into installs.</p></div>
       <div class="svc"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/></svg><h3>Website design &amp; development</h3><p>Fast, clear websites and landing pages for your app, with the risk warnings and legal pages your market requires.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="why">
-  <div class="wrap why">
-    <div class="why-text">
-      <h2>Why fintech apps choose us</h2>
-      <p class="serif">Focused. Creative.<br>Built to scale.</p>
-      <p class="why-body">Finance is a different game: strict rules, high-stakes trust and expensive customers. We build every video and ad with that in mind, so you can grow without risking your ad accounts or your name. The content comes from presenters people can trust, and from scripts your compliance team has signed off.</p>
-      <a class="btn btn-dark" href="get-in-touch.html">Get in touch</a>
-    </div>
-    <div class="why-vis" id="whyvis">
-      <div class="tree-wrap" aria-hidden="true">
-        <img src="tree-cut.png" alt="">
-        <span class="online"></span>
-      </div>
-      <div class="why-cards">
-        <div class="wcard" style="padding-left:40%"><span class="wtitle">Compliance first</span><p style="margin:10px 0 0;font-weight:600;line-height:1.4">No profit promises. A risk warning in every video. Sign-off before we film.</p></div>
-        <div class="wcard center"><b>Licensed</b><span class="wlabel">fintech, trading &amp; investing apps</span></div>
-        <div class="wcard wide">
-          <span class="swap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-4-4"/><path d="M20 16H6l4 4"/></svg></span>
-          <em>“Built to grow your proof”</em>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="team" id="team">
-  <div class="wrap team-head">
-    <span class="tag-team">Team</span>
-    <h2 class="h2">Meet the team</h2>
-    <p class="serif team-serif">Behind your growth</p>
-  </div>
-  <div class="team-marquee">
-    <div class="team-track">
-      <div class="team-set">
-          <figure class="tm"><div class="tm-img"><img src="team-elle-v2.jpg" alt="Elle, Business Development Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Elle</b><span>Business Development Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-jay.jpg" alt="Jay, Head of Design" width="520" height="650" loading="lazy"></div><figcaption><b>Jay</b><span>Head of Design</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-nina.jpg" alt="Nina, Social Media Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Nina</b><span>Social Media Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-leon.jpg" alt="Leon, Graphic Designer" width="520" height="650" loading="lazy"></div><figcaption><b>Leon</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-lily.jpg" alt="Lily, Graphic Designer" width="520" height="650" loading="lazy"></div><figcaption><b>Lily</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-bobby.jpg" alt="Bobby, HR Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Bobby</b><span>HR Manager</span></figcaption></figure>
-      </div>
-      <div class="team-set" aria-hidden="true">
-          <figure class="tm"><div class="tm-img"><img src="team-elle-v2.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Elle</b><span>Business Development Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-jay.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Jay</b><span>Head of Design</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-nina.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Nina</b><span>Social Media Manager</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-leon.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Leon</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-lily.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Lily</b><span>Graphic Designer</span></figcaption></figure>
-          <figure class="tm"><div class="tm-img"><img src="team-bobby.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Bobby</b><span>HR Manager</span></figcaption></figure>
-      </div>
     </div>
   </div>
 </section>
@@ -1081,53 +1114,31 @@ footer.foot .brand{font-size:20px;color:#0B1220}footer.foot .brand img{width:44p
   </div>
 </section>
 
-<section class="band dark" id="diff">
-  <div class="wrap" style="display:flex;flex-direction:column;gap:40px">
-    <div class="head">
-      <span class="eyebrow">The difference</span>
-      <h2 class="h2">What changes when you work with us</h2>
-    </div>
-    <div class="ba">
-      <div class="without">
-        <h3>Without Grow Your Proof</h3>
-        <p class="sub">Guesswork that costs you time and ad spend</p>
-        <ul>
-          <li><span class="qi" aria-hidden="true">?</span><span>Guessing which hooks work, with no time to test them</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>Ad budget burned on videos that don't convert</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>Ads rejected or accounts flagged because of one wrong claim</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>The same few videos running until results drop</span></li>
-          <li><span class="qi" aria-hidden="true">?</span><span>No idea which message brings in real, funded accounts</span></li>
-        </ul>
-        <div class="mtiles">
-          <div class="mt"><span>Cost per new account</span><b>?</b></div>
-          <div class="mt"><span>Completed ID checks</span><b>?</b></div>
-          <div class="mt"><span>Funded accounts</span><b>?</b></div>
-          <div class="mt"><span>Hook win rate</span><b>?</b></div>
-          <div class="mt wide"><span>Which hooks actually work?</span><b class="big unknown">Unknown</b></div>
-        </div>
+<section class="team" id="team">
+  <div class="wrap team-head">
+    <span class="tag-team">Team</span>
+    <h2 class="h2">Meet the team</h2>
+    <p class="serif team-serif">Behind your growth</p>
+  </div>
+  <div class="team-marquee">
+    <div class="team-track">
+      <div class="team-set">
+          <figure class="tm"><div class="tm-img"><img src="team-elle-v2.jpg" alt="Elle, Business Development Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Elle</b><span>Business Development Manager</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-jay.jpg" alt="Jay, Head of Design" width="520" height="650" loading="lazy"></div><figcaption><b>Jay</b><span>Head of Design</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-nina.jpg" alt="Nina, Social Media Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Nina</b><span>Social Media Manager</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-leon.jpg" alt="Leon, Graphic Designer" width="520" height="650" loading="lazy"></div><figcaption><b>Leon</b><span>Graphic Designer</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-lily.jpg" alt="Lily, Graphic Designer" width="520" height="650" loading="lazy"></div><figcaption><b>Lily</b><span>Graphic Designer</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-bobby.jpg" alt="Bobby, HR Manager" width="520" height="650" loading="lazy"></div><figcaption><b>Bobby</b><span>HR Manager</span></figcaption></figure>
       </div>
-      <div class="with">
-        <h3>With Grow Your Proof</h3>
-        <p class="sub">A tested system that turns views into new accounts</p>
-        <ul>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>5 hooks</b> tested per batch, then we scale the winners</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>Compliance sign-off</b> on every script before we film</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Studio shoots with <b>many different faces</b>, handled for you</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span><b>12 fresh videos</b> every month, so your ads never go stale</span></li>
-          <li><span class="ci" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></span><span>Built for <b>licensed fintech, trading &amp; investing apps</b></span></li>
-        </ul>
-        <div class="mtiles">
-          <div class="mt"><span>Cost per new account</span><b>Tracked</b></div>
-          <div class="mt"><span>Completed ID checks</span><b>Tracked</b></div>
-          <div class="mt"><span>Funded accounts</span><b>Tracked</b></div>
-          <div class="mt"><span>Hook win rate</span><b>Tracked</b></div>
-          <div class="mt wide"><span>Your ad budget</span><b class="big">Stays yours</b>
-            <div class="mascot money" role="img" aria-label="Grow Your Proof tree holding a money bag"><img src="tree-cut.png" alt=""><svg viewBox="0 0 600 629" aria-hidden="true"><g transform="translate(-30 0)"><path d="M70 420 C 20 470, -10 560, 40 610 C 80 640, 200 640, 240 610 C 290 560, 260 470, 210 420 Z" fill="#E7B54A"/><path d="M95 380 L185 380 L170 425 L110 425 Z" fill="#D49A2E"/><path d="M100 425 Q 140 440 180 425" fill="none" stroke="#8A5A00" stroke-width="12" stroke-linecap="round"/><path d="M60 470 C 40 520, 50 570, 80 600" fill="none" stroke="#F6D58B" stroke-width="14" stroke-linecap="round" opacity=".8"/><text x="140" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="130" fill="#8A5A00">$</text></g></svg></div>
-          </div>
-        </div>
+      <div class="team-set" aria-hidden="true">
+          <figure class="tm"><div class="tm-img"><img src="team-elle-v2.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Elle</b><span>Business Development Manager</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-jay.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Jay</b><span>Head of Design</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-nina.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Nina</b><span>Social Media Manager</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-leon.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Leon</b><span>Graphic Designer</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-lily.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Lily</b><span>Graphic Designer</span></figcaption></figure>
+          <figure class="tm"><div class="tm-img"><img src="team-bobby.jpg" alt="" width="520" height="650" loading="lazy"></div><figcaption><b>Bobby</b><span>HR Manager</span></figcaption></figure>
       </div>
     </div>
-    <p class="ba-note">What we track for you every week.</p>
   </div>
 </section>
 
